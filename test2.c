@@ -1,8 +1,11 @@
 #include <stdio>
 
-int i = 3
-while (i > 0)
+int main(void)
 {
-    printf("meow\n")
-    i--
+    int i = 3
+    while (i > 0)
+    {
+         printf("meow\n")
+         i--
+    }
 }
