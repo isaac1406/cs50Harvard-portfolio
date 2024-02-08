@@ -17,7 +17,7 @@ int main(void)
     for(int j = 1; j <= height; j++)
     {
         space--;
-        row(space, j);
+        pyramids(space, j);
     }
 }
 
@@ -30,6 +30,11 @@ void pyramids(int spaces, int lenght)
     }
     // print bricks
     for(int i = 0; i < lenght; i++)
+    {
+        printf("#");
+    }
+    printf("  ");
+    for(int l = 0; l < lenght; l++)
     {
         printf("#");
     }
