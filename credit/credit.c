@@ -16,15 +16,16 @@ int main(void)
 
 void validation(int a)
 {
+    int rest = 0;
     while(a > 0)
     {
         int b = a % 10;
+        rest += b;
         a /= 10;
         int c = a % 10;
-        
-
+        printf("%i, %i, %i\n", b, rest, c);
     }
-    printf("\n")
+    printf("\n");
 }
 
 printf("%i ", b);
