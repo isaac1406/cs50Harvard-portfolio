@@ -3,8 +3,10 @@
 
 int main(void)
 {
+    long number;
     do
     {
-        long number = get_long("Number: ")
+        number = get_long("Number: ");
     }
+    while(number < 1);
 }
