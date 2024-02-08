@@ -10,6 +10,7 @@ int main(void)
     {
         number = get_long("Number: ");
     }
+    // 0 não pode ser o primeiro numero resolver
     while(number < 1);
     validation(number);
 }
@@ -35,6 +36,7 @@ void validation(long a)
             doubled += multiply;
             a /= 10;
         }
+        
         total = doubled + rest;
         printf("%i %i\n", rest, doubled);
     }
