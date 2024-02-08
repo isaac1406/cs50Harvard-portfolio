@@ -16,5 +16,6 @@ void validation(int a)
     while(a > 0)
     {
         int b = a % 10
+        
     }
 }
