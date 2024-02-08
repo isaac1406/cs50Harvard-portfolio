@@ -32,7 +32,10 @@ void pyramids(int spaces, int lenght)
     for(int i = 0; i < lenght; i++)
     {
         printf("#");
-        printf("  ");
+    }
+    printf("  ");
+    for(int i = 0; i < lenght; i++)
+    {
         printf("#");
     }
     printf("\n");
