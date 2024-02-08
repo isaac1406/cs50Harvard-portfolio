@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void row(int spaces, int lenght);
+void pyramids(int spaces, int lenght);
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
     }
 }
 
-void row(int spaces, int lenght)
+void pyramids(int spaces, int lenght)
 {
     // print spaces
     for(int k = 0; k < spaces; k++)
