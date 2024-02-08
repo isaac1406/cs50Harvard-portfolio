@@ -26,7 +26,8 @@ void validation(long a)
         {
             c = a % 10;
             multiply = c * 2;
-            if(multiply)
+            if(multiply > 10)
+                int separate = 
             a /= 10;
         }
     }
