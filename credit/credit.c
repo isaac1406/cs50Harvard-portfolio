@@ -23,7 +23,7 @@ void validation(int a)
         rest += b;
         a /= 10;
         int c = a % 10;
-        printf("%i, %i, %i\n", b, rest, c);
+        printf("%i\n",rest);
     }
     printf("\n");
 }
