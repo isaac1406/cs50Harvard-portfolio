@@ -11,7 +11,7 @@ int main(void)
     {
         height = get_int("Height: ");
     }
-    while(height < 1);
+    while(height < 1 || height > 8);
     int space = height;
     // print a pyramid of the prompted height
     for(int j = 1; j <= height; j++)
