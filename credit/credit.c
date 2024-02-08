@@ -16,7 +16,7 @@ int main(void)
 
 void validation(long a)
 {
-    int rest = 0, c = 0, multiply =  0, doubled = 0;
+    int rest = 0, c = 0, multiply =  0, doubled = 0, total;
     while(a > 0)
     {
         int b = a % 10;
@@ -35,6 +35,8 @@ void validation(long a)
             doubled += multiply;
             a /= 10;
         }
+        int total = doubled + rest;
         printf("%i %i\n", rest, doubled);
     }
+    printf("%i\n", total)
 }
