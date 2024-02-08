@@ -28,12 +28,13 @@ void pyramids(int spaces, int lenght)
     {
         printf(" ");
     }
-    // print 
+    // print first pyramid
     for(int i = 0; i < lenght; i++)
     {
         printf("#");
     }
     printf("  ");
+    // print second pyramid
     for(int i = 0; i < lenght; i++)
     {
         printf("#");
