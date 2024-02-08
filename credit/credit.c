@@ -29,7 +29,7 @@ void validation(long a)
             if(multiply > 10)
                 int fdigit = multiply / 10;
                 int ldigit = multiply % 10;
-                multiply = fdigit + ldigit
+                multiply = ldigit + fdigit
             a /= 10;
         }
     }
