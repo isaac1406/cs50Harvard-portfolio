@@ -26,8 +26,10 @@ void validation(long a)
         {
             c = a % 10;
             multiply = c * 2;
+            if(multiply)
             a /= 10;
         }
-        printf("%i %i %i %i\n", b, rest, c, multiply);
     }
 }
+
+ printf("%i %i %i %i\n", b, rest, c, multiply);
