@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void validation(int a);
+void validation(long a);
 
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
     validation(number);
 }
 
-void validation(int a)
+void validation(long a)
 {
     int rest = 0;
     while(a > 0)
@@ -23,9 +23,11 @@ void validation(int a)
         rest += b;
         a /= 10;
         if(a > 0)
+        {
             int c = a % 10;
             int multiply = c * 2;
             a /= 10;
+        }
         printf("%i %i %i %i\n", b, rest, c, multiply);
     }
 }
