@@ -5,7 +5,7 @@ void row(int spaces, int lenght);
 
 int main(void)
 {
-    // prompt the user for the pyramid's height
+    // prompt the user for the height of the two pyramids
     int height;
     do
     {
