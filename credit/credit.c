@@ -36,7 +36,7 @@ void validation(long a)
             doubled += multiply;
             a /= 10;
         }
-        
+        // pesquisar sobre retorno de valor para a validação do cartão
         total = doubled + rest;
         printf("%i %i\n", rest, doubled);
     }
