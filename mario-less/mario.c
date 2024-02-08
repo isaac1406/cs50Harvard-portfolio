@@ -1,9 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void row (int spaces, int lenght);
+void row(int spaces, int lenght);
 
-int main (void)
+int main(void)
 {
     int height;
     do
@@ -19,7 +19,7 @@ int main (void)
     }
 }
 
-void row (int spaces, int lenght)
+void row(int spaces, int lenght)
 {
     for(int k = 0; k < spaces; k++)
     {
