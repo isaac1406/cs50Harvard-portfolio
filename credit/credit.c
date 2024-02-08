@@ -20,5 +20,7 @@ void validation(int a)
     {
         int b = a % 10;
         printf("%i ", b);
+        a /= 10;
     }
+    printf("\n")
 }
