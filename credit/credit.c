@@ -19,8 +19,9 @@ void validation(int a)
     while(a > 0)
     {
         int b = a % 10;
-        printf("%i ", b);
         a /= 10;
     }
     printf("\n")
 }
+
+printf("%i ", b);
