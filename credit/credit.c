@@ -23,8 +23,8 @@ void validation(int a)
         rest += b;
         a /= 10;
         int c = a % 10;
-        int double = c * 2;
+        int multiply = c * 2;
         a /= 10;
-        printf("%i %i %i %i\n", b, rest, c, double);
+        printf("%i %i %i %i\n", b, rest, c, multiply);
     }
 }
