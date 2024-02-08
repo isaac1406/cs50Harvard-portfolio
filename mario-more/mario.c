@@ -24,7 +24,7 @@ int main(void)
 void pyramids(int spaces, int lenght)
 {
     // print spaces
-    for(int k = 0; k < spaces; k++)
+    for(int i = 0; i < spaces; i++)
     {
         printf(" ");
     }
@@ -34,7 +34,7 @@ void pyramids(int spaces, int lenght)
         printf("#");
     }
     printf("  ");
-    for(int l = 0; l < lenght; l++)
+    for(int i = 0; i < lenght; i++)
     {
         printf("#");
     }
