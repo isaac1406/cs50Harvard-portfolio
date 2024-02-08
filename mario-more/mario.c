@@ -13,7 +13,7 @@ int main(void)
     }
     while(height < 1 || height > 8);
     int space = height;
-    // print a pyramid of the prompted height
+    // print the adjacent pyramids of the prompted height
     for(int j = 1; j <= height; j++)
     {
         space--;
