@@ -27,9 +27,12 @@ void validation(long a)
             c = a % 10;
             multiply = c * 2;
             if(multiply > 10)
+            {
                 int fdigit = multiply / 10;
                 int ldigit = multiply % 10;
-                multiply = ldigit + fdigit;
+                multiply = fdigit + ldigit;
+            }
+            
             a /= 10;
         }
         printf("%i %i %i %i\n", b, rest, c, multiply);
