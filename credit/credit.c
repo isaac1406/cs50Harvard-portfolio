@@ -22,7 +22,7 @@ void validation(int a)
         int b = a % 10;
         rest += b;
         a /= 10;
-        if (a > 0)
+        if(a > 0)
             int c = a % 10;
             int multiply = c * 2;
             a /= 10;
