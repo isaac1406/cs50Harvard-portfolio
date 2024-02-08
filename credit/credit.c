@@ -35,8 +35,8 @@ void validation(long a)
             doubled += multiply;
             a /= 10;
         }
-        int total = doubled + rest;
+        total = doubled + rest;
         printf("%i %i\n", rest, doubled);
     }
-    printf("%i\n", total)
+    printf("%i\n", total);
 }
