@@ -16,7 +16,7 @@ int main(void)
 
 void validation(long a)
 {
-    int rest = 0;
+    int rest = int c = int multiply =  0;
     while(a > 0)
     {
         int b = a % 10;
