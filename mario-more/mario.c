@@ -28,7 +28,7 @@ void pyramids(int spaces, int lenght)
     {
         printf(" ");
     }
-    // print bricks
+    // print 
     for(int i = 0; i < lenght; i++)
     {
         printf("#");
