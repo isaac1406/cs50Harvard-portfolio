@@ -8,7 +8,14 @@ int main(void)
     long number;
     do
     {
+        int counter = 0;
         number = get_long("Number: ");
+        while(number > 0)
+        {
+            counter++;
+            number /= 10;
+        }
+        int result = number 
     }
     while(number < 1);
     validation(number);
