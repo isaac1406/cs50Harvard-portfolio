@@ -10,8 +10,8 @@ int main(void)
     {
         number = get_long("Number: ");
     }
-    while(number < 1 && != 0);
-    validation(number);number
+    while(number < 1 && number = 0);
+    validation(number);
 }
 
 void validation(long a)
