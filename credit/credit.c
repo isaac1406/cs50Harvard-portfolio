@@ -9,7 +9,6 @@ int main(void)
     long number;
     do
     {
-        long result = 0;
         int counter = 0;
         number = get_long("Number: ");
         long clone = number;
