@@ -10,9 +10,8 @@ int main(void)
     {
         number = get_long("Number: ");
     }
-    // 0 não pode ser o primeiro numero resolver
-    while(number < 1);
-    validation(number);
+    while(number < 1 && != 0);
+    validation(number);number
 }
 
 void validation(long a)
