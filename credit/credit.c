@@ -52,13 +52,11 @@ int validation(long a)
 int firsts(int i, long j)
 {
     int counter = 0;
-    long clone = j;
-    while(clone > 0)
+    while(j > 0)
     {
         counter++;
-        clone /= 10;
+        j /= 10;
     }
-    long result = j / (pow(10, counter));
 }
 
 void type(long n)
