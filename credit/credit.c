@@ -3,6 +3,7 @@
 #include <math.h>
 
 int validation(long a);
+int firsts(int i, long j)
 
 int main(void)
 {
@@ -52,11 +53,15 @@ int validation(long a)
 int firsts(int i, long j)
 {
     int counter = 0;
-    while(j > 0)
+    if(i == 1)
     {
-        counter++;
-        j /= 10;
+        while(j > 0)
+        {
+            counter++;
+            j /= 10;
+        }
     }
+    printf("%li\n", j)
 }
 
 void type(long n)
