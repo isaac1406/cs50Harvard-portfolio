@@ -9,17 +9,9 @@ int main(void)
     long number;
     do
     {
-        int counter = 0;
         number = get_long("Number: ");
-        long clone = number;
-        while(clone > 0)
-        {
-            counter++;
-            clone /= 10;
-        }
-        long result = number / (pow(10, counter));
     }
-    while(result == 0 || number < 1);
+    while(number < 1);
     int decider = validation(number);
     if(decider % 10 == 0)
     {
@@ -57,7 +49,19 @@ int validation(long a)
     }
 }
 
+int firsts(int i, long j)
+{
+    int counter = 0;
+    long clone = j;
+    while(clone > 0)
+    {
+        counter++;
+        clone /= 10;
+    }
+    long result = j / (pow(10, counter));
+}
+
 void type(long n)
 {
-    
+
 }
