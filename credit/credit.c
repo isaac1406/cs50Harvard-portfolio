@@ -3,7 +3,8 @@
 #include <math.h>
 
 int validation(long a);
-int firsts(int i, long j)
+int firsts(int i, long j);
+void type(long n);
 
 int main(void)
 {
@@ -12,11 +13,11 @@ int main(void)
     {
         number = get_long("Number: ");
     }
-    while(number < 1);
+    while(number < 1);//need to reject the first digit being 0
     int decider = validation(number);
     if(decider % 10 == 0)
     {
-
+        //finish the functions first
     }
     else
     {
@@ -55,6 +56,7 @@ int firsts(int i, long j)
     int counter = 0;
     if(i == 1)
     {
+        //finish the pick up of firsts digits
         while(j > )
         {
             counter++;
@@ -73,5 +75,5 @@ int firsts(int i, long j)
 
 void type(long n)
 {
-
+    //when finish firsts functio, apply each variations of card types
 }
