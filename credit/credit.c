@@ -10,7 +10,7 @@ int main(void)
     {
         number = get_long("Number: ");
     }
-    while(number < 1 && number = 0);
+    while(number < 1);
     validation(number);
 }
 
