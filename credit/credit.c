@@ -57,3 +57,7 @@ int validation(long a)
     }
 }
 
+void type(long n)
+{
+    
+}
