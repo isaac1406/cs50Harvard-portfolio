@@ -18,7 +18,7 @@ int main(void)
         }
         int result = number / pow(10, counter);
     }
-    while(number < 1 && result == 0);
+    while(number < 1 || result == 0);
     validation(number);
 }
 
