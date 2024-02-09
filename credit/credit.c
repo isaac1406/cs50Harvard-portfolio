@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
 void validation(long a);
 
@@ -15,9 +16,9 @@ int main(void)
             counter++;
             number /= 10;
         }
-        int result = number / ()
+        int result = number / pow(10, counter);
     }
-    while(number < 1);
+    while(number < 1 && result == 0);
     validation(number);
 }
 
