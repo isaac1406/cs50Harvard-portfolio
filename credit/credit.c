@@ -61,6 +61,13 @@ int firsts(int i, long j)
             j /= 10;
         }
     }
+    else if(i == 2)
+    {
+        while(j > )
+        {
+            j /= 10
+        }
+    }
     printf("%li\n", j)
 }
 
