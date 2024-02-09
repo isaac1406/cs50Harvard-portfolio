@@ -9,16 +9,18 @@ int main(void)
     long number;
     do
     {
+        long result = 0;
         int counter = 0;
         number = get_long("Number: ");
-        while(number > 0)
+        long clone = number;
+        while(clone > 0)
         {
             counter++;
-            number /= 10;
+            clone /= 10;
         }
-        int result = number / pow(10, counter);
+        long result = number / (pow(10, counter));
     }
-    while(number < 1 || result == 0);
+    while(result == 0 || number < 1);
     validation(number);
 }
 
