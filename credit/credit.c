@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void validation(long a);
+int validation(long a);
 
 int main(void)
 {
@@ -20,10 +20,18 @@ int main(void)
         long result = number / (pow(10, counter));
     }
     while(result == 0 || number < 1);
-    validation(number);
+    int decider = validation(number);
+    if(decider % 10 == 0)
+    {
+
+    }
+    else
+    {
+        printf("Invalid\n")
+    }
 }
 
-void validation(long a)
+int validation(long a)
 {
     int rest = 0, c = 0, multiply =  0, doubled = 0, total;
     while(a > 0)
@@ -44,9 +52,8 @@ void validation(long a)
             doubled += multiply;
             a /= 10;
         }
-        // pesquisar sobre retorno de valor para a validação do cartão
         total = doubled + rest;
-        printf("%i %i\n", rest, doubled);
+        return total;
     }
-    printf("%i\n", total);
 }
+
