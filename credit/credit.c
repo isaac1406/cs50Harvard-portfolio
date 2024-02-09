@@ -55,7 +55,7 @@ int firsts(int i, long j)
     int counter = 0;
     if(i == 1)
     {
-        while(j > 0)
+        while(j > )
         {
             counter++;
             j /= 10;
