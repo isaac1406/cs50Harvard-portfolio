@@ -15,7 +15,7 @@ int main(void)
             counter++;
             number /= 10;
         }
-        int result = number 
+        int result = number / ()
     }
     while(number < 1);
     validation(number);
