@@ -99,5 +99,5 @@ bool IsMastercard(long card, int numDigits)
 
 bool IsVisa(long card, int numDigits)
 {
-    
+    int firsts = card / pow(10)
 }
