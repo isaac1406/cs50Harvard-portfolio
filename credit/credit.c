@@ -16,7 +16,7 @@ int main(void)
     while(number < 1);//need to reject the first digit being 0
     int decider = validation(number);
     int numDigits = digits(number);
-    amex = Isamex(number, numDigits);
+    bool amex = IsAmex(number, numDigits);
     if(decider % 10 != 0)
     {
         printf("Invalid\n");
