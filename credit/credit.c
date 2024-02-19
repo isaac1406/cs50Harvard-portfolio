@@ -60,5 +60,6 @@ int digits(long card)
 
 bool IsAmex(long card, int numDigits)
 {
-    int firsts
+    int firsts = card / pow(10, 13);
+    
 }
