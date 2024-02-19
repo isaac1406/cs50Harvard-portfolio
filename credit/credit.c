@@ -21,7 +21,7 @@ int main(void)
     {
         printf("Invalid\n");
     }
-    else if(amex = true)
+    else if(amex == true)
     {
         printf("AMEX\n");
     }
