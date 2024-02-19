@@ -4,8 +4,6 @@
 
 int validation(long a);
 int digits(long card);
-int firsts(int i, long j);
-void type(long n);
 
 int main(void)
 {
@@ -58,33 +56,4 @@ int digits(long card)
         counter++;
     }
     return count;
-}
-
-
-
-int firsts(int i, long j)
-{
-    int counter = 0;
-    if(i == 1)
-    {
-        //finish the pick up of firsts digits
-        while(j > )
-        {
-            counter++;
-            j /= 10;
-        }
-    }
-    else if(i == 2)
-    {
-        while(j > )
-        {
-            j /= 10
-        }
-    }
-    printf("%li\n", j)
-}
-
-void type(long n)
-{
-    //when finish firsts functio, apply each variations of card types
 }
