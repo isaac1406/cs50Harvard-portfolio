@@ -6,8 +6,6 @@ int validation(long a);
 int digits(long card);
 bool IsAmex(long card, int numDigits);
 bool IsMastercard(long card, int numDigits);
-bool IsVisa(long card, int numDigits);
-
 
 int main(void)
 {
