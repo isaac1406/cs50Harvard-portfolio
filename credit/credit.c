@@ -49,8 +49,8 @@ int validation(long a)
             a /= 10;
         }
         total = doubled + rest;
-        return total;
     }
+    return total;
 }
 
 int digits(long card)
