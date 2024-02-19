@@ -3,6 +3,7 @@
 #include <math.h>
 
 int validation(long a);
+int digits(long card);
 int firsts(int i, long j);
 void type(long n);
 
@@ -55,6 +56,7 @@ int digits(long card)
         card /= 10;
         counter++;
     }
+    return count;
 }
 
 
