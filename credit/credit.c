@@ -4,6 +4,7 @@
 
 int validation(long a);
 int digits(long card);
+bool IsAmex(long card, int numDigits);
 
 int main(void)
 {
@@ -15,9 +16,14 @@ int main(void)
     while(number < 1);//need to reject the first digit being 0
     int decider = validation(number);
     int numDigits = digits(number);
+    amex = Isamex(number, numDigits);
     if(decider % 10 != 0)
     {
         printf("Invalid\n");
+    }
+    else if(amex = true)
+    {
+        printf("AMEX\n");
     }
 }
 
@@ -61,5 +67,12 @@ int digits(long card)
 bool IsAmex(long card, int numDigits)
 {
     int firsts = card / pow(10, 13);
-    
+    if((numDigits == 15) && (firsts == 34 || firsts == 37))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
