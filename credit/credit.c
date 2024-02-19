@@ -15,13 +15,9 @@ int main(void)
     }
     while(number < 1);//need to reject the first digit being 0
     int decider = validation(number);
-    if(decider % 10 == 0)
+    if(decider % 10 != 0)
     {
-        //finish the functions first
-    }
-    else
-    {
-        printf("Invalid\n")
+        printf("Invalid\n");
     }
 }
 
@@ -50,6 +46,10 @@ int validation(long a)
         return total;
     }
 }
+
+
+
+
 
 int firsts(int i, long j)
 {
