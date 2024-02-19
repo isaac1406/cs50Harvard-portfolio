@@ -61,7 +61,7 @@ int digits(long card)
         card /= 10;
         counter++;
     }
-    return count;
+    return counter;
 }
 
 bool IsAmex(long card, int numDigits)
