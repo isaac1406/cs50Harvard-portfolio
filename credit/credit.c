@@ -97,8 +97,3 @@ bool IsMastercard(long card, int numDigits)
         return false;
     }
 }
-
-bool IsVisa(long card, int numDigits)
-{
-
-}
