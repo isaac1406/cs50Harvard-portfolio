@@ -82,7 +82,8 @@ bool IsAmex(long card, int numDigits)
 
 bool IsMastercard(long card, int numDigits)
 {
-    int firsts = card / pow()
+    int firsts = card / pow(10, 14)
+    if((numDigits == ))
 }
 
 bool IsVisa(long card, int numDigits)
