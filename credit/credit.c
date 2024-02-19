@@ -52,7 +52,8 @@ int digits(long card)
     int counter = 0;
     while(card > 0)
     {
-        
+        card /= 10;
+        counter++;
     }
 }
 
