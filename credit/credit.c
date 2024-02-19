@@ -76,3 +76,13 @@ bool IsAmex(long card, int numDigits)
         return false;
     }
 }
+
+bool IsMastercard(long card, int numDigits)
+{
+
+}
+
+bool IsVisa(long card, int numDigits)
+{
+
+}
