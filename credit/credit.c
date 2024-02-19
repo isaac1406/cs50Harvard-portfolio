@@ -93,7 +93,7 @@ bool IsAmex(long card, int numDigits)
 bool IsMastercard(long card, int numDigits)
 {
     int firsts = card / pow(10, 14);
-    if((numDigits == 16) && (firsts <= 55) && (firsts >= 51))
+    if((numDigits == 16) && (firsts > 50 && firsts < 56))
     {
         return true;
     }
