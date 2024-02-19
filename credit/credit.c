@@ -38,6 +38,10 @@ int main(void)
     {
         printf("VISA\n");
     }
+    else
+    {
+        printf("Invalid\n");
+    }
 }
 
 int validation(long a)
@@ -121,8 +125,5 @@ bool IsVisa(long card, int numDigits)
             return true;
         }
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
