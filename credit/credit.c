@@ -6,6 +6,7 @@ int validation(long a);
 int digits(long card);
 bool IsAmex(long card, int numDigits);
 bool IsMastercard(long card, int numDigits);
+bool IsVisa(long card, int numDigits);
 
 int main(void)
 {
@@ -20,6 +21,7 @@ int main(void)
     int numDigits = digits(number);
     bool amex = IsAmex(number, numDigits);
     bool mastercard = IsMastercard(number, numDigits);
+    bool visa = IsVisa(number, numDigits);
     if(decider % 10 != 0)
     {
         printf("Invalid\n");
@@ -31,6 +33,10 @@ int main(void)
     else if(mastercard == true)
     {
         printf("MASTERCARD\n");
+    }
+    else if(visa == true)
+    {
+        printf("VISA\n");
     }
 }
 
@@ -99,5 +105,24 @@ bool IsMastercard(long card, int numDigits)
 
 bool IsVisa(long card, int numDigits)
 {
-    int firsts = card / pow(10)
+    if(numDigits == 13)
+    {
+        int first = card / pow(10, 12);
+        if(first == 4)
+        {
+            return true;
+        }
+    }
+    else if(numDigits == 16)
+    {
+        int first = card / pow(10, 15);
+        if(first == 4)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
