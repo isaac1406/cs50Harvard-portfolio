@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int ldigit(long card)
+int ldigit(long card);
 int digits(long card);
 bool IsAmex(long card, int numDigits);
 bool IsMastercard(long card, int numDigits);
@@ -16,7 +16,7 @@ int main(void)
         number = get_long("Number: ");
     }
     while(number < 1);//need to reject the first digit being 0
-    int decider = validation(number);
+    int decider = ldigit(number);
     printf("%i\n", decider);
     int numDigits = digits(number);
     bool amex = IsAmex(number, numDigits);
@@ -59,6 +59,17 @@ int ldigit(long card)
        card /= 10;
     }
     return variable;
+}
+
+int digits(long card)
+{
+    int counter = 0;
+    while(card > 0)
+    {
+        card /= 10;
+        counter++;
+    }
+    return counter;
 }
 
 bool IsAmex(long card, int numDigits)
