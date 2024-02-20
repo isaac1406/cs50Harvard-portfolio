@@ -53,6 +53,7 @@ int ldigit(long card)
        if(alternate == true)
        {
         int last = card % 10;
+        int product = multiplier(last);
         sum += last;
        }
        alternate = !alternate;
@@ -65,12 +66,13 @@ int multiplier(int last)
 {
     int multiply = last * 2;
     int sum = 0;
-    if(multiply > 0)
+    while(multiply > 0)
     {
         int rest = multiply % 10;
+        sum += last;
         multiply /= 10;
     }
-
+    return sum;
 }
 
 int digits(long card)
