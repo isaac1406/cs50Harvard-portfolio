@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int validation(long a);
+int ldigit(long card)
 int digits(long card);
 bool IsAmex(long card, int numDigits);
 bool IsMastercard(long card, int numDigits);
@@ -44,9 +44,21 @@ int main(void)
     }
 }
 
-int ldigit(long a)
+int ldigit(long card)
 {
-    int 
+    int variable = 0;
+    bool alternate = false;
+    while(card > 0)
+    {
+       if(alternate == true)
+       {
+        int last = card % 10;
+        variable += last;
+       }
+       alternate = !alternate;
+       card /= 10;
+    }
+    return variable;
 }
 
 bool IsAmex(long card, int numDigits)
