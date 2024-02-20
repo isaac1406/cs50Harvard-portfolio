@@ -46,7 +46,7 @@ int main(void)
 
 int ldigit(long a)
 {
-
+    int 
 }
 
 bool IsAmex(long card, int numDigits)
