@@ -67,9 +67,10 @@ int multiplier(int last)
     int sum = 0;
     if(multiply > 0)
     {
-        int rest = multiply % 10
-        
+        int rest = multiply % 10;
+        multiply /= 10;
     }
+
 }
 
 int digits(long card)
