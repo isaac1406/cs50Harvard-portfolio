@@ -44,7 +44,7 @@ int main(void)
     }
 }
 
-int every_(long a)
+int ldigit(long a)
 {
 
 }
