@@ -46,19 +46,30 @@ int main(void)
 
 int ldigit(long card)
 {
-    int variable = 0;
+    int sum = 0;
     bool alternate = false;
     while(card > 0)
     {
        if(alternate == true)
        {
         int last = card % 10;
-        variable += last;
+        sum += last;
        }
        alternate = !alternate;
        card /= 10;
     }
-    return variable;
+    return sum;
+}
+
+int multiplier(int last)
+{
+    int multiply = last * 2;
+    int sum = 0;
+    if(multiply > 0)
+    {
+        int rest = multiply % 10
+        
+    }
 }
 
 int digits(long card)
