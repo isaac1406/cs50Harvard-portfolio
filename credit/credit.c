@@ -3,6 +3,7 @@
 #include <math.h>
 
 int ldigit(long card);
+int multiplier(int last);
 int digits(long card);
 bool IsAmex(long card, int numDigits);
 bool IsMastercard(long card, int numDigits);
