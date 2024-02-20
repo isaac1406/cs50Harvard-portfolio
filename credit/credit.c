@@ -70,7 +70,7 @@ int ldigit(long card)
 
 int multiplier(int last)
 {
-    int multiply = last * 2;
+    int multiply = last  2;
     int sum = 0;
     while(multiply > 0)
     {
