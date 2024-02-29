@@ -26,7 +26,6 @@ void points(string player1)
                 if(player1[j] == one[h])
                 {
                     sum += 1;
-                    return;
                 }
             }
         }
