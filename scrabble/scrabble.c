@@ -41,7 +41,7 @@ void points(string player1)
         for(int j = 0, lenght = strlen(player1); j < lenght; j++)
         {
             //check for 1 point
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 10; h++)
             {
                 if(player1[j] == one[h])
                 {
@@ -49,25 +49,25 @@ void points(string player1)
                 }
             }
             //check for 2 points
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 2; h++)
             {
-                if(player1[j] == one[h])
+                if(player1[j] == two[h])
                 {
                     sum += 1;
                 }
             }
             //check for 3 points
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 5; h++)
             {
-                if(player1[j] == one[h])
+                if(player1[j] == three[h])
                 {
                     sum += 1;
                 }
             }
             //check for 4 points
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 5; h++)
             {
-                if(player1[j] == one[h])
+                if(player1[j] == four[h])
                 {
                     sum += 1;
                 }
@@ -81,17 +81,17 @@ void points(string player1)
                 }
             }
             //check for 8 points
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 2; h++)
             {
-                if(player1[j] == one[h])
+                if(player1[j] == eight[h])
                 {
                     sum += 1;
                 }
             }
             //check for 10 points
-            for(int h = 0; h < 11; h++)
+            for(int h = 0; h < 2; h++)
             {
-                if(player1[j] == one[h])
+                if(player1[j] == ten[h])
                 {
                     sum += 1;
                 }
