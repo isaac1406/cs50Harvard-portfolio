@@ -6,7 +6,7 @@ void points(string player1);
 
 int main(void)
 {
-    string player1 = get_string("player 1: ");
+    string player1 = get_string(toupper("player 1: "));
 
     points(player1);
 }
