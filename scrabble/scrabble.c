@@ -8,9 +8,8 @@ void points(string player1);
 int main(void)
 {
     string player1 = get_string("player 1: ");
-   
-        string newone = toupper(player1[x]);
-    }
+    string newone = toupper(player1);
+
     printf("%s", newone);
 
     points(newone);
