@@ -1,15 +1,19 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void points(string player1);
 
 int main(void)
 {
     string player1 = get_string("player 1: ");
-    string newone = toupper(player1);
+    for(int x = 0, lenght = strlen(player1); x < lenght; x++)
+    {
+        toupper(player1[x])
+    }
 
-    points(newone);
+    points(player1);
 }
 
 void points(string player1)
