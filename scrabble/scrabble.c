@@ -23,6 +23,7 @@ int main(void)
 
 void points(string player1)
 {
+    //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
     char two[2] = {'D', 'G'};
     char three[4] = {'B', 'C', 'M', 'P'};
@@ -33,10 +34,55 @@ void points(string player1)
 
     int sum = 0;
 
+    //player 1 and 2
     for(int i = 0; i < 2; i++)
     {
+        //each letter of the word imputed
         for(int j = 0, lenght = strlen(player1); j < lenght; j++)
         {
+            //check for 1 point
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
+            for(int h = 0; h < 11; h++)
+            {
+                if(player1[j] == one[h])
+                {
+                    sum += 1;
+                }
+            }
             for(int h = 0; h < 11; h++)
             {
                 if(player1[j] == one[h])
