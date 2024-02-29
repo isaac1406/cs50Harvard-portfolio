@@ -18,8 +18,6 @@ int main(void)
         }
     }
 
-    printf("%s", player1);
-
     points(player1);
 }
 
