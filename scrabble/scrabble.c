@@ -73,12 +73,9 @@ void points(string player1)
                 }
             }
             //check for 5 points
-            for(int h = 0; h < 11; h++)
+            if(player1[j] == five)
             {
-                if(player1[j] == one[h])
-                {
-                    sum += 1;
-                }
+                sum += 1;
             }
             //check for 8 points
             for(int h = 0; h < 2; h++)
