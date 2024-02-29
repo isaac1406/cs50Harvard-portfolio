@@ -8,12 +8,11 @@ void points(string player1);
 int main(void)
 {
     string player1 = get_string("player 1: ");
-    char newone = 0
     for(int x = 0, lenght = strlen(player1); x < lenght; x++)
     {
-        newone += toupper(player1[x]);
+        //if lowercase
+        if(player1[x])
     }
-    printf("%c", newone);
 
     points(newone);
 }
