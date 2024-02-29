@@ -7,14 +7,20 @@ void points(string player1);
 
 int main(void)
 {
+    //make the players as arrays
     string player1 = get_string("player 1: ");
     for(int x = 0, lenght = strlen(player1); x < lenght; x++)
     {
         //if lowercase
-        if(player1[x])
+        if(player1[x] >= 'a' && player1[x] <= 'z')
+        {
+            player1[x] -= 32;
+        }
     }
 
-    points(newone);
+    printf("%s", player1);
+
+    points(player1);
 }
 
 void points(string player1)
