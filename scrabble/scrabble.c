@@ -14,6 +14,12 @@ int main(void)
 void points(string player1)
 {
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
+    char two[2] = {'D', 'G'};
+    char three[4] = {'B', 'C', 'M', 'P'};
+    char four[5] = {'F', 'H', 'V', 'W', 'Y'};
+    char five = 'K';
+    char eight[2] = {'J', 'X'};
+    char ten[2] = {'Q', 'Z'};
 
     int sum = 0;
 
