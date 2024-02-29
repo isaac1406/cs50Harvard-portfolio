@@ -31,10 +31,10 @@ void points(string player1)
     char five = 'K';
     char eight[2] = {'J', 'X'};
     char ten[2] = {'Q', 'Z'};
-
+    //sum as array
     int sum = 0;
 
-    //player 1 and 2
+    //player 1 and 2 to be finished
     for(int i = 0; i < 2; i++)
     {
         //each letter of the word imputed
