@@ -13,13 +13,16 @@ int main(void)
     //input the words chosen by both players
     for(int i = 0; i < N; i++)
     {
-                player[i] = get_string("player %i: ", i + 1);
+        player[i] = get_string("player %i: ", i + 1);
     }
 
+    // put all to uppercase to avoid mistakes in the pontuation
     upper(player[0]);
     upper(player[1]);
 
+    //apply functon to calculate the points of each player
     int score = points(player[0], player[1]);
+    //check the result
     if(score > 0)
     {
         printf("Player 1 WINS!")
