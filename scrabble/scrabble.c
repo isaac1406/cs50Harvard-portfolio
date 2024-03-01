@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 string upper(string player);
-int points(string player1, string player2);
+int points(string player[2]);
 
 int main(void)
 {
@@ -68,13 +68,13 @@ int points(string player[2])
     for(int i = 0; i < 2; i++)
     {
         //each letter of the word imputed
-        for(int j = 0, lenght = strlen(player1); j < lenght; j++)
+        for(int j = 0, lenght = strlen(player[i]); j < lenght; j++)
         {
             bool identify = true;
             //check for 1 point
             for(int h = 0; h < 10; h++)
             {
-                if(player1[j] == one[h])
+                if(player[i][j] == one[h])
                 {
                     sum[i] += 1;
                     identify = false;
@@ -86,7 +86,7 @@ int points(string player[2])
             {
                 for(int h = 0; h < 2; h++)
                 {
-                    if(player1[j] == two[h])
+                    if(player[i][j] == two[h])
                     {
                         sum[i] += 1;
                         identify = false;
@@ -99,7 +99,7 @@ int points(string player[2])
             {
                 for(int h = 0; h < 5; h++)
                 {
-                    if(player1[j] == three[h])
+                    if(player[i][j] == three[h])
                     {
                         sum[i] += 1;
                         identify = false;
@@ -112,7 +112,7 @@ int points(string player[2])
             {
                 for(int h = 0; h < 5; h++)
                 {
-                    if(player1[j] == four[h])
+                    if(player[i][j] == four[h])
                     {
                         sum[i] += 1;
                         identify = false;
@@ -123,7 +123,7 @@ int points(string player[2])
             //check for 5 points
             if(identify == true)
             {
-                if(player1[j] == five)
+                if(player[i][j] == five)
                 {
                     sum[i] += 1;
                     identify = false;
@@ -134,7 +134,7 @@ int points(string player[2])
             {
                 for(int h = 0; h < 2; h++)
                 {
-                    if(player1[j] == eight[h])
+                    if(player[i][j] == eight[h])
                     {
                         sum[i] += 1;
                         identify = false;
@@ -147,7 +147,7 @@ int points(string player[2])
             {
                 for(int h = 0; h < 2; h++)
                 {
-                    if(player1[j] == ten[h])
+                    if(player1[i][j] == ten[h])
                     {
                         sum[i] += 1;
                         break;
