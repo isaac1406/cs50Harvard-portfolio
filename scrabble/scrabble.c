@@ -76,6 +76,7 @@ int points(string player1, string player2)
                 if(player1[j] == one[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
             //check for 2 points
@@ -84,6 +85,7 @@ int points(string player1, string player2)
                 if(player1[j] == two[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
             //check for 3 points
@@ -92,6 +94,7 @@ int points(string player1, string player2)
                 if(player1[j] == three[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
             //check for 4 points
@@ -100,6 +103,7 @@ int points(string player1, string player2)
                 if(player1[j] == four[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
             //check for 5 points
@@ -113,6 +117,7 @@ int points(string player1, string player2)
                 if(player1[j] == eight[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
             //check for 10 points
@@ -121,6 +126,7 @@ int points(string player1, string player2)
                 if(player1[j] == ten[h])
                 {
                     sum[i] += 1;
+                    break;
                 }
             }
         }
