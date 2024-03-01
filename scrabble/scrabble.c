@@ -19,7 +19,20 @@ int main(void)
     upper(player[0]);
     upper(player[1]);
 
-    points(player[0], player[1]);
+    int score = points(player[0], player[1]);
+    if(score > 0)
+    {
+        printf("Player 1 WINS!!")
+    }
+    else if(score < 0)
+    {
+        printf("Player 2 WINS!!")
+    }
+    else
+    {
+        printf("TIE!!")
+    }
+
 }
 
 string upper(string player)
