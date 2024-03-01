@@ -17,7 +17,7 @@ int main(void)
     }
 
     upper(player[0]);
-    upper[player[1]];
+    upper(player[1]);
 
     points(player[0], player[1]);
 }
