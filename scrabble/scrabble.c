@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 string upper(string player);
-int points(string player[]);
+int points(string player1, string player2);
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
     upper(player[1]);
 
     //apply functon to calculate the points of each player
-    int score = points(player[N]);
+    int score = points(player[0], player[1]);
     //check the result
     if(score > 0)
     {
@@ -51,7 +51,7 @@ string upper(string player)
     return player;
 }
 
-int points(string player[])
+int points(string player1, string player2)
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
@@ -67,8 +67,16 @@ int points(string player[])
     //player 1 and 2
     for(int i = 0; i < 2; i++)
     {
+        if(i == 0)
+        {
+            string player = player1;
+        }
+        else
+        {
+            string player = player2;
+        }
         //each letter of the word imputed
-        for(int j = 0, lenght = strlen(player[i]); j < lenght; j++)
+        for(int j = 0, lenght = strlen(player); j < lenght; j++)
         {
             bool identify = true;
             //check for 1 point
