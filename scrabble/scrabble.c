@@ -46,7 +46,7 @@ void points(string player1, string player2)
     char eight[2] = {'J', 'X'};
     char ten[2] = {'Q', 'Z'};
     //sum as array
-    int sum = 0;
+    int sum[2] = {0, 0}
 
     //player 1 and 2 to be finished
     for(int i = 0; i < 2; i++)
