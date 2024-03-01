@@ -8,8 +8,12 @@ void points(string player1);
 int main(void)
 {
     //make the players as arrays
-    player[2]
-    string player1 = get_string("player 1: ");
+    const int N = 2;
+    string player[N];
+    for(int i = 0; i < N; i++)
+    {
+        player[i] = get_string("player %i: ", i + 1);
+    }
     for(int x = 0, lenght = strlen(player1); x < lenght; x++)
     {
         //if lowercase
