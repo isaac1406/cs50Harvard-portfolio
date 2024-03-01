@@ -62,7 +62,7 @@ int points(string player1, string player2)
     char eight[2] = {'J', 'X'};
     char ten[2] = {'Q', 'Z'};
     //sum of the points scored by each player
-    int sum[2] = {0, 0};
+    int sum[2];
 
     //player 1 and 2
     for(int i = 0; i < 2; i++)
