@@ -51,7 +51,7 @@ string upper(string player)
     return player;
 }
 
-int points(string player1, string player2)
+int points(string player[2])
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
