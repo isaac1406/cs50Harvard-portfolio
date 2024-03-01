@@ -98,7 +98,7 @@ int points(string player1, string player2)
                 {
                     if(player[j] == two[h])
                     {
-                        sum[i] += 1;
+                        sum[i] += 2;
                         identify = false;
                         break;
                     }
@@ -111,7 +111,7 @@ int points(string player1, string player2)
                 {
                     if(player[j] == three[h])
                     {
-                        sum[i] += 1;
+                        sum[i] += 3;
                         identify = false;
                         break;
                     }
@@ -124,7 +124,7 @@ int points(string player1, string player2)
                 {
                     if(player[j] == four[h])
                     {
-                        sum[i] += 1;
+                        sum[i] += 4;
                         identify = false;
                         break;
                     }
@@ -135,7 +135,7 @@ int points(string player1, string player2)
             {
                 if(player[j] == five)
                 {
-                    sum[i] += 1;
+                    sum[i] += 5;
                     identify = false;
                 }
             }
@@ -146,7 +146,7 @@ int points(string player1, string player2)
                 {
                     if(player[j] == eight[h])
                     {
-                        sum[i] += 1;
+                        sum[i] += 8;
                         identify = false;
                         break;
                     }
@@ -159,7 +159,7 @@ int points(string player1, string player2)
                 {
                     if(player1[j] == ten[h])
                     {
-                        sum[i] += 1;
+                        sum[i] += 10;
                         break;
                     }
                 }
