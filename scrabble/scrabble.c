@@ -13,7 +13,7 @@ int main(void)
     string player[N];
     for(int i = 0; i < N; i++)
     {
-        player[i] = get_string("player %i: ", i + 1);
+                player[i] = get_string("player %i: ", i + 1);
     }
 
     upper(player[0]);
