@@ -1,9 +1,9 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-//Functions declarations
+// Functions declarations
 string upper(string player);
 int points(string player1, string player2);
 
@@ -11,8 +11,8 @@ int main(void)
 {
     const int N = 2;
     string player[N];
-    //input the words chosen by both players
-    for(int i = 0; i < N; i++)
+    // input the words chosen by both players
+    for (int i = 0; i < N; i++)
     {
         player[i] = get_string("player %i: ", i + 1);
     }
@@ -21,18 +21,18 @@ int main(void)
     upper(player[0]);
     upper(player[1]);
 
-    //apply functon to calculate the points of each player
+    // apply functon to calculate the points of each player
     int score = points(player[0], player[1]);
-    //check the result
-    if(score > 0)
+    // check the result
+    if (score > 0)
     {
         printf("Player 1 wins!\n");
     }
-    else if(score < 0)
+    else if (score < 0)
     {
         printf("Player 2 wins!\n");
     }
-    else if(score == 0)
+    else if (score == 0)
     {
         printf("Tie!\n");
     }
@@ -41,10 +41,10 @@ int main(void)
 
 string upper(string player)
 {
-    for(int x = 0, lenght = strlen(player); x < lenght; x++)
+    for (int x = 0, lenght = strlen(player); x < lenght; x++)
     {
-        //if lowercase
-        if(player[x] >= 'a' && player[x] <= 'z')
+        // if lowercase
+        if (player[x] >= 'a' && player[x] <= 'z')
         {
             player[x] -= 32;
         }
@@ -54,7 +54,7 @@ string upper(string player)
 
 int points(string player1, string player2)
 {
-    //pontuation for each letter
+    // pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
     char two[2] = {'D', 'G'};
     char three[4] = {'B', 'C', 'M', 'P'};
@@ -62,11 +62,11 @@ int points(string player1, string player2)
     char five = 'K';
     char eight[2] = {'J', 'X'};
     char ten[2] = {'Q', 'Z'};
-    //sum of the points scored by each player
+    // sum of the points scored by each player
     int sum[2];
 
-    //player 1 and 2
-    for(int i = 0; i < 2; i++)
+    // player 1 and 2
+    for (int i = 0; i < 2; i++)
     {
         string player;
         if(i == 0)
@@ -77,26 +77,26 @@ int points(string player1, string player2)
         {
             player = player2;
         }
-        //each letter of the word imputed
+        // each letter of the word imputed
         for(int j = 0, lenght = strlen(player); j < lenght; j++)
         {
             bool identify = true;
-            //check for 1 point
-            for(int h = 0; h < 10; h++)
+            // check for 1 point
+            for (int h = 0; h < 10; h++)
             {
-                if(player[j] == one[h])
+                if (player[j] == one[h])
                 {
                     sum[i] += 1;
                     identify = false;
                     break;
                 }
             }
-            //check for 2 points
-            if(identify == true)
+            // check for 2 points
+            if (identify == true)
             {
-                for(int h = 0; h < 2; h++)
+                for (int h = 0; h < 2; h++)
                 {
-                    if(player[j] == two[h])
+                    if (player[j] == two[h])
                     {
                         sum[i] += 2;
                         identify = false;
@@ -104,12 +104,12 @@ int points(string player1, string player2)
                     }
                 }
             }
-            //check for 3 points
-            if(identify == true)
+            // check for 3 points
+            if (identify == true)
             {
-                for(int h = 0; h < 5; h++)
+                for (int h = 0; h < 5; h++)
                 {
-                    if(player[j] == three[h])
+                    if (player[j] == three[h])
                     {
                         sum[i] += 3;
                         identify = false;
@@ -117,12 +117,12 @@ int points(string player1, string player2)
                     }
                 }
             }
-            //check for 4 points
-            if(identify == true)
+            // check for 4 points
+            if (identify == true)
             {
-                for(int h = 0; h < 5; h++)
+                for (int h = 0; h < 5; h++)
                 {
-                    if(player[j] == four[h])
+                    if (player[j] == four[h])
                     {
                         sum[i] += 4;
                         identify = false;
@@ -130,21 +130,21 @@ int points(string player1, string player2)
                     }
                 }
             }
-            //check for 5 points
-            if(identify == true)
+            // check for 5 points
+            if (identify == true)
             {
-                if(player[j] == five)
+                if (player[j] == five)
                 {
                     sum[i] += 5;
                     identify = false;
                 }
             }
-            //check for 8 points
-            if(identify == true)
+            // check for 8 points
+            if (identify == true)
             {
-                for(int h = 0; h < 2; h++)
+                for (int h = 0; h < 2; h++)
                 {
-                    if(player[j] == eight[h])
+                    if (player[j] == eight[h])
                     {
                         sum[i] += 8;
                         identify = false;
@@ -152,12 +152,12 @@ int points(string player1, string player2)
                     }
                 }
             }
-            //check for 10 points
-            if(identify == true)
+            // check for 10 points
+            if (identify == true)
             {
-                for(int h = 0; h < 2; h++)
+                for (int h = 0; h < 2; h++)
                 {
-                    if(player1[j] == ten[h])
+                    if (player1[j] == ten[h])
                     {
                         sum[i] += 10;
                         break;
@@ -166,7 +166,7 @@ int points(string player1, string player2)
             }
         }
     }
-    //the result will define in main who won
+    // the result will define in main who won
     int score = sum[0] - sum[1];
     return score;
 }
