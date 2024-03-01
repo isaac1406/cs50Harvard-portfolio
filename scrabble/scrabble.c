@@ -22,11 +22,11 @@ int main(void)
     int score = points(player[0], player[1]);
     if(score > 0)
     {
-        printf("Player 1 WINS!!")
+        printf("Player 1 WINS!")
     }
     else if(score < 0)
     {
-        printf("Player 2 WINS!!")
+        printf("Player 2 WINS!")
     }
     else
     {
