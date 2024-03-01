@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 string upper(string player);
-int points(player[2]);
+int points(string player[]);
 
 int main(void)
 {
@@ -51,7 +51,7 @@ string upper(string player)
     return player;
 }
 
-int points(player[2])
+int points(string player[])
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
