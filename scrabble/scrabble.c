@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
-void points(string player1);
+string upper(string player);
+void points(string player1, string player2);
 
 int main(void)
 {
@@ -14,19 +15,27 @@ int main(void)
     {
         player[i] = get_string("player %i: ", i + 1);
     }
-    for(int x = 0, lenght = strlen(player1); x < lenght; x++)
-    {
-        //if lowercase
-        if(player1[x] >= 'a' && player1[x] <= 'z')
-        {
-            player1[x] -= 32;
-        }
-    }
 
-    points(player1);
+    upper(player[0]);
+    upper[player[1]]
+
+    points(player[0], player[1]);
 }
 
-void points(string player1)
+string upper(string player)
+{
+    for(int x = 0, lenght = strlen(player); x < lenght; x++)
+    {
+        //if lowercase
+        if(player[x] >= 'a' && player[x] <= 'z')
+        {
+            player[x] -= 32;
+        }
+    }
+    return player;
+}
+
+void points(string player1, string player2)
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
