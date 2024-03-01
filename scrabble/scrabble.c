@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
+//Functions declarations
 string upper(string player);
 int points(string player1, string player2);
 
@@ -25,15 +26,15 @@ int main(void)
     //check the result
     if(score > 0)
     {
-        printf("Player 1 WINS!\n");
+        printf("Player 1 wins!\n");
     }
     else if(score < 0)
     {
-        printf("Player 2 WINS!\n");
+        printf("Player 2 wins!\n");
     }
     else if(score == 0)
     {
-        printf("TIE!!\n");
+        printf("Tie!\n");
     }
 
 }
