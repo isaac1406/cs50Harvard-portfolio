@@ -36,7 +36,6 @@ int main(void)
     {
         printf("Tie!\n");
     }
-
 }
 
 string upper(string player)
@@ -69,7 +68,7 @@ int points(string player1, string player2)
     for (int i = 0; i < 2; i++)
     {
         string player;
-        if(i == 0)
+        if (i == 0)
         {
             player = player1;
         }
@@ -78,7 +77,7 @@ int points(string player1, string player2)
             player = player2;
         }
         // each letter of the word imputed
-        for(int j = 0, lenght = strlen(player); j < lenght; j++)
+        for (int j = 0, lenght = strlen(player); j < lenght; j++)
         {
             bool identify = true;
             // check for 1 point
