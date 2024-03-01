@@ -59,7 +59,7 @@ void points(string player1, string player2)
             {
                 if(player1[j] == one[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
             //check for 2 points
@@ -67,7 +67,7 @@ void points(string player1, string player2)
             {
                 if(player1[j] == two[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
             //check for 3 points
@@ -75,7 +75,7 @@ void points(string player1, string player2)
             {
                 if(player1[j] == three[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
             //check for 4 points
@@ -83,20 +83,20 @@ void points(string player1, string player2)
             {
                 if(player1[j] == four[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
             //check for 5 points
             if(player1[j] == five)
             {
-                sum += 1;
+                sum[i] += 1;
             }
             //check for 8 points
             for(int h = 0; h < 2; h++)
             {
                 if(player1[j] == eight[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
             //check for 10 points
@@ -104,7 +104,7 @@ void points(string player1, string player2)
             {
                 if(player1[j] == ten[h])
                 {
-                    sum += 1;
+                    sum[i] += 1;
                 }
             }
         }
