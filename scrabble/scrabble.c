@@ -108,38 +108,50 @@ int points(string player1, string player2)
                 }
             }
             //check for 4 points
-            for(int h = 0; h < 5; h++)
+            if(identify == true)
             {
-                if(player1[j] == four[h])
+                for(int h = 0; h < 5; h++)
                 {
-                    sum[i] += 1;
-                    identify = false;
-                    break;
+                    if(player1[j] == four[h])
+                    {
+                        sum[i] += 1;
+                        identify = false;
+                        break;
+                    }
                 }
             }
             //check for 5 points
-            if(player1[j] == five)
+            if(identify == true)
             {
-                sum[i] += 1;
-                identify = false;
-            }
-            //check for 8 points
-            for(int h = 0; h < 2; h++)
-            {
-                if(player1[j] == eight[h])
+                if(player1[j] == five)
                 {
                     sum[i] += 1;
                     identify = false;
-                    break;
+                }
+            }
+            //check for 8 points
+            if(identify == true)
+            {
+                for(int h = 0; h < 2; h++)
+                {
+                    if(player1[j] == eight[h])
+                    {
+                        sum[i] += 1;
+                        identify = false;
+                        break;
+                    }
                 }
             }
             //check for 10 points
-            for(int h = 0; h < 2; h++)
+            if(identify == true)
             {
-                if(player1[j] == ten[h])
+                for(int h = 0; h < 2; h++)
                 {
-                    sum[i] += 1;
-                    break;
+                    if(player1[j] == ten[h])
+                    {
+                        sum[i] += 1;
+                        break;
+                    }
                 }
             }
         }
