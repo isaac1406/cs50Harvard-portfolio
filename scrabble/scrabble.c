@@ -25,15 +25,15 @@ int main(void)
     //check the result
     if(score > 0)
     {
-        printf("Player 1 WINS!")
+        printf("Player 1 WINS!");
     }
     else if(score < 0)
     {
-        printf("Player 2 WINS!")
+        printf("Player 2 WINS!");
     }
     else
     {
-        printf("TIE!!")
+        printf("TIE!!");
     }
 
 }
