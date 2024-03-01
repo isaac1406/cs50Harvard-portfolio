@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 string upper(string player);
-void points(string player1, string player2);
+int points(string player1, string player2);
 
 int main(void)
 {
@@ -35,7 +35,7 @@ string upper(string player)
     return player;
 }
 
-void points(string player1, string player2)
+int points(string player1, string player2)
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
@@ -45,10 +45,10 @@ void points(string player1, string player2)
     char five = 'K';
     char eight[2] = {'J', 'X'};
     char ten[2] = {'Q', 'Z'};
-    //sum as array
-    int sum[2] = {0, 0}
+    //sum of the points scored by each player
+    int sum[2] = {0, 0};
 
-    //player 1 and 2 to be finished
+    //player 1 and 2
     for(int i = 0; i < 2; i++)
     {
         //each letter of the word imputed
@@ -109,4 +109,7 @@ void points(string player1, string player2)
             }
         }
     }
+    //the result will define in main who won
+    int score = sum[0] - sum[1];
+    return score;
 }
