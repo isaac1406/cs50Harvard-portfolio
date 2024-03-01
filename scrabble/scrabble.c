@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 string upper(string player);
-int points(string player[2]);
+int points(player[2]);
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
     upper(player[1]);
 
     //apply functon to calculate the points of each player
-    int score = points(player[0], player[1]);
+    int score = points(player[N]);
     //check the result
     if(score > 0)
     {
@@ -51,7 +51,7 @@ string upper(string player)
     return player;
 }
 
-int points(string player[2])
+int points(player[2])
 {
     //pontuation for each letter
     char one[10] = {'A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'};
