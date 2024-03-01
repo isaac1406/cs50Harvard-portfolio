@@ -82,23 +82,29 @@ int points(string player1, string player2)
                 }
             }
             //check for 2 points
-            for(int h = 0; h < 2; h++)
+            if(identify == true)
             {
-                if(player1[j] == two[h])
+                for(int h = 0; h < 2; h++)
                 {
-                    sum[i] += 1;
-                    identify = false;
-                    break;
+                    if(player1[j] == two[h])
+                    {
+                        sum[i] += 1;
+                        identify = false;
+                        break;
+                    }
                 }
             }
             //check for 3 points
-            for(int h = 0; h < 5; h++)
+            if(identify == true)
             {
-                if(player1[j] == three[h])
+                for(int h = 0; h < 5; h++)
                 {
-                    sum[i] += 1;
-                    identify = false;
-                    break;
+                    if(player1[j] == three[h])
+                    {
+                        sum[i] += 1;
+                        identify = false;
+                        break;
+                    }
                 }
             }
             //check for 4 points
