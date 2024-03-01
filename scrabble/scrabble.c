@@ -8,9 +8,9 @@ int points(string player1, string player2);
 
 int main(void)
 {
-    //make the players as arrays
     const int N = 2;
     string player[N];
+    //input the words chosen by both players
     for(int i = 0; i < N; i++)
     {
                 player[i] = get_string("player %i: ", i + 1);
