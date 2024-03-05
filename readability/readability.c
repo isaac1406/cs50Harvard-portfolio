@@ -52,13 +52,13 @@ int count_words(string text)
     int counterw = 0;
     for (int i = 0, lenght = strlen(text); i < lenght; i++)
     {
-        if (text[i] >= 'A' && text[i] <= 'Z')
+        if (text[i] == ' ')
         {
-            counterl++;
+            counterw++;
         }
 
     }
-    return counterl;
+    return counterw;
 }
 
 int count_sentences(string text)
