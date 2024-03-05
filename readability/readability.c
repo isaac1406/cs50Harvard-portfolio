@@ -23,6 +23,11 @@ int main(void)
     // Print the grade level
 }
 
+int formula(int numlet, int numwor, int numsen)
+{
+    
+}
+
 int count_letters(string text)
 {
     // Return the number of letters in text
