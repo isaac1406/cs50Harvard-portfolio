@@ -30,8 +30,8 @@ int formula(int numlet, int numwor, int numsen)
     float L = (numlet * 100.0) / (numwor * 100.0);
     float S = (numsen * 100.0) / (numwor * 100.0);
     float index = 0.0588 * L - 0.296 * S - 15.8;
-    (int) round(index);
-    return index;
+    int grade = (int) round(index);
+    return grade;
 }
 
 int count_letters(string text)
@@ -57,7 +57,7 @@ int count_words(string text)
     {
         for (int i = 1, lenght = strlen(text); i < lenght; i++)
         {
-            if (isalpha(text[i - 1]) && text[i] == ' ' && isalpha(test[i + 1]))
+            if (isalpha(text[i - 1]) && text[i] == ' ' && isalpha(text[i + 1]))
             {
                 counterw++;
             }
