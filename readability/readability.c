@@ -70,7 +70,7 @@ int count_sentences(string text)
 {
     // Return the number of sentences in text
     int counters = 0, lenght = strlen(text), i = 0;
-    string each = "";
+    string each[] = "";
     int spaces = 0;
     for (i = 0; i < lenght; i++)
     {
