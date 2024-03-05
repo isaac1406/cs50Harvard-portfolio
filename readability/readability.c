@@ -93,7 +93,7 @@ int count_sentences(string text)
                 }
             }
         }
-        each +=  text[i];
+        each += text[i];
     }
     return counters;
 }
