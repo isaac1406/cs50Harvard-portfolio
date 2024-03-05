@@ -20,7 +20,7 @@ int main(void)
     int sentences = count_sentences(text);
 
     // Compute the Coleman-Liau index
-    int formula(int letters, int words, int sentences);
+    int grade = formula(int letters, int words, int sentences);
 
     // Print the grade level
 }
