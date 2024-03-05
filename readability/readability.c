@@ -89,6 +89,7 @@ int count_sentences(string text)
                     counters++;
                     each = "";
                     spaces = 0;
+                    numwor = 0;
                 }
             }
         }
