@@ -49,6 +49,16 @@ int count_letters(string text)
 int count_words(string text)
 {
     // Return the number of words in text
+    int counterw = 0;
+    for (int i = 0, lenght = strlen(text); i < lenght; i++)
+    {
+        if (text[i] >= 'A' && text[i] <= 'Z')
+        {
+            counterl++;
+        }
+
+    }
+    return counterl;
 }
 
 int count_sentences(string text)
