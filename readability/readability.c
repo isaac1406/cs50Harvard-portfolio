@@ -69,7 +69,7 @@ int count_sentences(string text)
 
                 counters++;
             }
-            new
+            
         }
         return counters;
     }
