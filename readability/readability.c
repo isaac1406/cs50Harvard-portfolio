@@ -81,11 +81,15 @@ int count_sentences(string text)
         if (text[i] == '!' || text[i] == '?' || text[i] == '.')
         {
             int numwor = count_words(each);
-            if (numwor > 0 && spaces < numwor)
+            if (numwor > 0)
             {
-                counters++;
-                each = "";
-                spaces = 0;
+                numwor++;
+                if (spaces < numwor)
+                {
+                    counters++;
+                    each = "";
+                    spaces = 0;
+                }
             }
         }
         each +=  text[i];
