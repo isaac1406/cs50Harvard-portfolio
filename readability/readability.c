@@ -71,8 +71,6 @@ int count_sentences(string text)
         {
             counters++;
         }
-        
-
     }
     return counters;
 }
