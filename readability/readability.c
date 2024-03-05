@@ -25,6 +25,7 @@ int main(void)
 
 string upper(string text)
 {
+    string new;
     for (int x = 0, lenght = strlen(text); x < lenght; x++)
     {
         string new += toupper(text[x]);
