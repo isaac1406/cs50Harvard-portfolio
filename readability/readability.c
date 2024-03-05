@@ -25,7 +25,7 @@ int main(void)
 
 int formula(int numlet, int numwor, int numsen)
 {
-    
+    float L = (numlet * 100.0) / (numwor * 100.0)
 }
 
 int count_letters(string text)
