@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
+int formula(int numlet, int numwor, int numsen);
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -19,6 +20,7 @@ int main(void)
     int sentences = count_sentences(text);
 
     // Compute the Coleman-Liau index
+    int formula(int letters, int words, int sentences);
 
     // Print the grade level
 }
@@ -28,6 +30,8 @@ int formula(int numlet, int numwor, int numsen)
     float L = (numlet * 100.0) / (numwor * 100.0);
     float S = (numsen * 100.0) / (numwor * 100.0);
     float index = 0.0588 * L - 0.296 * S - 15.8;
+    (int) round(index);
+    return index;
 }
 
 int count_letters(string text)
