@@ -41,7 +41,7 @@ int count_letters(string text)
 int count_words(string text)
 {
     // Return the number of words in text
-    int counterw = 0;
+    int counterw = 1;
     int let = count_letters(text);
     if (let > 0)
     {
