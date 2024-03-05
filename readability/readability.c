@@ -23,15 +23,6 @@ int main(void)
     // Print the grade level
 }
 
-string upper(string text)
-{
-    string new;
-    for (int x = 0, lenght = strlen(text); x < lenght; x++)
-    {
-        new += toupper(text[x]);
-    }
-    return text;
-}
 int count_letters(string text)
 {
     // Return the number of letters in text
