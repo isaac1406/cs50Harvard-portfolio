@@ -33,7 +33,6 @@ int count_letters(string text)
         {
             counterl++;
         }
-
     }
     return counterl;
 }
@@ -45,9 +44,9 @@ int count_words(string text)
     int let = count_letters(text);
     if (let > 0)
     {
-        for (int i = 0, lenght = strlen(text); i < lenght; i++)
+        for (int i = 1, lenght = strlen(text); i < lenght; i++)
         {
-            if (text[i] == ' ' && test[i + 1] != ' ')
+            if (isalpha(text[i - 1]) && text[i] == ' ' && isalpha(test[i + 1]))
             {
                 counterw++;
             }
