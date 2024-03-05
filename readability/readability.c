@@ -57,7 +57,7 @@ int count_words(string text)
     {
         for (int i = 1, lenght = strlen(text); i < lenght; i++)
         {
-            if (isalpha(text[i - 1]) && text[i] == ' ' && text[i + 1] != ' ')
+            if (text[i - 1] != ' ' && text[i] == ' ' && text[i + 1] != ' ')
             {
                 counterw++;
             }
