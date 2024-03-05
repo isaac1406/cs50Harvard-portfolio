@@ -25,6 +25,7 @@ int main(void)
     // Print the grade level
 }
 
+// fix the formula
 int formula(int numlet, int numwor, int numsen)
 {
     float L = (numlet * 100.0) / (numwor);
@@ -93,6 +94,7 @@ int count_sentences(string text)
                 }
             }
         }
+        // fix the addin of chars of each sentence
         each[i] = text[i];
     }
     return counters;
