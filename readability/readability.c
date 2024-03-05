@@ -42,13 +42,13 @@ int count_words(string text)
 {
     // Return the number of words in text
     int counterw = 0;
+    int let = count_letters(text);
     for (int i = 0, lenght = strlen(text); i < lenght; i++)
     {
         if (text[i] == ' ')
         {
             counterw++;
         }
-
     }
     return counterw;
 }
