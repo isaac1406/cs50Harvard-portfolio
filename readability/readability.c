@@ -34,10 +34,16 @@ string upper(string text)
 int count_letters(string text)
 {
     // Return the number of letters in text
+    int counterl = 0;
     for (int i = 0, lenght = strlen(text); i < lenght; i++)
     {
         if (text[i] >= 'A' && text[i] <= 'Z')
+        {
+            counterl++;
+        }
+
     }
+    return counterl;
 }
 
 int count_words(string text)
