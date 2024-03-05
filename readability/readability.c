@@ -59,10 +59,9 @@ int count_words(string text)
 int count_sentences(string text)
 {
     // Return the number of sentences in text
-    int counters = 0;
-    int wor = count_words(text);
-    while(true)
-    for (int i = 0, lenght = strlen(text); i < lenght; i++)
+    int counters = 0, wor = count_words(text), lenght = strlen(text);
+    while()
+    for (int i = 0; i < lenght; i++)
     {
         if (text[i] == '!' || text[i] == '?' || text[i] == '.')
         {
