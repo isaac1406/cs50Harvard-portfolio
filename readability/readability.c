@@ -74,7 +74,7 @@ int count_sentences(string text)
     int spaces = 0;
     for (i = 0; i < lenght; i++)
     {
-        if (text[i] == ' ')
+        if (text[i] == ' ' && isalpha(text[i - 1]))
         {
             spaces++;
         }
