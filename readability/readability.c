@@ -27,7 +27,7 @@ int formula(int numlet, int numwor, int numsen)
 {
     float L = (numlet * 100.0) / (numwor * 100.0);
     float S = (numsen * 100.0) / (numwor * 100.0);
-    
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 }
 
 int count_letters(string text)
