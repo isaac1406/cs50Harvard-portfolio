@@ -63,8 +63,10 @@ int count_sentences(string text)
     string each = "";
     while (i < lenght)
     {
+        int spaces = 0;
         for (i = 0; i < lenght; i++)
         {
+            if (text)
             if (text[i] == '!' || text[i] == '?' || text[i] == '.')
             {
                 int numwor = count_words(each);
