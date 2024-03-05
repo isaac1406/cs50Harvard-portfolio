@@ -62,13 +62,15 @@ int count_sentences(string text)
     int counters = 0, wor = count_words(text), lenght = strlen(text), i = 0;
     while (i < lenght)
     {
-    for (i = 0; i < lenght; i++)
-    {
-        if (text[i] == '!' || text[i] == '?' || text[i] == '.')
+        for (i = 0; i < lenght; i++)
         {
-            counters++;
+            if (text[i] == '!' || text[i] == '?' || text[i] == '.')
+            {
+
+                counters++;
+            }
+            new
         }
-    }
-    return counters;
+        return counters;
     }
 }
