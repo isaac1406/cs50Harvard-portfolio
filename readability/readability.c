@@ -61,23 +61,24 @@ int count_sentences(string text)
     // Return the number of sentences in text
     int counters = 0, lenght = strlen(text), i = 0;
     string each = "";
-    while (i < lenght)
+    int spaces = 0;
+    for (i = 0; i < lenght; i++)
     {
-        int spaces = 0;
-        for (i = 0; i < lenght; i++)
+        if (text[i] == ' ')
         {
-            if (text)
-            if (text[i] == '!' || text[i] == '?' || text[i] == '.')
-            {
-                int numwor = count_words(each);
-                if (numwor > 0)
-                {
-                    counters++;
-                    each = "";
-                }
-            }
-            each +=  text[i];
+            spaces++;
         }
+        if (text[i] == '!' || text[i] == '?' || text[i] == '.')
+        {
+            int numwor = count_words(each);
+            if (numwor > 0 && spaces < numwor)
+            {
+                counters++;
+                each = "";
+                spaces = 0;
+            }
+        }
+        each +=  text[i];
     }
     return counters;
 }
