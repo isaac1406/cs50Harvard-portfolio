@@ -71,6 +71,7 @@ int count_sentences(string text)
                 if (numwor > 0)
                 {
                     counters++;
+                    each = "";
                 }
             }
             each +=  text[i];
