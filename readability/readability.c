@@ -36,7 +36,7 @@ int count_letters(string text)
     // Return the number of letters in text
     for (int i = 0, lenght = strlen(text); i < lenght; i++)
     {
-        if (a <= text[i] <= z || )
+        if (text[i] >= 'A' && text[i] <= 'Z')
     }
 }
 
