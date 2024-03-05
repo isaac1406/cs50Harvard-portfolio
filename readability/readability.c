@@ -34,7 +34,7 @@ string upper(string text)
 int count_letters(string text)
 {
     // Return the number of letters in text
-    for (int i = 0, lenght = strlen(text))
+    for (int i = 0, lenght = strlen(text);)
 }
 
 int count_words(string text)
