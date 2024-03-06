@@ -30,9 +30,8 @@ int formula(int numlet, int numwor, int numsen)
 {
     float L = (numlet * 100.0) / (numwor);
     float S = (numsen * 100.0) / (numwor);
-    float index = 0.0588 * L - 0.296 * S - 15.8;
-    int grade = (int) round(index);
-    return grade;
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    return index;
 }
 
 int count_letters(string text)
@@ -67,29 +66,11 @@ int count_sentences(string text)
 {
     // Return the number of sentences in text
     int counters = 0, lenght = strlen(text), i = 0;
-    string each;
-    int spaces = 0;
     for (i = 0; i < lenght; i++)
     {
-        each += text[i];
-        if (text[i] == ' ' && isalpha(text[i - 1]))
-        {
-            spaces++;
-        }
         if (text[i] == '!' || text[i] == '?' || text[i] == '.')
         {
-            int numwor = count_words(each);
-            if (numwor > 0)
-            {
-                numwor++;
-                if (spaces < numwor)
-                {
-                    counters++;
-                    each = "";
-                    spaces = 0;
-                    numwor = 0;
-                }
-            }
+            counters++;
         }
     }
     return counters;
