@@ -75,6 +75,7 @@ int count_sentences(string text)
     int spaces = 0;
     for (i = 0; i < lenght; i++)
     {
+        each += text[i];
         if (text[i] == ' ' && isalpha(text[i - 1]))
         {
             spaces++;
@@ -94,8 +95,6 @@ int count_sentences(string text)
                 }
             }
         }
-        // fix the addin of chars of each sentence
-        each[i] = text[i];
     }
     return counters;
 }
