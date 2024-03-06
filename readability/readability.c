@@ -25,7 +25,7 @@ int main(void)
     // Print the grade level
 }
 
-// fix the formula
+// formula to be used
 int formula(int numlet, int numwor, int numsen)
 {
     float L = (numlet * 100.0) / (numwor);
@@ -34,9 +34,9 @@ int formula(int numlet, int numwor, int numsen)
     return index;
 }
 
+// Return the number of letters in text
 int count_letters(string text)
 {
-    // Return the number of letters in text
     int counterl = 0;
     for (int i = 0, lenght = strlen(text); i < lenght; i++)
     {
@@ -48,9 +48,9 @@ int count_letters(string text)
     return counterl;
 }
 
+// Return the number of words in text
 int count_words(string text)
 {
-    // Return the number of words in text
     int counterw = 1;
     for (int i = 1, lenght = strlen(text); i < lenght; i++)
     {
@@ -62,9 +62,9 @@ int count_words(string text)
     return counterw;
 }
 
+// Return the number of sentences in text
 int count_sentences(string text)
 {
-    // Return the number of sentences in text
     int counters = 0, lenght = strlen(text), i = 0;
     for (i = 0; i < lenght; i++)
     {
