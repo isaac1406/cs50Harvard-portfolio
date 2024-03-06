@@ -53,15 +53,11 @@ int count_words(string text)
 {
     // Return the number of words in text
     int counterw = 1;
-    int let = count_letters(text);
-    if (let > 0)
+    for (int i = 1, lenght = strlen(text); i < lenght; i++)
     {
-        for (int i = 1, lenght = strlen(text); i < lenght; i++)
+        if (text[i - 1] != ' ' && text[i] == ' ' && text[i + 1] != ' ')
         {
-            if (text[i - 1] != ' ' && text[i] == ' ' && text[i + 1] != ' ')
-            {
-                counterw++;
-            }
+            counterw++;
         }
     }
     return counterw;
