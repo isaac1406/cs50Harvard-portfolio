@@ -23,6 +23,18 @@ int main(void)
     int grade = formula(letters, words, sentences);
 
     // Print the grade level
+    if (grade <= 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (grade >= 16)
+    {
+        printf("Grade 16+");
+    }
+    else
+    {
+        printf("Grade %i", grade);
+    }
 }
 
 // formula to be used
