@@ -31,7 +31,7 @@ int main(int argc, string argv[])
 
     printf("ciphertext: ");
 
-    // rotate the letters to encryptate
+    // rotate the letters to ciphered
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
         plain[i] = rotate(plain[i], key);
@@ -50,13 +50,15 @@ char rotate(char c, int n)
         // rotate
         new += n;
 
-        // check if a uppercase
+        // check if a uppercase got out of the letter boundaries of ASCII
         if (isupper(c))
         {
             c -= 65;
             new = (c + n) % 26;
             new += 65;
         }
+
+        // check if a lowercase case got out of the letter boundaries of ASCII
         else
         {
             c -= 97;
@@ -64,11 +66,13 @@ char rotate(char c, int n)
             new += 97;
         }
     }
+    // return the ciphered char
     return new;
 }
 
 bool only_digits(string s)
 {
+    // check if there is only digits in the command-line argument
     for (int i = 0, lenght = strlen(s); i < lenght; i++)
     {
         if (isdigit(s[i]) == 0)
