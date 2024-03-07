@@ -8,11 +8,17 @@ bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
+    // check if there's only one command-line argument
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
+    // check if the command-line argument contains only digits
+    if (only_digits(argv[]) == false)
+    
+
 }
 
 bool only_digits(string s)
@@ -21,8 +27,8 @@ bool only_digits(string s)
     {
         if (isdigit(s[i]) == 0)
         {
-            printf("Usage: ./caesar key\n");
-            return 1;
+            return false;
         }
     }
+    return true;
 }
