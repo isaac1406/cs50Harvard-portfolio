@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 bool only_digits(string s);
-int rotate(char c, int n);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -37,7 +37,7 @@ int main(int argc, string argv[])
 
 }
 
-int rotate(char c, int n)
+char rotate(char c, int n)
 {
     if (isalpha(c))
     {
