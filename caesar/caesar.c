@@ -51,14 +51,14 @@ char rotate(char c, int n)
         {
             while (new > 90)
             {
-                new = ;
+                new = (c + n) % 26;
             }
         }
         else
         {
             while (new > 122)
             {
-                new = ;
+                new = (c + n) % 26;
             }
         }
     }
