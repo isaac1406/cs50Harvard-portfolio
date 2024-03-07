@@ -41,9 +41,16 @@ char rotate(char c, int n)
 {
     if (isalpha(c))
     {
-        c += n;
+        char new = c + n;
+        if (isupper(c))
+        {
+            if (new > 90)
+            {
+                
+            }
+        }
     }
-    return c;
+    return new;
 }
 
 bool only_digits(string s)
