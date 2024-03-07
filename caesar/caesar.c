@@ -21,6 +21,9 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+
+    // convert the string inputed into an int
+    
 }
 
 bool only_digits(string s)
