@@ -35,7 +35,7 @@ int main(int argc, string argv[])
         plain[i] = rotate(plain[i], key);
     }
 
-    printf("cyphertext: %s", plain);
+    printf("cyphertext: %s\n", plain);
 
 }
 
