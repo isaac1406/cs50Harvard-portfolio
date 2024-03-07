@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 bool only_digits(string s);
 char rotate(char c, int n);
@@ -38,7 +38,6 @@ int main(int argc, string argv[])
         printf("%c", plain[i]);
     }
     printf("\n");
-
 }
 
 char rotate(char c, int n)
