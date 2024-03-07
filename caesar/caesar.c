@@ -19,6 +19,10 @@ bool only_digits(string s)
 {
     for (int i = 0, lenght = strlen(s); i < lenght; i++)
     {
-        if
+        if (isdigit(s[i]) == 0)
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
     }
 }
