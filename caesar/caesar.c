@@ -29,6 +29,7 @@ int main(int argc, string argv[])
     // ask for plaintext
     string plain = get_string("Plaintext: ");
 
+    // rotate the letters to
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
         plain[i] = rotate(plain[i], key);
