@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 bool only_digits(string s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -27,6 +28,15 @@ int main(int argc, string argv[])
 
     // ask for plaintext
     string plain = get_string("Plaintext: ")
+
+}
+
+char rotate(char c, int n)
+{
+    if (isalpha(c))
+    {
+        
+    }
 }
 
 bool only_digits(string s)
