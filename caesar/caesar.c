@@ -29,13 +29,15 @@ int main(int argc, string argv[])
     // ask for plaintext
     string plain = get_string("Plaintext: ");
 
+    printf("ciphertext: ");
+
     // rotate the letters to encryptate
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
         plain[i] = rotate(plain[i], key);
+        printf("%c", plain[i]);
     }
-
-    printf("ciphertext: %s\n", plain);
+    printf("\n");
 
 }
 
