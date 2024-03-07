@@ -27,7 +27,9 @@ int main(int argc, string argv[])
     int key = atoi(argv[1]);
 
     // ask for plaintext
-    string plain = get_string("Plaintext: ")
+    string plain = get_string("Plaintext: ");
+
+    for (int i = 0, lenght = strlen(plain); )
 
 }
 
@@ -35,8 +37,9 @@ char rotate(char c, int n)
 {
     if (isalpha(c))
     {
-        (int) c 
+        (int) c += n;
     }
+    return (char) c;
 }
 
 bool only_digits(string s)
