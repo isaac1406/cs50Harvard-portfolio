@@ -39,14 +39,15 @@ int main(int argc, string argv[])
 
 char rotate(char c, int n)
 {
+    char new;
     if (isalpha(c))
     {
-        char new = c + n;
+        new = c + n;
         if (isupper(c))
         {
-            if (new > 90)
+            while (new > 90)
             {
-                
+                new -= 26;
             }
         }
     }
