@@ -50,6 +50,13 @@ char rotate(char c, int n)
                 new -= 26;
             }
         }
+        else
+        {
+            while (new > 90)
+            {
+                new -= 26;
+            }
+        }
     }
     return new;
 }
