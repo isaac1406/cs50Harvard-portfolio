@@ -29,7 +29,10 @@ int main(int argc, string argv[])
     // ask for plaintext
     string plain = get_string("Plaintext: ");
 
-    for (int i = 0, lenght = strlen(plain); )
+    for (int i = 0, lenght = strlen(plain); i < lenght; i++)
+    {
+        
+    }
 
 }
 
