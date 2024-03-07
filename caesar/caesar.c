@@ -52,7 +52,7 @@ char rotate(char c, int n)
         }
         else
         {
-            while (new > 90)
+            while (new > 122)
             {
                 new -= 26;
             }
