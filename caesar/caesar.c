@@ -35,7 +35,7 @@ char rotate(char c, int n)
 {
     if (isalpha(c))
     {
-        
+        (int) c 
     }
 }
 
