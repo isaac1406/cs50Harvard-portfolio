@@ -17,5 +17,8 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    
+    for (int i = 0, lenght = strlen(s); i < lenght; i++)
+    {
+        
+    }
 }
