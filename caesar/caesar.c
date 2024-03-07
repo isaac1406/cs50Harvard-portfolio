@@ -39,7 +39,7 @@ int main(int argc, string argv[])
 
 char rotate(char c, int n)
 {
-    char new;
+    char new = ;
     if (isalpha(c))
     {
         new = c + n;
