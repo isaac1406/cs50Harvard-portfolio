@@ -23,7 +23,10 @@ int main(int argc, string argv[])
     }
 
     // convert the string inputed into an int
-    
+    int key = atoi(argv[1]);
+
+    // ask for plaintext
+    string plain = get_string("Plaintext: ")
 }
 
 bool only_digits(string s)
