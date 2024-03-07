@@ -19,6 +19,6 @@ bool only_digits(string s)
 {
     for (int i = 0, lenght = strlen(s); i < lenght; i++)
     {
-        
+        if
     }
 }
