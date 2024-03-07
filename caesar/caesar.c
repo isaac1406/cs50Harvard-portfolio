@@ -43,9 +43,14 @@ int main(int argc, string argv[])
 char rotate(char c, int n)
 {
     char new = c;
+
+    // check if the char is a letter
     if (isalpha(c))
     {
+        // rotate
         new += n;
+
+        // check if a uppercase
         if (isupper(c))
         {
             c -= 65;
