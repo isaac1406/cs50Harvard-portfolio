@@ -31,7 +31,7 @@ int main(int argc, string argv[])
 
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
-        
+        plain[i] = rotate(plain[i], key);
     }
 
 }
