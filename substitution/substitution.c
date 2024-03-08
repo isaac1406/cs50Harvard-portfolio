@@ -70,11 +70,13 @@ string substitute(string plain, string key)
                 {
                     key[j] = tolower(key[j]);
                 }
-                // substitute the plaintext letter for the respective one in the key
+                // go thru
                 for (int k = 0, num = strlen(lower); k < num; k++)
                 {
+                    // see what letter it is
                     if (plain[i] == lower[k])
                     {
+                        // change it for the respective one in the key
                         plain[i] = key[k];
                         break;
                     }
