@@ -117,4 +117,3 @@ bool validation(string s)
     }
     return true;
 }
-
