@@ -37,6 +37,7 @@ bool validation(string s)
     // check if there are 26 letters
     if (strlen(s) != 26)
     {
+        
         return false;
     }
 
