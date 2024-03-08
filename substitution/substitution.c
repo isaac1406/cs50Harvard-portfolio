@@ -11,7 +11,14 @@ int main(int argc, string argv[])
     // check if there's only one command-line argument
     if (argc != 2)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+
+    // validate the key
+    if (validation(argv[1]) == false)
+    {
+        printf("Usage: ./substitution key\n");
         return 1;
     }
 }
