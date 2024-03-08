@@ -20,7 +20,8 @@ bool validation(string s)
         {
             return false;
         }
-        
+
+        for (int j = 0; )
     }
     return true;
 }
