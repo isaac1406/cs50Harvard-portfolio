@@ -29,7 +29,8 @@ int main(int argc, string argv[])
 
 string substitute(string plain, string key)
 {
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string lower = "abcdefghijklmnopqrstuvwxyz";
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
         if (isalpha(plain[i]))
@@ -41,9 +42,9 @@ string substitute(string plain, string key)
                     toupper(key[j]);
                 }
 
-                for (int k = 0, num = strlen(alphabet); k < num; k++)
+                for (int k = 0, num = strlen(upper); k < num; k++)
                 {
-                    if (plain[i] == alphabet[k])
+                    if (plain[i] == upper[k])
                     {
                         plain[i] = key[k];
                         break;
@@ -53,7 +54,19 @@ string substitute(string plain, string key)
 
             else
             {
+                for (int j = 0, num = strlen(key); j < num; j++)
+                {
+                    tolower(key[j]);
+                }
 
+                for (int k = 0, num = strlen(lower); k < num; k++)
+                {
+                    if (plain[i] == lower[k])
+                    {
+                        plain[i] = key[k];
+                        break;
+                    }
+                }
             }
         }
     }
