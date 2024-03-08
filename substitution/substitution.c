@@ -36,9 +36,21 @@ string substitute(string plain, string key)
         {
             if (isupper(plain[i]))
             {
-                for
+                for (int j = 0, num = strlen(key); j < num; j++)
+                {
+                    
+                }
+
+                for (int k = 0, num = strlen(alphabet); k < num; k++)
+                {
+                    if (plain[i] == alphabet[k])
+                    {
+                        plain[i] = key[k];
+                        break;
+                    }
+                }
             }
-            
+
             else
             {
 
