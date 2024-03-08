@@ -26,25 +26,32 @@ int main(int argc, string argv[])
     // ask for plaintext
     string plain = get_string("Plaintext:  ");
 
-    string cypher = substitute(plain, argv[1]);
+    // new ciphered text
+    string cipher = substitute(plain, argv[1]);
     printf("ciphertext: %s", cypher);
 }
 
 string substitute(string plain, string key)
 {
+    // uppercase and lowercase alphabet
     string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string lower = "abcdefghijklmnopqrstuvwxyz";
+
+    // loop to pick each letter of the plaintext
     for (int i = 0, lenght = strlen(plain); i < lenght; i++)
     {
+        // check if it's an alphabetical char
         if (isalpha(plain[i]))
         {
+            // check if it's in uppercase
             if (isupper(plain[i]))
             {
+                // guarantee all the letters in the key are in uppercase too
                 for (int j = 0, num = strlen(key); j < num; j++)
                 {
                     key[j] = toupper(key[j]);
                 }
-
+                // substitute the plaintext letter for the respective one in the key
                 for (int k = 0, num = strlen(upper); k < num; k++)
                 {
                     if (plain[i] == upper[k])
@@ -55,13 +62,15 @@ string substitute(string plain, string key)
                 }
             }
 
+            // check if it's in lowercase
             else
             {
+                // guarantee all the letters in the key are in lowercase too
                 for (int j = 0, num = strlen(key); j < num; j++)
                 {
                     key[j] = tolower(key[j]);
                 }
-
+                // substitute the plaintext letter for the respective one in the key
                 for (int k = 0, num = strlen(lower); k < num; k++)
                 {
                     if (plain[i] == lower[k])
