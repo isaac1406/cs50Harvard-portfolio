@@ -29,8 +29,8 @@ int main(int argc, string argv[])
 
 string substitute(string plain, string key)
 {
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for (i = )
+    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (int i = 0, lenght = strlen(alphabet))
 }
 
 bool validation(string s)
