@@ -29,7 +29,7 @@ int main(int argc, string argv[])
 
 string substitute(string plain, string key)
 {
-    string alphabet = ""
+    string alphabet = "ABCDEF"
 }
 
 bool validation(string s)
