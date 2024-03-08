@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     // validate the key
     if (validation(argv[1]) == false)
     {
-        printf("Key must contain 26 letters.\n");
+        printf("Key must contain 26 different letters.\n");
         return 1;
     }
 
