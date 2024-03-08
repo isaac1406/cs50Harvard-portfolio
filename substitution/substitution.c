@@ -28,7 +28,7 @@ int main(int argc, string argv[])
 
     // new ciphered text
     string cipher = substitute(plain, argv[1]);
-    printf("ciphertext: %s", cipher);
+    printf("ciphertext: %s\n", cipher);
 }
 
 string substitute(string plain, string key)
