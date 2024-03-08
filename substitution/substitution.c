@@ -34,7 +34,15 @@ string substitute(string plain, string key)
     {
         if (isalpha(plain[i]))
         {
+            if (isupper(plain[i]))
+            {
+                for
+            }
             
+            else
+            {
+
+            }
         }
     }
 }
