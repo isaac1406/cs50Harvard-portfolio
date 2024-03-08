@@ -5,6 +5,7 @@
 #include <string.h>
 
 bool validation(string s);
+string substitute(string plain, string key);
 
 int main(int argc, string argv[])
 {
@@ -24,7 +25,11 @@ int main(int argc, string argv[])
 
     // ask for plaintext
     string plain = get_string("Plaintext: ");
+}
 
+string substitute(string plain, string key)
+{
+    
 }
 
 bool validation(string s)
