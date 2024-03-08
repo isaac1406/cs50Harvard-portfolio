@@ -19,6 +19,7 @@ int main(int argc, string argv[])
     // validate the key
     if (validation(argv[1]) == false)
     {
+        printf("Key must contain 26 letters.");
         return 1;
     }
 
@@ -36,7 +37,6 @@ bool validation(string s)
     // check if there are 26 letters
     if (strlen(s) != 26)
     {
-        printf("Key must contain 26 characters.");
         return false;
     }
 
