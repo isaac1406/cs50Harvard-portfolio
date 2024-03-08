@@ -16,10 +16,11 @@ bool validation(string s)
     // check if there is only digits in the command-line argument
     for (int i = 0, lenght = strlen(s); i < lenght; i++)
     {
-        if (isdigit(s[i]) == 0)
+        if (isalpha(s[i]) == 0)
         {
             return false;
         }
+        
     }
     return true;
 }
