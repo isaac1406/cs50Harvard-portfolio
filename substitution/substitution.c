@@ -56,7 +56,7 @@ string substitute(string plain, string key)
             {
                 for (int j = 0, num = strlen(key); j < num; j++)
                 {
-                    tolower(key[j]);
+                    key[j] = tolower(key[j]);
                 }
 
                 for (int k = 0, num = strlen(lower); k < num; k++)
