@@ -30,7 +30,13 @@ int main(int argc, string argv[])
 string substitute(string plain, string key)
 {
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (int i = 0, lenght = strlen(alphabet))
+    for (int i = 0, lenght = strlen(plain); i < lenght; i++)
+    {
+        if (isalpha(plain[i]))
+        {
+            
+        }
+    }
 }
 
 bool validation(string s)
