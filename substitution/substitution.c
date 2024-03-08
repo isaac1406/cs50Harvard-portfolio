@@ -30,6 +30,7 @@ int main(int argc, string argv[])
 string substitute(string plain, string key)
 {
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for (i = )
 }
 
 bool validation(string s)
