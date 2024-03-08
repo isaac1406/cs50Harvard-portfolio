@@ -28,7 +28,7 @@ int main(int argc, string argv[])
 
     // new ciphered text
     string cipher = substitute(plain, argv[1]);
-    printf("ciphertext: %s", cypher);
+    printf("ciphertext: %s", cipher);
 }
 
 string substitute(string plain, string key)
@@ -51,11 +51,13 @@ string substitute(string plain, string key)
                 {
                     key[j] = toupper(key[j]);
                 }
-                // substitute the plaintext letter for the respective one in the key
+                // go through the alphabet letters
                 for (int k = 0, num = strlen(upper); k < num; k++)
                 {
+                    // see what letter it is
                     if (plain[i] == upper[k])
                     {
+                        // change it for the respective one in the key
                         plain[i] = key[k];
                         break;
                     }
@@ -70,7 +72,7 @@ string substitute(string plain, string key)
                 {
                     key[j] = tolower(key[j]);
                 }
-                // go thru
+                // go through the alphabet letters
                 for (int k = 0, num = strlen(lower); k < num; k++)
                 {
                     // see what letter it is
@@ -84,6 +86,7 @@ string substitute(string plain, string key)
             }
         }
     }
+    // return the already ciphered text
     return plain;
 }
 
