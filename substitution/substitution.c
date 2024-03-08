@@ -8,7 +8,12 @@ bool validation(string s);
 
 int main(int argc, string argv[])
 {
-
+    // check if there's only one command-line argument
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
 }
 
 bool validation(string s)
