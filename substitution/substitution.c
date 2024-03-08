@@ -39,7 +39,7 @@ string substitute(string plain, string key)
             {
                 for (int j = 0, num = strlen(key); j < num; j++)
                 {
-                    toupper(key[j]);
+                    key[j] = toupper(key[j]);
                 }
 
                 for (int k = 0, num = strlen(upper); k < num; k++)
