@@ -19,12 +19,6 @@ int main(int argc, string argv[])
     // validate the key
     if (validation(argv[1]) == false)
     {
-        if (strlen(argv[1]) != 26)
-        {
-            printf("Key must contain 26 characters.");
-            return 1;
-        }
-        printf("Usage: ./substitution key\n");
         return 1;
     }
 
@@ -42,6 +36,7 @@ bool validation(string s)
     // check if there are 26 letters
     if (strlen(s) != 26)
     {
+        printf("Key must contain 26 characters.");
         return false;
     }
 
