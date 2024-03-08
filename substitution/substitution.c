@@ -70,6 +70,7 @@ string substitute(string plain, string key)
             }
         }
     }
+    return plain;
 }
 
 bool validation(string s)
