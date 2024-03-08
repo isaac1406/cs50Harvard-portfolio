@@ -24,7 +24,10 @@ int main(int argc, string argv[])
     }
 
     // ask for plaintext
-    string plain = get_string("Plaintext: ");
+    string plain = get_string("Plaintext:  ");
+
+    string cypher = substitute(plain, argv[1]);
+    printf("ciphertext: %s", cypher);
 }
 
 string substitute(string plain, string key)
