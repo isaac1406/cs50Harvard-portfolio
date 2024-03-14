@@ -1,6 +1,6 @@
 sort1 uses: TODO
 
-How do you know?: Takes 0.80s to sort reversed5000 list, and
+How do you know?: Takes 0.80s to sort reversed5000 list, and 0.049s to sort sorted5000 list
 
 sort2 uses: TODO
 
