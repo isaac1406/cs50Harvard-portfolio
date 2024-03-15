@@ -84,9 +84,13 @@ void print_winner(void)
     int order[candidate_count];
     for (int k = 0; k < candidate_count - 1; k++)
     {
-        if (candidates[k].votes == candidates[k + 1].votes)
+        if (candidates[k].votes >= candidates[k + 1].votes)
         {
-            order[k] = candidates
+            order[k] = candidates[k].votes;
+        }
+        else
+        {
+            
         }
     }
 
