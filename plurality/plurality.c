@@ -84,7 +84,7 @@ void print_winner(void)
 {
     // initialize max value of votes
     int highest = 0;
-    for (int k = 0; k < candidate_count - 1; k++)
+    for (int k = 0; k < candidate_count; k++)
     {
         // get the max value of votes
         if (candidates[k].votes > highest)
