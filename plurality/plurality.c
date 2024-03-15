@@ -82,14 +82,15 @@ void print_winner(void)
 {
     // TODO
     string winner, winners[];
-    int highest = 0;
+    int highest = 0, x = 0;
     for (int k = 0; k < candidate_count - 1; k++)
     {
         if (candidates[k].votes == winner)
         {
+            x++;
             highest = candidates[k].votes;
-            winners[k] = candidates[k].name;
-            winners[k + 1] = candidates[k + 1].name;
+            winners[x] = candidates[k].name;
+            winners[x + 1] = candidates[k + 1].name;
         }
         if (candidates[k].votes > winner)
         {
