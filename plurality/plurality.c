@@ -86,13 +86,15 @@ void print_winner(void)
     {
         if (candidates[k].votes >= candidates[k + 1].votes)
         {
-            order[k] = candidates[k].votes;
+            order[k] = candidates[k ].votes;
         }
         else
         {
-            
+            order[k + 1] = candidates[k].votes;
+            order[k] = candidates[k + 1].votes;
         }
     }
+    printf("")
 
     return;
 }
