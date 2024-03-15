@@ -81,11 +81,10 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string winner, winners[];
-    int highest = 0, x = 0;
+    int order[candidate_count];
     for (int k = 0; k < candidate_count - 1; k++)
     {
-        
+
     }
 
     return;
