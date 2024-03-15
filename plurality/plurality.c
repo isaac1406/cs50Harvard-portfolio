@@ -86,7 +86,7 @@ void print_winner(void)
     {
         if (candidates[k].votes == candidates[k + 1].votes)
         {
-            
+            order[k] = candidates
         }
     }
 
