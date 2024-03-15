@@ -85,7 +85,7 @@ void print_winner(void)
     int highest = 0, x = 0;
     for (int k = 0; k < candidate_count - 1; k++)
     {
-        if (candidates[k].votes == winner)
+        if (candidates[k].votes == winner ||  )
         {
             x++;
             highest = candidates[k].votes;
