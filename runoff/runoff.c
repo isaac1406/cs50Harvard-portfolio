@@ -132,7 +132,7 @@ bool vote(int voter, int rank, string name)
     {
         if(strcmp(candidates[i].name, name) == 0)
         {
-            preferences[voter][rank] = candidates[i];
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -155,7 +155,7 @@ void tabulate(void)
                 else
                     break;
             }
-            if (preferences[i][choice] == candidates[j])
+            if (preferences[i][choice] == j)
                 candidates[j].votes++;
         }
     }
