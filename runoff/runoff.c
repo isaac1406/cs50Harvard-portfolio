@@ -153,9 +153,7 @@ void tabulate(void)
             {
                 while (true)
                 {
-                    if (candidates[remain].eliminated)
-                    {
-                        remain++;
+                    if (candidates[preferences[i][choice]].eliminated)
                         choice++;
                     }
                     else
