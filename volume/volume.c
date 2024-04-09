@@ -40,9 +40,10 @@ int main(int argc, char *argv[])
     // write that same header in output
     fwrite(header, HEADER_SIZE, 1, output);
 
-    // Read samples from input file and write updated data to output file
+    // set buffer
     int16_t buffer;
     while(fread(&buffer, sizeof(int16_t), 1, input)){
+        // 
         buffer *= factor;
         fwrite(&buffer, sizeof(int16_t), 1, output);
     }
