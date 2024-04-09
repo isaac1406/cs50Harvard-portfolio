@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     // set buffer
     int16_t buffer;
     // loop to read all the samples from input
-    while(fread(&buffer, sizeof(int16_t), 1, input)){
+    while (fread(&buffer, sizeof(int16_t), 1, input)){
         // update the samples
         buffer *= factor;
         // copy the updated samples into output
