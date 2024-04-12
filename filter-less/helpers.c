@@ -78,7 +78,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width], int color)
+int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width], char color)
 {
     int counter = 0, sum = 0;
     for (int collumn = i - 1; collumn <= (i + 1); collumn++)
@@ -87,7 +87,12 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
         {
             if (row < 0 || row >= height || collumn < 0 || collumn >= width)
                 continue;
-            if (color = )
+            if (color = 'r')
+                sum += image[collumn][row].rgbtRed;
+            else if (color = 'g')
+                sum += image[collumn][row].rgbtGreen;
+            else
+                sum += image[collumn][row].rgbtBlue;
         }
     }
 }
