@@ -120,9 +120,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image [i][j].rgbtRed = get_blur(i, j, height, width, copy, 'r');
-            image [i][j].rgbtGreen = get_blur(i, j, height, width, copy, 'g');
-            image [i][j].rgbtBlue = get_blur(i, j, height, width, copy, 'b');
+            image[i][j].rgbtRed = get_blur(i, j, height, width, copy, 'r');
+            image[i][j].rgbtGreen = get_blur(i, j, height, width, copy, 'g');
+            image[i][j].rgbtBlue = get_blur(i, j, height, width, copy, 'b');
         }
     }
     return;
