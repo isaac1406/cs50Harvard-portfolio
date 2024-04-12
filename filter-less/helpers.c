@@ -14,7 +14,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
             float average = (red + green + blue) / 3.0;
-            (int) round(average);
+            round(average);
 
             // Update pixel values
             image[i][j].rgbtRed = average;
@@ -42,9 +42,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float sepiaGreen = .349 * red + .686 * green + .168 * blue;
             float sepiaBlue = .272 * red + .534 * green + .131 * blue;
             // round float numbers to the nearest int
-            (int) round(sepiaRed);
-            (int) round(sepiaGreen);
-            (int) round(sepiaBlue);
+            round(sepiaRed);
+            round(sepiaGreen);
+            round(sepiaBlue);
             // Ensure the resulting value is no larger than 255
             if (sepiaRed > 255)
                 sepiaRed = 255;
@@ -90,9 +90,9 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
             if (row < 0 || row >= height || collumn < 0 || collumn >= width)
                 continue;
             // apply the sum for the color called
-            if (color = 'r')
+            if (color == 'r')
                 sum += image[row][collumn].rgbtRed;
-            else if (color = 'g')
+            else if (color == 'g')
                 sum += image[row][collumn].rgbtGreen;
             else
                 sum += image[row][collumn].rgbtBlue;
@@ -101,7 +101,7 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
         }
     }
     // return the average of the surroundings to blur that pixel
-    return (int) round(sum / counter);
+    return round(sum / counter);
 }
 
 // Blur image
