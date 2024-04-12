@@ -44,7 +44,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             (int) round(sepiaRed);
             (int) round(sepiaGreen);
             (int) round(sepiaBlue);
-            if ()
+            (sepiaRed > 255) ?
         }
     }
     return;
