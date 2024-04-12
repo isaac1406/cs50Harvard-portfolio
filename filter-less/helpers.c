@@ -93,8 +93,10 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
                 sum += image[row][collumn].rgbtGreen;
             else
                 sum += image[row][collumn].rgbtBlue;
+            counter++;
         }
     }
+    return (int) round(sum / counter);
 }
 
 // Blur image
