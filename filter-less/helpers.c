@@ -85,7 +85,7 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
     {
         for (int row = j - 1; row <= (j + 1); row++);
         {
-            
+            if (i )
         }
     }
 }
