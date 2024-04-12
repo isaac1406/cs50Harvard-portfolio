@@ -108,8 +108,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             copy[i][j] = image[i][j];
             get_blur(i, j, height, width, image[height][width], 'r');
-            get_blur(i, j, height, width, image[height][width], 'r');
-            get_blur(i, j, height, width, image[height][width], 'r')
+            get_blur(i, j, height, width, image[height][width], 'g');
+            get_blur(i, j, height, width, image[height][width], 'b');
         }
     }
     return;
