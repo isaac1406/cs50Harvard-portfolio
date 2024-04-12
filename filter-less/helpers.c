@@ -87,7 +87,7 @@ int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width]
         {
             if (row < 0 || row >= height || collumn < 0 || collumn >= width)
                 continue;
-            
+            if (color)
         }
     }
 }
