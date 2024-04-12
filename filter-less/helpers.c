@@ -14,7 +14,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
             float average = (red + green + blue) / 3.0;
-            average = (int) round(average);
+            (int) round(average);
 
             // Update pixel values
             image[i][j].rgbtRed = average;
@@ -32,13 +32,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // Take average of red, green, and blue
+            // Take original red, green, and blue
             int red = image[i][j].rgbtRed;
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
+            // Compute sepia values
             float sepiaRed = .393 * red + .769 * green + .189 * blue;
             float sepiaGreen = .349 * red + .686 * green + .168 * blue;
             float sepiaBlue = .272 * red + .534 * green + .131 * blue;
+            // round float numbers to the nearest int
+            (int) round(sepiaRed);
+            (int) round(sepiaGreen);
+            (int) round(sepiaBlue);
+            if ()
         }
     }
     return;
