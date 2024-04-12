@@ -81,21 +81,26 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 int get_blur(int i, int j, int height, int width, RGBTRIPLE image[height][width], char color)
 {
     int counter = 0, sum = 0;
+    // loop through only the surroundings
     for (int row = i - 1; row <= (i + 1); row++)
     {
         for (int collumn = j - 1; collumn <= (j + 1); collumn++)
         {
+            // check if it's out of boundaries
             if (row < 0 || row >= height || collumn < 0 || collumn >= width)
                 continue;
+            // apply the sum for the color called
             if (color = 'r')
                 sum += image[row][collumn].rgbtRed;
             else if (color = 'g')
                 sum += image[row][collumn].rgbtGreen;
             else
                 sum += image[row][collumn].rgbtBlue;
+            // count the how many pixels there are in the proximity
             counter++;
         }
     }
+    // return the average of the surroundings to blur that pixel
     return (int) round(sum / counter);
 }
 
@@ -109,9 +114,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             copy[i][j] = image[i][j];
-            get_blur(i, j, height, width, image[height][width], 'r');
-            get_blur(i, j, height, width, image[height][width], 'g');
-            get_blur(i, j, height, width, image[height][width], 'b');
+            image [i][j].rgbtRed = get_blur(i, j, height, width, copy[height][width], 'r');
+            image [i][j].rgbtGreen = get_blur(i, j, height, width, copy[height][width], 'g');
+            image [i][j].rgbtBlue = get_blur(i, j, height, width, copy[height][width], 'b');
         }
     }
     return;
