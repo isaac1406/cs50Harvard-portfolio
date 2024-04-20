@@ -29,10 +29,13 @@ int main(int argc, char *argv[])
         sprintf(name, "%03i.jpg", count);
         img = fopen(name, "w");
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0){
-            if (found)
-            {
+            if (found){
                 fclose(img);
             }
+            else{
+                found = 1;
+            }
+
             fwrite(buffer, 1, 512, img);
         }
         else{
