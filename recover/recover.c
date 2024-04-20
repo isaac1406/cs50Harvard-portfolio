@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[])
 {
@@ -36,8 +37,8 @@ int main(int argc, char *argv[])
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
             if (img == NULL){
-                fclose card;
-                printf("Could not create %s\n", name)
+                fclose (card);
+                printf("Could not create %s\n", name);
                 return 2;
             }
             count++;
