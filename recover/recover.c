@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     // Open the memory card
     FILE *card = fopen(argv[1], "r");
 
+    // Open the memory card
     uint8_t buffer[512];
 
 }
