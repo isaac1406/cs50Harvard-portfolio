@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
                 printf("Could not create %s\n", name)
                 return 2;
             }
+            count++
 
             fwrite(buffer, 1, 512, img);
         }
