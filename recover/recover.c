@@ -41,8 +41,10 @@ int main(int argc, char *argv[])
                 return 2;
             }
             count++
-
-            fwrite(buffer, 1, 512, img);
+            }
+            if (found){
+                fwrite(buffer, 1, 512, img);
+            }
         }
         else{
             fwrite(buffer, 1, 512, img);
