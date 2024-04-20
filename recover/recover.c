@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     bool found = 0;
     uint8_t buffer[512];
     int count = 0;
-    char *name = malloc(8);
+    char *name[8];
     FILE *img = NULL;
 
     // While there's still data left to read from the memory card
