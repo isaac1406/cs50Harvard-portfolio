@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1, 512, img);
         }
         else{
+            sprintf(name, "%03i.jpg", count);
+            FILE *img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
         }
 
