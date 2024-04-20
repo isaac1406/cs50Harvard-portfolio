@@ -16,4 +16,9 @@ int main(int argc, char *argv[])
     // Open the memory card
     uint8_t buffer[512];
 
+    // While there's still data left to read from the memory card
+    while(fread(buffer, 1, 512, card) == 512){
+
+    }
+
 }
