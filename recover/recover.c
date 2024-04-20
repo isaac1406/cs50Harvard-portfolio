@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *card = fopen(argv[1], "r")
+    FILE *card = fopen(argv[1], "r");
+
+    uint8_t buffer[512];
 
 }
