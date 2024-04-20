@@ -36,21 +36,21 @@ int main(int argc, char *argv[])
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
             if (img == NULL){
-                fclose argv[1];
+                fclose card;
                 printf("Could not create %s\n", name)
                 return 2;
             }
-            count++
+            count++;
             }
             if (found){
                 fwrite(buffer, 1, 512, img);
             }
         }
-        else{
-            fwrite(buffer, 1, 512, img);
-        }
+    fclose(card);
+    free(name);
+    if (found){
         fclose(img);
     }
-    free(name);
-    fclose(card);
+    return 0;
+
 }
