@@ -27,7 +27,9 @@ int main(int argc, char *argv[])
             FILE *img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
         }
-
+        else{
+            fwrite
+        }
 
     }
 
