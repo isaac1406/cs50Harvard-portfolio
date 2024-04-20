@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     bool found = 0;
     uint8_t buffer[512];
     int count = 0;
-    char *name[8];
+    char name[8];
     FILE *img = NULL;
 
     // While there's still data left to read from the memory card
@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
             }
         }
     fclose(card);
-    free(name);
     if (found){
         fclose(img);
     }
