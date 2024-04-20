@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
             sprintf(name, "%03i.jpg", count);
             count++;
             FILE *img = fopen(name, "w");
+            fwrite(buffer, 1, 512, img);
         }
 
 
