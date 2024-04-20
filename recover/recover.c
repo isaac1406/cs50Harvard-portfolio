@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0){
             char *name = malloc(8);
             sprintf(name, "%03i.jpg", count);
+            count++;
+            
         }
 
 
