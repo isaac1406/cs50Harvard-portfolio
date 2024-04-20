@@ -18,14 +18,16 @@ int main(int argc, char *argv[])
     }
 
     // Open the memory card
+    bool found = 0;
     uint8_t buffer[512];
     int count = 0;
     char *name = malloc(8);
+    FILE *img = NULL;
 
     // While there's still data left to read from the memory card
     while(fread(buffer, 1, 512, card) == 512){
         sprintf(name, "%03i.jpg", count);
-        FILE *img = fopen(name, "w");
+        img = fopen(name, "w");
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0){
             count++;
             fwrite(buffer, 1, 512, img);
