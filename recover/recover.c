@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1, 512, img);
         }
         else{
-            fwrite
+            fwrite(buffer, 1, 512, img);
         }
 
     }
