@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
 
     // Open the memory card
     uint8_t buffer[512];
-
     int count = 0;
     char *name = malloc(8);
 
