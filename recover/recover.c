@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
     // While there's still data left to read from the memory card
     while(fread(buffer, 1, 512, card) == 512){
-        malloc
+        char *name = malloc(8);
 
     }
 
