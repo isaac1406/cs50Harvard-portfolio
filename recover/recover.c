@@ -21,19 +21,17 @@ int main(int argc, char *argv[])
 
     // While there's still data left to read from the memory card
     while(fread(buffer, 1, 512, card) == 512){
+        sprintf(name, "%03i.jpg", count);
+        FILE *img = fopen(name, "w");
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0){
-            sprintf(name, "%03i.jpg", count);
             count++;
-            FILE *img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
         }
         else{
-            sprintf(name, "%03i.jpg", count);
-            FILE *img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
         }
+        fclose(img);
     }
     free(name);
-    fclose
-
+    fclose(card);
 }
