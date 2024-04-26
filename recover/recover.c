@@ -35,16 +35,13 @@ int main(int argc, char *argv[])
             }
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
-            if (img == NULL){
-                fclose (card);
-                printf("Could not create %s\n", name);
-                return 2;
-            }
+            fwrite(buffer, 1, 512, img);
+            found = 0;
             count++;
-            }
-            if (found){
-                fwrite(buffer, 1, 512, img);
-            }
+        }
+        else if (found){
+            fwrite(buffer, 1, 512, img);
+        }
         }
     fclose(card);
     if (found){
