@@ -39,14 +39,12 @@ int main(int argc, char *argv[])
             found = 0;
             count++;
         }
-        else if (found){
+        else if (count != 0){
             fwrite(buffer, 1, 512, img);
         }
-        }
-    fclose(card);
-    if (found){
-        fclose(img);
     }
+    fclose(card);
+    fclose(img);
     return 0;
 
 }
