@@ -32,12 +32,15 @@ int main(int argc, char *argv[])
         // check JPEG signature
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             found = true;
+        // found the signature
         if (found == true)
         {
+            // check if it's the first JPEG
             if (count != 0)
             {
                 fclose(img);
             }
+            w
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
