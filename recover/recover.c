@@ -15,10 +15,11 @@ int main(int argc, char *argv[])
     // Open the memory card
     FILE *card = fopen(argv[1], "r");
 
+    // check if the file exists
     if (card == NULL)
         printf("Could not open %s", argv[1]);
 
-    // Open the memory card
+    // initialize variables
     bool found = false;
     uint8_t buffer[512];
     int count = 0;
