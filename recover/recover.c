@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
 
     // Open the memory card
-    bool found = 0;
+    bool found = false;
     uint8_t buffer[512];
     int count = 0;
     char name[8];
@@ -28,15 +28,15 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while(fread(buffer, 1, 512, card) == 512){
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-            found = 1;
-        if (found){
+            found = true;
+        if (found == true){
             if (count != 0){
                 fclose(img);
             }
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
-            found = 0;
+            found = false;
             count++;
         }
         else if (count != 0){
