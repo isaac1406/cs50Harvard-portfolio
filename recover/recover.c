@@ -27,12 +27,11 @@ int main(int argc, char *argv[])
 
     // While there's still data left to read from the memory card
     while(fread(buffer, 1, 512, card) == 512){
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0){
-            if (found){
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[3] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+            found = 1;
+        if (found){
+            if (count != 0){
                 fclose(img);
-            }
-            else{
-                found = 1;
             }
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
