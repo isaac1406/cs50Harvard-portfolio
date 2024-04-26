@@ -40,18 +40,20 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
             }
-            w
+            // write into the new file
             sprintf(name, "%03i.jpg", count);
             img = fopen(name, "w");
             fwrite(buffer, 1, 512, img);
             found = false;
             count++;
         }
+        // If it isn't the first JPEG
         else if (count != 0)
         {
             fwrite(buffer, 1, 512, img);
         }
     }
+    // close open files
     fclose(card);
     fclose(img);
     return 0;
