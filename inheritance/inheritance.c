@@ -64,13 +64,13 @@ person *create_family(int generations)
         new_person -> parents[0] = NULL;
         new_person -> parents[0] = NULL;
 
-        // TODO: Randomly assign alleles
+        // Randomly assign alleles
         new_person -> alleles = random_allele();
         new_person -> alleles = random_allele();
     }
 
     // TODO: Return newly created person
-    return NULL;
+    return new_person;
 }
 
 // Free `p` and all ancestors of `p`.
