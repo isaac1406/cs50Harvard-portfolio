@@ -38,6 +38,11 @@ bool load(const char *dictionary)
 {
      // Open the dictionary file
     FILE *source = fopen(dictionary, "r");
+    if (source == NULL)
+    {
+        puts("Error");
+        return false;
+    }
 
     // Read each word in the file
 
