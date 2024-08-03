@@ -65,7 +65,7 @@ bool load(const char *dictionary)
     }
     // Read each word in the file
     char buffer[45];
-    while(fscanf(source, "%s", buffer))
+    while(fscanf(source, "%s", buffer) != EOF)
     {
         node *new = malloc(sizeof(node));
         int hashValue = hash(buffer);
@@ -99,6 +99,7 @@ bool unload(void)
         {
             cursor = cursor->next;
             free(tmp);
+            tmp = cursor;
         }
     }
     return true;
