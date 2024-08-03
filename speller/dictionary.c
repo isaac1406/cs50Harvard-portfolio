@@ -13,7 +13,8 @@ typedef struct node
     struct node *next;
 } node;
 
-// TODO: Choose number of buckets in hash table
+// initialize global variables
+int numWords = 0;
 const unsigned int N = 26;
 
 // Hash table
@@ -22,14 +23,18 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    int hashValue = hash(word);
+    while(true)
+    {
+        node *cursor = table[hashValue];
+        if(strcasecmp(cursor->word, word) == 0)
+    }
     return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
     return toupper(word[0]) - 'A';
 }
 
@@ -58,6 +63,7 @@ bool load(const char *dictionary)
         strcopy(new->word, buffer);
         new->next = table[hashValue];
         table[hashValue] = new;
+        numWords++;
     }
     // Close the dictionary file
     fclose(source);
@@ -67,8 +73,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    // global variable counted in load function
+    return numWords;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
