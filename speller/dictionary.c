@@ -55,6 +55,8 @@ bool load(const char *dictionary)
         node *new = malloc(sizeof(node));
         int hashValue = hash(buffer);
         strcopy(new->word, buffer);
+        new->next = table[hashValue];
+        table[hashValue] = new;
     }
 
         // Add each word to the hash table
