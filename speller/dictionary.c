@@ -44,6 +44,8 @@ bool load(const char *dictionary)
         return false;
     }
     // Read each word in the file
+    char buffer[45];
+    fscanf(source, "%s", buffer);
 
         // Add each word to the hash table
 
