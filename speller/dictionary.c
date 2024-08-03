@@ -54,16 +54,14 @@ bool load(const char *dictionary)
     {
         node *new = malloc(sizeof(node));
         int hashValue = hash(buffer);
+        // Add each word to the hash table
         strcopy(new->word, buffer);
         new->next = table[hashValue];
         table[hashValue] = new;
     }
-
-        // Add each word to the hash table
-
     // Close the dictionary file
     fclose(source);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
