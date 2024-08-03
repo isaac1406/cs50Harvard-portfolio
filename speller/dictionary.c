@@ -70,7 +70,7 @@ bool load(const char *dictionary)
         node *new = malloc(sizeof(node));
         int hashValue = hash(buffer);
         // Add each word to the hash table
-        strcopy(new->word, buffer);
+        strcpy(new->word, buffer);
         new->next = table[hashValue];
         table[hashValue] = new;
         numWords++;
