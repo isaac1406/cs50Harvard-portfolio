@@ -28,9 +28,9 @@ bool check(const char *word)
 {
     int hashValue = hash(word);
     node *cursor = table[hashValue];
-    while(cursor != NULL)
+    while (cursor != NULL)
     {
-        if(strcasecmp(cursor->word, word) == 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }
@@ -65,7 +65,7 @@ bool load(const char *dictionary)
     }
     // Read each word in the file
     char buffer[45];
-    while(fscanf(source, "%s", buffer) != EOF)
+    while (fscanf(source, "%s", buffer) != EOF)
     {
         node *new = malloc(sizeof(node));
         int hashValue = hash(buffer);
@@ -95,7 +95,7 @@ bool unload(void)
     {
         node *tmp = table[i];
         node *cursor = table[i];
-        while(cursor != NULL)
+        while (cursor != NULL)
         {
             cursor = cursor->next;
             free(tmp);
