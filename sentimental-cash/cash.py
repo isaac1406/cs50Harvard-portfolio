@@ -9,12 +9,15 @@ coins = 0
 while n > 0:
     if n >= 0.25:
         n -= 0.25
+        coins += 1
     elif n >= 0.10:
         n -= 0.10
+        coins += 1
     elif n >= 0.05:
         n -= 0.05
+        coins += 1
     else:
         n -= 0.01
-    coins += 1
+        coins += 1
 
 print(coins)
