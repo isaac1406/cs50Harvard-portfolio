@@ -1,8 +1,9 @@
-def get_int():
-    while (True)
-        try:
-            n = int(input("Height: "))
-            return
-        except (n < 1 | n > 8):
-            
+from cs50 import get_int
 
+while True:
+    n = get_int("Height: ")
+    if n < 1 | n > 8:
+        break
+
+for i in range(n):
+    
