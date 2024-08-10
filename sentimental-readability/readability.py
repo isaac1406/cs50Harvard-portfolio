@@ -7,7 +7,8 @@ for c in text:
     if c.isalpha():
         numlet += 1
 
-numwor = 0
+numwor = len(text.split())
+
 numsen = 0
 
 
