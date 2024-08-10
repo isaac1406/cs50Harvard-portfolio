@@ -8,5 +8,6 @@ def main():
     text = get_string("Text: ")
 
 def counter(text):
+    numlet = len
     for i in range(len(text)):
         if (text[i] = " ")
