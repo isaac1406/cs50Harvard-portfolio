@@ -26,9 +26,9 @@ def counter(text):
         if text[i] == ",":
             numlet -= 1
             continue
-        if text[i - 1] != ' ' & text[i] == ' ' & text[i + 1] != ' ':
+        if (text[i - 1] != ' ' & text[i] == ' ' & text[i + 1] != ' '):
             numwor += 1
-        if text[i] == '!' | text[i] == '?' | text[i] == '.':
+        if (text[i] == '!' | text[i] == '?' | text[i] == '.'):
             numsen += 1
 
 def formula():
