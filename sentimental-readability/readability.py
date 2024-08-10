@@ -6,6 +6,8 @@ numsen = 0
 
 def main():
     text = get_string("Text: ")
+    counter(text)
+    
 
 def counter(text):
     global numlet, numwor, numsen
