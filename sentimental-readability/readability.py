@@ -8,13 +8,15 @@ def main():
     text = get_string("Text: ")
 
 def counter(text):
-    global numwor, numsen, numlet
+    global numlet, numwor, numsen
     numlet = len(text)
 
     for i in range(len(text)):
-        if text[i] = " ":
+        if text[i] == " " | text[i] == ",":
             numlet -= 1
         if text[i - 1] != ' ' & text[i] == ' ' & text[i + 1] != ' ':
             numwor += 1
-        
+        if text[i] == '!' | text[i] == '?' | text[i] == '.':
+            numsen += 1
 
+def formula()
