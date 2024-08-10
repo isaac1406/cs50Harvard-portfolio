@@ -21,8 +21,11 @@ def counter(text):
     numlet = len(text)
 
     for i in range(len(text)):
-        if text[i] == " " | text[i] == ",":
+        if text[i] == " ":
             numlet -= 1
+        if text[i] == ",":
+            numlet -= 1
+            continue
         if text[i - 1] != ' ' & text[i] == ' ' & text[i + 1] != ' ':
             numwor += 1
         if text[i] == '!' | text[i] == '?' | text[i] == '.':
