@@ -15,7 +15,7 @@ L = (numlet * 100) / numwor
 
 S = (numsen * 100) / numwor
 
-grade = index = 0.0588 * L - 0.296 * S - 15.8
+grade = round(0.0588 * L - 0.296 * S - 15.8)
 
 if (grade < 1):
     print("Before Grade 1")
