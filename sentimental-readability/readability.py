@@ -3,6 +3,10 @@ from cs50 import get_string
 text = get_string("Text: ")
 
 numlet = 0
+for c in text:
+    if c.isalpha():
+        numlet += 1
+
 numwor = 0
 numsen = 0
 
