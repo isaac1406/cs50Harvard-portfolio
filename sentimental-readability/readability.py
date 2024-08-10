@@ -9,7 +9,7 @@ for c in text:
 
 numwor = len(text.split())
 
-numsen = 0
+numsen = text.count(".") + text.count("!") + text.count("?")
 
 
 
