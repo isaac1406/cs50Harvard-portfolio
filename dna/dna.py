@@ -23,6 +23,7 @@ def main():
     for key in database[0].keys():
         if key == "name":
             continue
+        str_count[key]
 
     # TODO: Check database for matching profiles
 
