@@ -26,6 +26,11 @@ def main():
         str_count[key] = longest_match(sequence, key)
 
     # TODO: Check database for matching profiles
+    for row in database:
+        match = True
+        for key in row.keys():
+            if key == "name":
+                continue
 
     return
 
