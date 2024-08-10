@@ -11,9 +11,9 @@ numwor = len(text.split())
 
 numsen = text.count(".") + text.count("!") + text.count("?")
 
-L = numlet / (numwor * 100)
+L = (numlet * 100) / numwor
 
-S = numsen / (numwor * 100)
+S = (numsen * 100) / numwor
 
 grade = index = 0.0588 * L - 0.296 * S - 15.8
 
