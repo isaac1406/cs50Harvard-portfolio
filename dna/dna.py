@@ -19,7 +19,10 @@ def main():
         sequence = sequence_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    str_count = 
+    str_count = {}
+    for key in database[0].keys():
+        if key == "name":
+            continue
 
     # TODO: Check database for matching profiles
 
