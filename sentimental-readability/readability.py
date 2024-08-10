@@ -11,6 +11,10 @@ numwor = len(text.split())
 
 numsen = text.count(".") + text.count("!") + text.count("?")
 
+L = numlet / (numwor * 100)
+S = numsen / (numwor * 100)
+    index = round(0.0588 * L - 0.296 * S - 15.8)
+
 
 
     if (grade <= 1):
@@ -19,13 +23,3 @@ numsen = text.count(".") + text.count("!") + text.count("?")
         print("Grade 16+")
     else:
         print(f"Grade {grade}")
-
-
-def formula():
-    global numlet, numwor, numsen
-    L = (numlet * 100.0) / (numwor)
-    S = (numsen * 100.0) / (numwor)
-    index = round(0.0588 * L - 0.296 * S - 15.8)
-    return index
-
-main()
