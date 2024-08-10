@@ -1,13 +1,12 @@
 from cs50 import get_string
 
+text = get_string("Text: ")
+
 numlet = 0
 numwor = 0
 numsen = 0
 
-def main():
-    text = get_string("Text: ")
-    counter(text)
-    grade = formula()
+
 
     if (grade <= 1):
         print("Before Grade 1")
@@ -16,20 +15,6 @@ def main():
     else:
         print(f"Grade {grade}")
 
-def counter(text):
-    global numlet, numwor, numsen
-    numlet = len(text)
-
-    for i in range(len(text)):
-        if text[i] == " ":
-            numlet -= 1
-        if text[i] == ",":
-            numlet -= 1
-            continue
-        if (text[i - 1] != ' ' & text[i] == ' ' & text[i + 1] != ' '):
-            numwor += 1
-        if (text[i] == '!' | text[i] == '?' | text[i] == '.'):
-            numsen += 1
 
 def formula():
     global numlet, numwor, numsen
