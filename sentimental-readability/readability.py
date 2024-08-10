@@ -7,7 +7,14 @@ numsen = 0
 def main():
     text = get_string("Text: ")
     counter(text)
-    
+    grade = formula()
+
+    if (grade <= 1)
+        print("Before Grade 1")
+    elif (grade >= 16)
+        print("Grade 16+\n")
+    else
+        print("Grade %i\n", grade)
 
 def counter(text):
     global numlet, numwor, numsen
