@@ -19,4 +19,8 @@ def counter(text):
         if text[i] == '!' | text[i] == '?' | text[i] == '.':
             numsen += 1
 
-def formula()
+def formula():
+    global numlet, numwor, numsen
+    L = (numlet * 100.0) / (numwor)
+    S = (numsen * 100.0) / (numwor)
+    index = round(0.0588 * L - 0.296 * S - 15.8)
