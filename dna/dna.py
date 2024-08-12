@@ -4,28 +4,28 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
+    # Check for command-line usage
     if len(sys.argv) != 3:
         print("Usage: python dna.py data.csv sequence.txt")
         sys.exit(1)
 
-    # TODO: Read database file into a variable
+    # Read database file into a variable
     with open(sys.argv[1], "r") as database:
         reader = csv.DictReader(database)
         database = [row for row in reader]
 
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as sequence_file:
         sequence = sequence_file.read()
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
     str_count = {}
     for key in database[0].keys():
         if key == "name":
             continue
         str_count[key] = longest_match(sequence, key)
 
-    # TODO: Check database for matching profiles
+    # heck database for matching profiles
     for row in database:
         match = True
         for key in row.keys():
