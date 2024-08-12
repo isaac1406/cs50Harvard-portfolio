@@ -31,8 +31,14 @@ def main():
         for key in row.keys():
             if key == "name":
                 continue
+            if int(row[key]) != str_count[key]:
+                match = False
+                break
+            if match:
+                print(row["name"])
+                return
 
-    return
+    print("No match")
 
 
 def longest_match(sequence, subsequence):
