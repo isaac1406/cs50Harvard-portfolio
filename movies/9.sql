@@ -1,4 +1,4 @@
-SELECT name, birth FROM people
+SELECT DISTINCT name FROM people
 WHERE id IN
 (
     SELECT person_id FROM stars
@@ -7,4 +7,5 @@ WHERE id IN
         SELECT id FROM movies
         WHERE year = 2004
     )
-);
+)
+ORDER BY birth;
