@@ -1,5 +1,6 @@
 SELECT DISTINCT name FROM people
 JOIN directors ON people.id = stars.person_id
 JOIN movies ON stars.movie_id = movies.id
+JOIN ratings ON 
 WHERE movies.year = 2004
 ORDER BY people.birth;
