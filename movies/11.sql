@@ -1,3 +1,4 @@
 SELECT title FROM movies
 JOIN stars ON movies.id = stars.movie_id
-JOIN people ON 
+JOIN people ON stars.person.id = people.id
+
