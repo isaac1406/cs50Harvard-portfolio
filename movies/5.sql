@@ -1,3 +1,3 @@
 SELECT title, year FROM movies
-WHERE title = 'Harry Potter'
+WHERE 'Harry Potter' in title
 ORDER BY year;
