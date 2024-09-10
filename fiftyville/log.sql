@@ -21,7 +21,7 @@ JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id = 18;
 
-SELECT name, id, phone_number
+SELECT name, phone_number
 FROM people
 WHERE license_plate IN
 (
@@ -44,7 +44,10 @@ AND phone_number IN
     AND duration < 60
 );
 
-
+SELECT passport_number FROM people
+JOIN phone_calls
+ON people.phone_number = phone_calls.receiver
+WHERE
 
 
 
