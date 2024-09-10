@@ -44,7 +44,7 @@ AND phone_number IN
     AND duration < 60
 );
 
-SELECT receiver
+SELECT receiver, caller
 FROM phone_calls
 WHERE day = 28
 AND month = 7
