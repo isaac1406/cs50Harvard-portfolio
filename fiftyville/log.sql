@@ -21,7 +21,7 @@ JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id = 18;
 
-SELECT name
+SELECT name, phone_number
 FROM people
 WHERE license_plate IN
 (
@@ -43,6 +43,8 @@ AND phone_number IN
     AND year = 2023
     AND duration < 60
 );
+
+SELECT 
 
 SELECT activity, license_plate, minute
 FROM bakery_security_logs
