@@ -64,8 +64,6 @@ WHERE
 SELECT DISTINCT name FROM people
 JOIN passengers
 ON passengers.passport_number = people.passport_number
-JOIN phone_calls
-ON people.phone_number = phone_calls.receiver
 WHERE passengers.flight_id = 18
 AND passengers.passport_number =
 (
