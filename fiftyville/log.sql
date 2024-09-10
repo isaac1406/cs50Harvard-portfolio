@@ -48,7 +48,8 @@ SELECT name FROM people
 JOIN passengers
 ON passengers.passport_number = people.passport_number
 JOIN flights ON flights.id = passengers.flight_id
-
+JOIN phone_calls
+ON people.phone_number = phone_calls.receiver
 WHERE flights.id = 18
 AND passengers.passport_number =
 (
