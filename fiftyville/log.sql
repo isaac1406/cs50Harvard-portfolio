@@ -44,7 +44,11 @@ AND phone_number IN
     AND duration < 60
 );
 
-SELECT 
+SELECT name FROM people
+JOIN passengers
+ON passengers.passport_number = people.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+
 
 SELECT activity, license_plate, minute
 FROM bakery_security_logs
