@@ -89,16 +89,7 @@ JOIN phone_calls
 ON people.phone_number = phone_calls.receiver
 JOIN passengers
 ON passengers.passport_number = people.passport_number
-WHERE passengers.flight_id =
-(
-    SELECT id FROM flights
-    WHERE flights.day = 29
-    AND flights.month = 7
-    AND flights.year = 2023
-    ORDER BY flights.minute
-    LIMIT 1
-)
-AND passengers.passport_number IN
+WHERE passengers.passport_number IN
 (
     SELECT passport_number FROM people
     JOIN phone_calls
@@ -122,6 +113,15 @@ AND passengers.passport_number IN
             AND minute <= 25
         )
     )
+)
+AND passengers.flight_id =
+(
+    SELECT id FROM flights
+    WHERE flights.day = 29
+    AND flights.month = 7
+    AND flights.year = 2023
+    ORDER BY flights.minute
+    LIMIT 1
 );
 
 
