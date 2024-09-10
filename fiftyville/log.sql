@@ -46,10 +46,13 @@ AND phone_number IN
 
 SELECT receiver
 FROM phone_calls
-WHERE caller IN
+WHERE day = 28
+AND month = 7
+AND year = 2023
+AND duration < 60
+AND caller IN
 (
-    SELECT name, phone_number
-    FROM people
+    SELECT phone_number FROM people
     WHERE license_plate IN
     (
         SELECT license_plate
@@ -61,16 +64,7 @@ WHERE caller IN
         AND minute >= 15
         AND minute <= 25
     )
-    AND phone_number IN
-    (
-        SELECT caller
-        FROM phone_calls
-        WHERE day = 28
-        AND month = 7
-        AND year = 2023
-        AND duration < 60
-    )
-)
+);
 
 SELECT passport_number FROM people
 JOIN phone_calls
