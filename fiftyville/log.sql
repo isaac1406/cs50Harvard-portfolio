@@ -28,5 +28,8 @@ JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id = 18;
 
-SELECT account_number, transactIon_type
-FROM
+SELECT account_number, transaction_type, amount
+FROM atm_transactions
+WHERE day = 28
+AND month = 7
+AND year = 2023;
