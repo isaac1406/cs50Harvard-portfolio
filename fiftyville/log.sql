@@ -48,6 +48,8 @@ SELECT name FROM people
 JOIN passengers
 ON passengers.passport_number = people.passport_number
 JOIN flights ON flights.id = passengers.flight_id
+WHERE flights.id = 18
+AND
 
 
 SELECT activity, license_plate, minute
