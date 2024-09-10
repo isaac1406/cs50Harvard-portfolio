@@ -28,6 +28,14 @@ JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id = 18;
 
+SELECT caller, receiver
+FROM phone_calls
+WHERE day = 28
+AND month = 7
+AND year = 2023
+AND duration 
+
+
 SELECT account_number, transaction_type, amount
 FROM atm_transactions
 WHERE day = 28
