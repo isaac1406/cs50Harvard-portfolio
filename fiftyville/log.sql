@@ -69,7 +69,8 @@ AND caller IN
 SELECT passport_number FROM people
 JOIN phone_calls
 ON people.phone_number = phone_calls.receiver
-WHERE
+
+
 
 
 
