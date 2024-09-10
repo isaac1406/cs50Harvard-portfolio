@@ -55,7 +55,7 @@ AND passengers.passport_number =
 (
     SELECT people.passport_number
     FROM people
-    WHERE receiver
+    WHERE phone_calls.receiver
     WHERE license_plate IN
     (
         SELECT license_plate
