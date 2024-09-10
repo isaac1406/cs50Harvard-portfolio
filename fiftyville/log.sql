@@ -1,3 +1,3 @@
 --
 SELECT description FROM crime_scene_reports
-WHERE day = 28
+WHERE day = 28 AND month = 'july';
