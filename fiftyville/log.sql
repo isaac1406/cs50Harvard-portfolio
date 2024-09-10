@@ -9,12 +9,7 @@ WHERE day = 28
 AND month = 7
 AND year = 2023;
 
-SELECT id FROM flights
-WHERE day = 29
-AND month = 7
-AND year = 2023
-ORDER BY minute
-LIMIT 1;
+
 
 SELECT city FROM airports
 JOIN flights
@@ -89,7 +84,12 @@ AND caller IN
     )
 );
 
-
+SELECT id FROM flights
+WHERE day = 29
+AND month = 7
+AND year = 2023
+ORDER BY minute
+LIMIT 1;
 
 
 
