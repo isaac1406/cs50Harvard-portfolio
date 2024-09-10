@@ -58,28 +58,32 @@ AND passengers.passport_number =
     WHERE phone_calls.receiver =
     (
         SELECT phone_calls.receiver FROM phone_calls
-        WHERE phone_calls.caller = 
-    WHERE license_plate IN
-    (
-        SELECT license_plate
-        FROM bakery_security_logs
-        WHERE day = 28
-        AND month = 7
-        AND year = 2023
-        AND hour = 10
-        AND minute >= 15
-        AND minute <= 25
+        WHERE phone_calls.caller =
+        (
+            SELECT people.phone_number
+            WHERE people.license_plate IN
+            (
+                SELECT license_plate
+                FROM bakery_security_logs
+                WHERE bakery_security_logs.day = 28
+                AND bakery_security_logs.month = 7
+                AND bakery_security_logs.year = 2023
+                AND bakery_security_logs.hour = 10
+                AND bakery_security_logs.minute >= 15
+                AND bakery_security_logs.minute <= 25
+            )
+            AND people.phone_number IN
+            (
+                SELECT caller
+                FROM phone_calls
+                WHERE phone_calls.day = 28
+                AND phone_calls.month = 7
+                AND phone_calls.year = 2023
+                AND phone_calls.duration < 60
+            )
+        )
     )
-    AND phone_number IN
-    (
-        SELECT caller
-        FROM phone_calls
-        WHERE day = 28
-        AND month = 7
-        AND year = 2023
-        AND duration < 60
-    )
-)
+);
 
 
 SELECT activity, license_plate, minute
