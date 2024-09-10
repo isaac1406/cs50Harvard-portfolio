@@ -74,7 +74,11 @@ AND passengers.passport_number =
     WHERE phone_calls.receiver =
     (
         SELECT phone_calls.receiver FROM phone_calls
-        WHERE phone_calls.caller =
+        WHERE phone_calls.day = 28
+        AND phone_calls.month = 7
+        AND phone_calls.year = 2023
+        AND phone_calls.duration < 60
+        AND phone_calls.caller =
         (
             SELECT people.phone_number
             WHERE people.license_plate IN
@@ -87,15 +91,6 @@ AND passengers.passport_number =
                 AND bakery_security_logs.hour = 10
                 AND bakery_security_logs.minute >= 15
                 AND bakery_security_logs.minute <= 25
-            )
-            AND people.phone_number IN
-            (
-                SELECT caller
-                FROM phone_calls
-                WHERE phone_calls.day = 28
-                AND phone_calls.month = 7
-                AND phone_calls.year = 2023
-                AND phone_calls.duration < 60
             )
         )
     )
