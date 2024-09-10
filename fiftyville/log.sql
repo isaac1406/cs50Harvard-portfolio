@@ -71,9 +71,9 @@ AND passengers.passport_number =
 (
     SELECT people.passport_number
     FROM people
-    WHERE phone_calls.receiver =
+    WHERE people.phone_number =
     (
-        SELECT people.phone_number FROM phone_calls
+        SELECT phone_calls.receiver FROM phone_calls
         WHERE phone_calls.day = 28
         AND phone_calls.month = 7
         AND phone_calls.year = 2023
