@@ -49,7 +49,31 @@ JOIN passengers
 ON passengers.passport_number = people.passport_number
 JOIN flights ON flights.id = passengers.flight_id
 WHERE flights.id = 18
-AND
+AND passengers.passport_number =
+(
+    SELECT people.passport_number
+    FROM people
+    WHERE license_plate IN
+    (
+        SELECT license_plate
+        FROM bakery_security_logs
+        WHERE day = 28
+        AND month = 7
+        AND year = 2023
+        AND hour = 10
+        AND minute >= 15
+        AND minute <= 25
+    )
+    AND phone_number IN
+    (
+        SELECT caller
+        FROM phone_calls
+        WHERE day = 28
+        AND month = 7
+        AND year = 2023
+        AND duration < 60
+    )
+)
 
 
 SELECT activity, license_plate, minute
