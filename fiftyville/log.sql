@@ -84,9 +84,7 @@ AND caller IN
     )
 );
 
-SELECT name FROM people
-JOIN passengers
-ON passengers.passport_number = people.passport_number
+SELECT flight_id FROM passengers
 WHERE passengers.passport_number IN
 (
     SELECT passport_number FROM people
@@ -111,15 +109,6 @@ WHERE passengers.passport_number IN
             AND minute <= 25
         )
     )
-)
-AND passengers.flight_id =
-(
-    SELECT id FROM flights
-    WHERE flights.day = 29
-    AND flights.month = 7
-    AND flights.year = 2023
-    ORDER BY flights.minute
-    LIMIT 1
 );
 
 
