@@ -9,7 +9,7 @@ WHERE day = 28
 AND month = 7
 AND year = 2023;
 
-SELECT name, phone_number
+SELECT name, phone_number, license_plate
 FROM people
 WHERE license_plate IN
 (
@@ -20,7 +20,7 @@ WHERE license_plate IN
     AND year = 2023
     AND hour = 10
 )
-
+WHERE phone_number IN
 (
     SELECT caller
     FROM phone_calls
