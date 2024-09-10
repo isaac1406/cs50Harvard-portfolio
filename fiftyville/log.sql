@@ -85,7 +85,10 @@ AND caller IN
 );
 
 SELECT name FROM people
-
+JOIN phone_calls
+ON people.phone_number = phone_calls.receiver
+JOIN passengers
+ON passengers.passport_number = people.passport_number
 
 
 
