@@ -84,7 +84,7 @@ AND caller IN
     )
 );
 
-SELECT flight_id FROM passengers
+SELECT flight_id, passport_number FROM passengers
 WHERE passengers.passport_number IN
 (
     SELECT passport_number FROM people
