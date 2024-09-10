@@ -1,5 +1,5 @@
 --
 SELECT description FROM crime_scene_reports
 WHERE day = 28
-month = 'July'
-year = 2023;
+AND month = 'July'
+AND year = 2023;
