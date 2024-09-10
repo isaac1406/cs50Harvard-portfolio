@@ -27,3 +27,6 @@ SELECT city FROM airports
 JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id = 18;
+
+SELECT account_number, transactIon_type
+FROM
