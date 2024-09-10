@@ -9,7 +9,19 @@ WHERE day = 28
 AND month = 7
 AND year = 2023;
 
-SELECT name, phone_number, license_plate
+SELECT id FROM flights
+WHERE day = 29
+AND month = 7
+AND year = 2023
+ORDER BY minute
+LIMIT 1;
+
+SELECT city FROM airports
+JOIN flights
+ON airports.id = flights.destination_airport_id
+WHERE flights.id = 18;
+
+SELECT name
 FROM people
 WHERE license_plate IN
 (
@@ -39,17 +51,7 @@ AND month = 7
 AND year = 2023
 AND hour = 10;
 
-SELECT id FROM flights
-WHERE day = 29
-AND month = 7
-AND year = 2023
-ORDER BY minute
-LIMIT 1;
 
-SELECT city FROM airports
-JOIN flights
-ON airports.id = flights.destination_airport_id
-WHERE flights.id = 18;
 
 SELECT caller, receiver
 FROM phone_calls
