@@ -84,6 +84,11 @@ AND caller IN
     )
 );
 
+SELECT name FROM people
+
+
+
+
 SELECT id FROM flights
 WHERE day = 29
 AND month = 7
