@@ -92,12 +92,31 @@ ON passengers.passport_number = people.passport_number
 WHERE passengers.flight_id =
 (
     SELECT id FROM flights
-    WHERE day = 29
-    AND month = 7
-    AND year = 2023
-    ORDER BY minute
+    WHERE flights.day = 29
+    AND flights.month = 7
+    AND flights.year = 2023
+    ORDER BY flights.minute
     LIMIT 1;
 )
+AND phone_calls.day = 28
+AND phone_calls.month = 7
+AND phone_calls.year = 2023
+AND phone_calls.duration < 60
+AND phone_calls.caller IN
+(
+    SELECT phone_number FROM people
+    WHERE license_plate IN
+    (
+        SELECT license_plate
+        FROM bakery_security_logs
+        WHERE day = 28
+        AND month = 7
+        AND year = 2023
+        AND hour = 10
+        AND minute >= 15
+        AND minute <= 25
+    )
+);
 
 
 
