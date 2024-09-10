@@ -98,6 +98,7 @@ WHERE passengers.flight_id =
     ORDER BY flights.minute
     LIMIT 1
 )
+AND passengers.passport_number IN
 AND phone_calls.day = 28
 AND phone_calls.month = 7
 AND phone_calls.year = 2023
