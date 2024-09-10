@@ -66,9 +66,28 @@ AND caller IN
     )
 );
 
-SELECT passport_number FROM people
+SELECT name, passport_number FROM people
 JOIN phone_calls
 ON people.phone_number = phone_calls.receiver
+WHERE day = 28
+AND month = 7
+AND year = 2023
+AND duration < 60
+AND caller IN
+(
+    SELECT phone_number FROM people
+    WHERE license_plate IN
+    (
+        SELECT license_plate
+        FROM bakery_security_logs
+        WHERE day = 28
+        AND month = 7
+        AND year = 2023
+        AND hour = 10
+        AND minute >= 15
+        AND minute <= 25
+    )
+);
 
 
 
