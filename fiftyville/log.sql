@@ -16,4 +16,7 @@ AND month = 7
 AND year = 2023
 AND hour = 10;
 
-SELECT destination_airport_id
+SELECT city FROM airports
+JOIN flights
+ON airports.id = flights.destination_airport_id
+
