@@ -9,7 +9,7 @@ WHERE day = 28
 AND month = 7
 AND year = 2023;
 
-SELECT name, passport_number
+SELECT name
 FROM people
 WHERE license_plate IN
 (
@@ -18,7 +18,7 @@ WHERE license_plate IN
     WHERE day = 28
     AND month = 7
     AND year = 2023
-    AND hour = 10;
+    AND hour = 10
 )
 AND phone_number IN
 (
@@ -27,8 +27,8 @@ AND phone_number IN
     WHERE day = 28
     AND month = 7
     AND year = 2023
-    AND duration < 60;
-)
+    AND duration < 60
+);
 
 SELECT activity, license_plate, minute
 FROM bakery_security_logs
