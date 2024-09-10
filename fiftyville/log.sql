@@ -9,11 +9,11 @@ WHERE day = 28
 AND month = 7
 AND year = 2023;
 
-SELECT name
+SELECT name, phone_number
 FROM people
 WHERE license_plate IN
 (
-    SELECT activity, license_plate, minute
+    SELECT license_plate
     FROM bakery_security_logs
     WHERE day = 28
     AND month = 7
@@ -22,7 +22,7 @@ WHERE license_plate IN
 )
 AND phone_number IN
 (
-    SELECT caller, receiver
+    SELECT caller
     FROM phone_calls
     WHERE day = 28
     AND month = 7
