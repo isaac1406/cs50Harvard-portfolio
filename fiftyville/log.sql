@@ -20,7 +20,7 @@ WHERE license_plate IN
     AND year = 2023
     AND hour = 10
 )
-WHERE phone_number IN
+AND phone_number IN
 (
     SELECT caller
     FROM phone_calls
