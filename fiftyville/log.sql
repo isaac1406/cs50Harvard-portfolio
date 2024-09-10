@@ -19,6 +19,8 @@ WHERE license_plate IN
     AND month = 7
     AND year = 2023
     AND hour = 10
+    AND minute >= 15
+    AND minute <= 25
 )
 AND phone_number IN
 (
