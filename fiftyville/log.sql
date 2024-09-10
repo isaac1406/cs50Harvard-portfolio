@@ -16,6 +16,13 @@ AND month = 7
 AND year = 2023
 AND hour = 10;
 
+SELECT id FROM flights
+WHERE day = 29
+AND month = 7
+AND year = 2023
+ORDER BY minute
+LIMIT 1;
+
 SELECT city FROM airports
 JOIN flights
 ON airports.id = flights.destination_airport_id
