@@ -44,12 +44,9 @@ AND phone_number IN
     AND duration < 60
 );
 
-SELECT receiver, caller
+SELECT receiver
 FROM phone_calls
-WHERE day = 28
-AND month = 7
-AND year = 2023
-AND duration < 60;
+WHERE caller IN
 
 SELECT passport_number FROM people
 JOIN phone_calls
