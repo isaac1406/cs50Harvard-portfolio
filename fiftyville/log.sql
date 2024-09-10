@@ -78,7 +78,7 @@ AND passengers.passport_number =
         AND phone_calls.duration < 60
         AND phone_calls.caller =
         (
-            SELECT people.phone_number
+            SELECT people.phone_number FROM people
             WHERE people.license_plate IN
             (
                 SELECT license_plate
