@@ -255,6 +255,6 @@ WHERE passport_number =
     LIMIT 1
 );
 
-SELECT name FROM people
+SELECT rwcwivwFROM people
 JOIN phone_calls ON phone_number = receiver
-WHERE caller = 'Bruce'
+WHERE caller = 'Bruce';
