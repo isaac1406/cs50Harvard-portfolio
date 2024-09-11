@@ -124,6 +124,7 @@ JOIN flights ON id = flight_id
 WHERE flights.day = 29
 AND flights.month = 7
 AND flights.year = 2023
+
 AND passengers.passport_number IN
 (
     SELECT passport_number FROM people
