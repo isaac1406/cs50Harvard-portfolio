@@ -115,9 +115,9 @@ AND passengers.passport_number IN
     )
 );
 
-SELECT name FROM people
+SELECT person_id FROM bank_accounts
 JOIN atm_transactions
-ON 
+ON bank_accounts.account_number = atm_transactions.account_number
 
 SELECT account_number, transaction_type, amount
 FROM atm_transactions
