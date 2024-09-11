@@ -255,5 +255,7 @@ WHERE passport_number =
     LIMIT 1
 );
 
+SELECT name FROM people
+
 
 
