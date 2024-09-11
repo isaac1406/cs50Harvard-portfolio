@@ -115,6 +115,9 @@ AND passengers.passport_number IN
     )
 );
 
+SELECT name FROM people
+JOIN 
+
 SELECT account_number, transaction_type, amount
 FROM atm_transactions
 WHERE day = 28
