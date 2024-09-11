@@ -256,6 +256,7 @@ WHERE passport_number =
 );
 
 SELECT name FROM people
+JOIN phone_call ON phone_number = receiver
 WHERE passport_number =
 (
     SELECT passport_number FROM passengers
