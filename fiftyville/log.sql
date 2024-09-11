@@ -161,7 +161,7 @@ JOIN flights
 ON airports.id = flights.destination_airport_id
 WHERE flights.id =
 (
-    SELECT flight_id, passport_number FROM passengers
+    SELECT flight_id FROM passengers
     JOIN flights ON id = flight_id
     WHERE flights.day = 29
     AND flights.month = 7
