@@ -257,4 +257,8 @@ WHERE passport_number =
 
 SELECT name FROM people
 JOIN phone_calls ON phone_number = receiver
-WHERE receiver = 'Bruce';
+WHERE caller =
+(
+    SELECT phone_number FROM people
+    WHERE name = 'Bruce'
+);
