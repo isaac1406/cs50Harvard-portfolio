@@ -133,7 +133,7 @@ AND passengers.passport_number IN
 (
     SELECT passport_number FROM people
     JOIN phone_calls
-    ON people.phone_number = phone_calls.receiver
+    ON people.phone_number = phone_calls.caller
     WHERE phone_calls.day = 28
     AND phone_calls.month = 7
     AND phone_calls.year = 2023
