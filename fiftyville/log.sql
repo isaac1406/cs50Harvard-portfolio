@@ -85,7 +85,7 @@ AND caller IN
 
 SELECT name, passport_number FROM people
 JOIN phone_calls
-ON people.phone_number = phone_calls.receiver
+ON people.phone_number = phone_calls.caller
 WHERE day = 28
 AND month = 7
 AND year = 2023
@@ -117,11 +117,6 @@ AND caller IN
     )
 );
 
-
-day = 28
-AND month = 7
-AND year = 2023
-AND
 
 
 SELECT flight_id, passport_number FROM passengers
