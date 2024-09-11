@@ -1,9 +1,9 @@
--- See the all crime scene reports of that day
+-- see the all crime scene reports of that day
 SELECT description FROM crime_scene_reports
 WHERE day = 28
 AND month = 7
 AND year = 2023;
--- See the all crime interviews of that day, to find informations
+-- see the all crime interviews of that day, to find informations
 SELECT transcript FROM interviews
 WHERE day = 28
 AND month = 7
@@ -42,43 +42,8 @@ AND people.id IN
     AND transaction_type = 'withdraw'
     AND atm_location = 'Leggett Street'
 );
--- 
-SELECT name, passport_number FROM people
-JOIN phone_calls
-ON people.phone_number = phone_calls.caller
-WHERE day = 28
-AND month = 7
-AND year = 2023
-AND duration < 60
-AND caller IN
-(
-    SELECT phone_number FROM people
-    WHERE license_plate IN
-    (
-        SELECT license_plate
-        FROM bakery_security_logs
-        WHERE day = 28
-        AND month = 7
-        AND year = 2023
-        AND hour = 10
-        AND minute >= 15
-        AND minute <= 25
-    )
-    AND people.id IN
-    (
-        SELECT person_id FROM bank_accounts
-        JOIN atm_transactions
-        ON bank_accounts.account_number = atm_transactions.account_number
-        WHERE day = 28
-        AND month = 7
-        AND year = 2023
-        AND transaction_type = 'withdraw'
-        AND atm_location = 'Leggett Street'
-    )
-);
-
-
-
+-- since the last querie results in to suspects
+-- shis one is to narrow it down that list by looking at the earliest flight
 SELECT flight_id, passport_number FROM passengers
 JOIN flights ON id = flight_id
 WHERE flights.day = 29
@@ -122,7 +87,8 @@ AND passengers.passport_number IN
 )
 ORDER BY flights.hour ASC
 LIMIT 1;
-
+-- the Last querie found the flight id and passport id of the thief
+-- so this one is to find the city where he escaped, answering the question 2 too
 SELECT city FROM airports
 JOIN flights
 ON airports.id = flights.destination_airport_id
@@ -172,8 +138,8 @@ WHERE flights.id =
     ORDER BY flights.hour ASC
     LIMIT 1
 );
-
-
+-- querie to find the name of the thief
+-- answers question 1
 SELECT name FROM people
 WHERE passport_number =
 (
@@ -221,7 +187,8 @@ WHERE passport_number =
     ORDER BY flights.hour ASC
     LIMIT 1
 );
-
+-- querie to find the name of the accomplice, parting with the thief's name that was found earlier
+-- answers question 3
 SELECT name FROM people
 JOIN phone_calls ON phone_number = receiver
 WHERE caller =
@@ -234,8 +201,3 @@ WHERE caller =
     AND phone_calls.duration < 60
 
 );
-
-
-
-
-
