@@ -1,14 +1,14 @@
---
+-- See the all crime scene reports of that day
 SELECT description FROM crime_scene_reports
 WHERE day = 28
 AND month = 7
 AND year = 2023;
-
+-- See the all crime interviews of that day, to find informations
 SELECT transcript FROM interviews
 WHERE day = 28
 AND month = 7
 AND year = 2023;
-
+-- look for the who matches the from de interview's transcripts
 SELECT name, phone_number
 FROM people
 WHERE license_plate IN
