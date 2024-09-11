@@ -117,12 +117,16 @@ AND caller IN
     )
 );
 
-SELECT flight_id, passport_number FROM passengers
-JOIN flights ON id = flight_id
-WHERE day = 29
+
+day = 29
 AND month = 7
 AND year = 2023
-AND passengers.passport_number IN
+AND 
+
+
+SELECT flight_id, passport_number FROM passengers
+JOIN flights ON id = flight_id
+WHERE passengers.passport_number IN
 (
     SELECT passport_number FROM people
     JOIN phone_calls
