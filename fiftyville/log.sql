@@ -160,7 +160,7 @@ AND passengers.passport_number IN
         )
     )
 )
-ORDER BY flight.hour ASC
+ORDER BY flights.hour ASC
 LIMIT 1;
 
 
