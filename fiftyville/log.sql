@@ -159,7 +159,9 @@ AND passengers.passport_number IN
             AND atm_location = 'Leggett Street'
         )
     )
-);
+)
+ORDER BY flight.hour ASC
+LIMIT 1;
 
 
 
