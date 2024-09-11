@@ -145,6 +145,17 @@ AND passengers.passport_number IN
             AND minute >= 15
             AND minute <= 25
         )
+        AND people.id IN
+        (
+            SELECT person_id FROM bank_accounts
+            JOIN atm_transactions
+            ON bank_accounts.account_number = atm_transactions.account_number
+            WHERE day = 28
+            AND month = 7
+            AND year = 2023
+            AND transaction_type = 'withdraw'
+            AND atm_location = 'Leggett Street'
+        )
     )
 );
 
