@@ -256,10 +256,10 @@ WHERE passport_number =
 );
 
 SELECT name FROM people
-JOIN phone_call ON phone_number = receiver
+JOIN phone_calls ON phone_number = receiver
 WHERE caller =
 (
-    SELECT phone_number FROM phone_call
+    SELECT phone_number FROM phone_calls
     WHERE passport_number =
     (
         SELECT passport_number FROM passengers
@@ -305,7 +305,6 @@ WHERE caller =
         )
         ORDER BY flights.hour ASC
         LIMIT 1
-    );
-
-)
+    )
+);
 
