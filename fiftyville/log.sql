@@ -116,7 +116,8 @@ AND passengers.passport_number IN
 );
 
 SELECT name FROM people
-JOIN 
+JOIN atm_transactions
+ON 
 
 SELECT account_number, transaction_type, amount
 FROM atm_transactions
