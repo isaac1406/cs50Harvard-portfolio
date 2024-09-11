@@ -203,8 +203,8 @@ WHERE flights.id =
         )
     )
     ORDER BY flights.hour ASC
-    LIMIT 1;
-)
+    LIMIT 1
+);
 
 
 
