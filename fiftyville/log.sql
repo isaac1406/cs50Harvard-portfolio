@@ -126,8 +126,7 @@ AND
 
 SELECT flight_id, passport_number FROM passengers
 JOIN flights ON id = flight_id
-WHERE 
-AND month = 7
+WHERE month = 7
 AND year = 2023
 AND passengers.passport_number IN
 (
