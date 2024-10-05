@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void altera(int *salario, int percentual);
+void altera(float *salario, float percentual);
 
 int main()
 {
-    int *salario = malloc(sizeof(int));
-    int percentual;
-    scanf("%d %d", salario, &percentual);
+    float *salario = malloc(sizeof(int));
+    float percentual;
+    scanf("%f %f", salario, &percentual);
     altera(salario, percentual/100);
-    printf("%d\n", *salario);
+    printf("%.2f\n", *salario);
     return 0;
 }
 
 
-void altera(int *salario, int percentual)
+void altera(float *salario, float percentual)
 {
-    *salario *= percentual;
+    *salario += *salario * percentual;
     return;
 }
