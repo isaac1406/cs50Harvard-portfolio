@@ -8,8 +8,8 @@ int main()
     int *salario = malloc(sizeof(int));
     int percentual;
     scanf("%d %d", salario, &percentual);
-    altera(salario, percentual);
-    printf("%d", *salario);
+    altera(salario, percentual/100);
+    printf("%d\n", *salario);
     return 0;
 }
 
