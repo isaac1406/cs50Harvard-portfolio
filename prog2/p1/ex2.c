@@ -114,7 +114,7 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
     fseek(parq, 0, SEEK_SET);
 
     while(fscanf(parq, "%s %d x %d %s",
-    placar.time1.nome, placar.time1.gols, placar.time2.gols, placar.time2.nome))
+    placar.time1.nome, &placar.time1.gols, &placar.time2.gols, placar.time2.nome))
     {
         if(strcmp(placar.time1.nome, time_grava.nome) == 0 || strcmp(placar.time2.nome, time_grava.nome) == 0)
         {
