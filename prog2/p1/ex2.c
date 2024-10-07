@@ -72,6 +72,8 @@ int grava_pontos_time(FILE *parq, tPontos time_grava)
         fseek(parq, 0, SEEK_END);
         fwrite(&time_grava, sizeof(tPontos), 1, parq);
     }
+    
+    return 0;
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
 {
