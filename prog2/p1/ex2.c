@@ -51,7 +51,7 @@ int main()
 
 int grava_pontos_time(FILE *parq, tPontos time_grava)
 {
-
+    if()
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
 {
