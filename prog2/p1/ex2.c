@@ -109,6 +109,10 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
     tPlacarJogo placar;
     tPontos time_grava;
 
+    time_grava.jogos = 0;
+    time_grava.pontos = 0;
+    time_grava.saldo = 0;
+
     strcpy(time_grava.nome, time_desejado);
 
     fseek(parq, 0, SEEK_SET);
