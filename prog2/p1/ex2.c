@@ -51,9 +51,10 @@ int main()
 
 int grava_pontos_time(FILE *parq, tPontos time_grava)
 {
+    char string[MAX];
     while(!feof(parq))
     {
-        fgets(parq, )
+        fgets(string, MAX, parq);
     }
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
