@@ -116,8 +116,14 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
     while(fscanf(parq, "%s %d x %d %s",
     placar.time1.nome, placar.time1.gols, placar.time2.gols, placar.time2.nome))
     {
-        if(strcmp())
+        if(strcmp(placar.time1.nome, time_grava.nome) == 0 || strcmp(placar.time2.nome, time_grava.nome) == 0)
+        {
+            contabiliza_pontuacao(&placar, &time_grava);
+            break;
+        }
     }
+
+    grava_pontos_time(parq2, time_grava)
 }
 void mostra_pontuacao_time(FILE *parq)
 {
