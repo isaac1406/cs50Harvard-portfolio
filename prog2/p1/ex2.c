@@ -31,7 +31,7 @@ int main()
    char time_buscado[MAX];
    parq=fopen("jogos.txt","r");
    if(parq==NULL)
-   return -1;
+    return -1;
    parq2=fopen("pontos.dat","w+");
    if(parq2==NULL) {
       fclose(parq);
@@ -52,10 +52,16 @@ int main()
 int grava_pontos_time(FILE *parq, tPontos time_grava)
 {
     char string[MAX];
+    int exite = 0;
     while(!feof(parq))
     {
         fgets(string, MAX, parq);
-        if (strstr())
+        if (strstr(string, time_grava.nome) == NULL)
+            continue;
+        else
+        {
+            
+        }
     }
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
