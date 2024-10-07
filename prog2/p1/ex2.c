@@ -51,17 +51,26 @@ int main()
 
 int grava_pontos_time(FILE *parq, tPontos time_grava)
 {
-    char string[MAX];
-    int exite = 0;
-    while(!feof(parq))
+    tPontos time_lido;
+    int encontrado = 0;
+
+    fseek(parq, 0, SEEK_SET);
+
+    while(fread(&time_lido, sizeof(tPontos), 1, parq) == 1)
     {
-        fgets(string, MAX, parq);
-        if (strstr(string, time_grava.nome) == NULL)
-            continue;
-        else
+        if(strcmp(time_lido.nome, time_grava.nome) == 0)
         {
-            
+            encontrado = 1;
+            fseek(parq, -sizeof(tPontos), SEEK_CUR);
+            fwrite(&time_grava, sizeof(tPontos), 1, parq);
+            break;
         }
+    }
+
+    if(!encontrado)
+    {
+        fseek(parq, 0, SEEK_END);
+        fwrite(&time_grava, sizeof(tPontos), 1, parq);
     }
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
