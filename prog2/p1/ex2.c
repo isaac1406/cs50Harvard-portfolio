@@ -108,7 +108,16 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
     tPlacarJogo placar;
     tPontos time_grava;
 
-    sscanf(time_desejado, "time: %s - jogos %d - saldo de gols")
+    sscanf(time_desejado, "time: %s - jogos %d, saldo de gols: %d, pontos: %d",
+    time_grava.nome, &time_grava.jogos, &time_grava.saldo, &time_grava.pontos);
+
+    fseek(parq, 0, SEEK_SET);
+
+    while(fscanf(parq, "%s %d x %d %s",
+    placar.time1.nome, placar.time1.gols, placar.time2.gols, placar.time2.nome))
+    {
+        if(strcmp())
+    }
 }
 void mostra_pontuacao_time(FILE *parq)
 {
