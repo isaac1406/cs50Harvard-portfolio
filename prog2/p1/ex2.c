@@ -123,7 +123,6 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
         if(strcmp(placar.time1.nome, time_grava.nome) == 0 || strcmp(placar.time2.nome, time_grava.nome) == 0)
         {
             contabiliza_pontuacao(&placar, &time_grava);
-            break;
         }
     }
 
