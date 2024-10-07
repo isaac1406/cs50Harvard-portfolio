@@ -105,7 +105,7 @@ int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
 }
 int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
 {
-
+    
 }
 void mostra_pontuacao_time(FILE *parq)
 {
