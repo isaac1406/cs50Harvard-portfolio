@@ -135,7 +135,8 @@ void mostra_pontuacao_time(FILE *parq)
     tPontos time_lido;
     fseek(parq, 0, SEEK_SET);
 
-    while (fread(&time_lido, sizeof(tPontos), 1, parq) == 1) {
+    while (!feof(parq)) {
+        fread(&time_lido, sizeof(tPontos), 1, parq);
         printf("time: %s - jogos: %d, saldo de gols: %d, pontos: %d\n",
         time_lido.nome, time_lido.jogos, time_lido.saldo, time_lido.pontos);
     }
