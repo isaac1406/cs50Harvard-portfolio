@@ -80,7 +80,7 @@ int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
     time_grava->jogos++;
     if(strcmp(placar->time1.nome, time_grava->nome) == 0)
     {
-        time_grava->saldo += placar->time1.gols - placar->time2.gols
+        time_grava->saldo += placar->time1.gols - placar->time2.gols;
         if(placar->time1.gols > placar->time2.gols)
         {
             time_grava->pontos += 3;
@@ -92,7 +92,7 @@ int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
     }
     else if(strcmp(placar->time2.nome, time_grava->nome) == 0)
     {
-        time_grava->saldo += placar->time2.gols - placar->time1.gols
+        time_grava->saldo += placar->time2.gols - placar->time1.gols;
         if(placar->time2.gols > placar->time1.gols)
         {
             time_grava->pontos += 3;
@@ -102,6 +102,7 @@ int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
             time_grava->pontos += 1;
         }
     }
+    return 0;
 }
 int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
 {
