@@ -123,7 +123,8 @@ int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
         }
     }
 
-    grava_pontos_time(parq2, time_grava)
+    grava_pontos_time(parq2, time_grava);
+    return 0;
 }
 void mostra_pontuacao_time(FILE *parq)
 {
