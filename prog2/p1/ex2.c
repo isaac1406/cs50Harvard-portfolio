@@ -31,7 +31,7 @@ int main()
    char time_buscado[MAX];
    parq=fopen("jogos.txt","r");
    if(parq==NULL)
-  return -1;
+   return -1;
    parq2=fopen("pontos.dat","w+");
    if(parq2==NULL) {
       fclose(parq);
