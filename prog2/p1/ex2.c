@@ -72,12 +72,24 @@ int grava_pontos_time(FILE *parq, tPontos time_grava)
         fseek(parq, 0, SEEK_END);
         fwrite(&time_grava, sizeof(tPontos), 1, parq);
     }
-    
+
     return 0;
 }
 int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
 {
-
+    time_grava->jogos++;
+    if(strcmp(placar->time1.nome, time_grava->nome) == 0)
+    {
+        time_grava->saldo += placar->time1.gols - placar->time2.gols
+        if(placar->time1.gols > placar->time2.gols)
+        {
+            time_grava->pontos += 3;
+        }
+        else if(placar->time1.gols == placar->time2.gols)
+        {
+            time_grava->pontos += 1;
+        }
+    }
 }
 int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
 {
