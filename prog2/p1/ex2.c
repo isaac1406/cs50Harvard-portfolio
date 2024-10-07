@@ -90,6 +90,18 @@ int contabiliza_pontuacao(tPlacarJogo *placar, tPontos *time_grava)
             time_grava->pontos += 1;
         }
     }
+    else if(strcmp(placar->time2.nome, time_grava->nome) == 0)
+    {
+        time_grava->saldo += placar->time2.gols - placar->time1.gols
+        if(placar->time2.gols > placar->time1.gols)
+        {
+            time_grava->pontos += 3;
+        }
+        else if(placar->time2.gols == placar->time1.gols)
+        {
+            time_grava->pontos += 1;
+        }
+    }
 }
 int ler_gravar_resultados(FILE *parq, FILE *parq2, char *time_desejado)
 {
