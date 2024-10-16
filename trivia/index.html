@@ -9,30 +9,30 @@
             document.addEventListener('DOMContentLoaded', function() {
 
                 // When any incorrect answer is clicked, change color to red.
-                let incorrects = document.querySelectorAll(".incorrect");
+                let incorrect = document.querySelectorAll(".incorrect");
                 for (let i = 0; i < incorrects.length; i++) {
-                    incorrects[i].addEventListener('click', function() {
+                    incorrect[i].addEventListener('click', function() {
 
                         // Set background color to red
-                        incorrects[i].style.backgroundColor = 'Red';
+                        incorrect[i].style.backgroundColor = 'Red';
 
                         // Go to parent element of correct button and find the first element with class "feedback" which has that parent
-                        incorrects[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                        incorrect[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
                     });
                 }
 
                 // Get all elements with class "correct"
-                let corrects = document.querySelectorAll('.correct');
+                let correct = document.querySelectorAll('.correct');
 
                 // Add event listeners to each correct button
-                for (let i = 0; i < corrects.length; i++) {
-                    corrects[i].addEventListener('click', function() {
+                for (let i = 0; i < correct.length; i++) {
+                    correct[i].addEventListener('click', function() {
 
                         // Set background color to green
-                        corrects[i].style.backgroundColor = 'Green';
+                        correct[i].style.backgroundColor = 'Green';
 
                         // Go to parent element of correct button and find the first element with class "feedback" which has that parent
-                        corrects[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                        correct[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                     });
                 }
 
