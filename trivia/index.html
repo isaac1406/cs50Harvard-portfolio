@@ -8,30 +8,28 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
 
-                // When any incorrect answer is clicked, change color to red.
+                // incorrect answer, change color to red
                 let incorrect = document.querySelectorAll(".incorrect");
                 for (let i = 0; i < incorrect.length; i++) {
                     incorrect[i].addEventListener('click', function() {
 
-                        // Set background color to red
+                        // Set button color to red
                         incorrect[i].style.backgroundColor = 'red';
 
-                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        // answer's feedback
                         incorrect[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
                     });
                 }
 
-                // Get all elements with class "correct"
+                // correct answer, change color to green
                 let correct = document.querySelectorAll('.correct');
-
-                // Add event listeners to each correct button
                 for (let i = 0; i < correct.length; i++) {
                     correct[i].addEventListener('click', function() {
 
-                        // Set background color to green
+                        // Set button color to green
                         correct[i].style.backgroundColor = 'green';
 
-                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        // answer's feedback
                         correct[i].parentElement.querySelector('.feedback').innerHTML = 'Correct';
                     });
                 }
