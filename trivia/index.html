@@ -8,9 +8,6 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
 
-                // Get all elements with class "correct"
-                let corrects = document.querySelectorAll('.correct');
-
                 // When any incorrect answer is clicked, change color to red.
                 let incorrects = document.querySelectorAll(".incorrect");
                 for (let i = 0; i < incorrects.length; i++) {
@@ -23,6 +20,9 @@
                         incorrects[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
                     });
                 }
+
+                // Get all elements with class "correct"
+                let corrects = document.querySelectorAll('.correct');
 
                 // Add event listeners to each correct button
                 for (let i = 0; i < corrects.length; i++) {
