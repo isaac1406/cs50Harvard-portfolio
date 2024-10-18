@@ -20,6 +20,10 @@ body {
     margin-bottom: 2rem;
 }
 
+p {
+    text-align: left;
+}
+
 h1 {
     color: #007bff;
     text-align: center;
