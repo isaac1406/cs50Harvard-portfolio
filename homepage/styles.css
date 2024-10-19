@@ -38,7 +38,7 @@ h2, h3, h5{
 
 
 button {
-    background-color: #d9edff;
+    background-color: #007bff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     font-size: 0.95rem;
@@ -50,6 +50,6 @@ button {
 }
 
 button:hover {
-    background-color: #f5f5f5;
+    background-color: #d9edff;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
