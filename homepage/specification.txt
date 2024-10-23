@@ -6,7 +6,7 @@ HTML Tags Used:
 5. <div>
 6. <h1>
 7. <p>
-8. <meta>
+8. <button>
 10. <script>
 
 CSS Properties Used:
@@ -14,7 +14,7 @@ CSS Properties Used:
 2. color
 3. text-align
 4. margin
-5. font-size 
+5. font-size
 
 JavaScript and Bootstrap:
 - Bootstrap is used to style the navigation bar and make the site responsive.
