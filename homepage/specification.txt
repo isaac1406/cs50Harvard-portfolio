@@ -1,21 +1,20 @@
 HTML Tags Used:
-1. <nav> - Used for navigation bar.
-2. <ul> - Used for unordered list in navigation.
-3. <li> - Used for list items in navigation.
-4. <a> - Used for hyperlinks.
-5. <div> - Used for container elements.
-6. <h1> - Used for main headings.
-7. <p> - Used for paragraphs.
-8. <meta> - Used for metadata.
-9. <link> - Used for linking stylesheets.
-10. <script> - Used for linking JavaScript files.
+1. <nav>
+2. <ul>
+3. <li>
+4. <a>
+5. <div>
+6. <h1>
+7. <p>
+8. <meta>
+10. <script>
 
 CSS Properties Used:
-1. background-color - Used to set the background color of the body.
-2. color - Used to set the text color.
-3. text-align - Used to center-align text.
-4. margin - Used to set the margin around elements.
-5. font-size - Used to set the size of the font.
+1. background-color
+2. color
+3. text-align
+4. margin
+5. font-size 
 
 JavaScript and Bootstrap:
 - Bootstrap is used to style the navigation bar and make the site responsive.
