@@ -26,7 +26,7 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        # TODO: Add the user's entry into the database
+        # Add the user's entry into the database
         name = request.form.get("name")
         if not name:
             return redirect("/")
@@ -57,7 +57,7 @@ def index():
 
     else:
 
-        # TODO: Display the entries in the database on index.html
+        # Display the entries in the database on index.html
         birthdays = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", birthdays=birthdays)
 
