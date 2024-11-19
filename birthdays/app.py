@@ -51,7 +51,6 @@ def index():
         if day < 1 or day > 31:
             return redirect("/")
 
-        # Insert data into database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
         return redirect("/")
