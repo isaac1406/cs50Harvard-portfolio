@@ -121,21 +121,34 @@ def register():
         # check if username was submitted
         if not request.form.get("username"):
             return apology("Username required", 400)
-        # check if passworld was submitted
-        elif not request.form.get("passworld"):
-            return apology("Passworld required", 400)
+        # check if password was submitted
+        elif not request.form.get("password"):
+            return apology("Password required", 400)
         # check if confirmation was submitted
-        elif not request.form.get("passworld"):
+        elif not request.form.get("password"):
             return apology("Username required", 400)
-        # check if passworld and confirmation match
-        elif request.form.get("passworld") != request.form.get("confirmation"):
-            return apology("passworlds do not match")
-        
+        # check if password and confirmation match
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords do not match")
         # query databse for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # check if username already exists
         if len(rows) != 0:
             return apology("Username already exists")
+
+        # insert new user into database
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
+        # query database for new user
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # remenber the user that logged in
+        session["user_id"] = rows[0][id]
+
+        # redirect to home page
+        return redirect("/")
+
+    else:
+        return render_template("registration.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
