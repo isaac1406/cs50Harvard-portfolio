@@ -8,4 +8,7 @@
     <h2>Get a Stock Quote</h2>
     <form action="/quote" method="POST">
         <input type=text name="symbol" id="symbol" placeholder="Symbol">
+        <button class="btn btn-primary" type="submit">Get Quote</button>
     </form>
+    {% if quote %}
+        <h3></h3>
