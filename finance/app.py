@@ -51,6 +51,7 @@ def buy():
         # check if shares was submitted
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive integer number of shares")
+
         # check if the sybol can be found
         quote = lookup(symbol)
         if quote is None:
@@ -62,10 +63,19 @@ def buy():
         # check if there's enough cash
         if cash < total:
             return apology("not suficient cash")
-        
+
+        # update users table
         db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total, session["user_id"])
 
+        # add the purchase to the history table
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
+                   session["user_id"], symbol, shares, price)
 
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        return redirect("/")
+
+    else:
+        return render_template("buy.html")
 
 @app.route("/history")
 @login_required
