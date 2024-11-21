@@ -147,6 +147,7 @@ def register():
         # redirect to home page
         return redirect("/")
 
+    # form submitted via GET
     else:
         return render_template("registration.html")
 
