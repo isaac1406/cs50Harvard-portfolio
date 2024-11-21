@@ -35,8 +35,26 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    stocks = db.exe
+    # get user's stocks and shares
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+                        session["user_id"])
+    # get user's cash balance
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])(0)["cash"]
 
+    # initialize variables for total values
+    total_value = cash
+    grand_total = cash
+
+    # Iterate over stocks and add price and total value
+    for stock in stocks:
+        quote = lookup(stock["symbol"])
+        stock["name"] = quote["name"]
+        stock["price"] = quote["price"]
+        stock["value"] = stock["price"] * stock["total_shares"]
+        total_value += stock["value"]
+        grand_total += stock["value"]
+
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
