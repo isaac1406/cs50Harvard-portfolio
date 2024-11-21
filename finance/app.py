@@ -51,10 +51,10 @@ def buy():
         # check if shares was submitted
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive integer number of shares")
-
+        # check if the sybol can be found
         quote = lookup(symbol)
         if quote is None:
-            return apology("Symbol n")
+            return apology("Symbol not found")
 
 
 
