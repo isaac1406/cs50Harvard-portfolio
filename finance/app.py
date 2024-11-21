@@ -114,8 +114,10 @@ def register():
     """Register user"""
     # forget any user id
     session.clear()
+
     # form submitted via POST
     if request.method == "POST":
+
         # check if username was submitted
         if not request.form.get("username"):
             return apology("Username required", 400)
@@ -125,9 +127,11 @@ def register():
         # check if confirmation was submitted
         elif not request.form.get("passworld"):
             return apology("Username required", 400)
-
+        # check if passworld and confirmation match
         elif request.form.get("passworld") != request.form.get("confirmation"):
-            return apology("")
+            return apology("passworlds do not match")
+
+        
 
 
 
