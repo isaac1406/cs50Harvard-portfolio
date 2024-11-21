@@ -71,7 +71,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
                    session["user_id"], symbol, shares, price)
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        flash(f"Bought {shares} shares of {symbol} for {usd(total)}!")
         return redirect("/")
 
     else:
