@@ -62,8 +62,8 @@ def buy():
         # check if there's enough cash
         if cash < total:
             return apology("not suficient cash")
-
-        db.execute("UPDATE users SET cash")
+        
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total, session["user_id"])
 
 
 
