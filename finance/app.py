@@ -56,6 +56,15 @@ def buy():
         if quote is None:
             return apology("Symbol not found")
 
+        price = quote["price"]
+        total = int(shares) * price
+        cash = db.execute("SELECT cash FROM users WHERE id = ", session["user_id"])[0]["cash"]
+        # check if there's enough cash
+        if cash < total:
+            return apology("not suficient cash")
+
+        db.execute("UPDATE users SET cash")
+
 
 
 @app.route("/history")
