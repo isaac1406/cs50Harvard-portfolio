@@ -110,6 +110,7 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         quote = lookup(symbol)
+        # check if symbol is valid
         if not quote:
             return apology("invalid symbol", 400)
         return render_template("quote.html", quote=quote)
