@@ -130,9 +130,12 @@ def register():
         # check if passworld and confirmation match
         elif request.form.get("passworld") != request.form.get("confirmation"):
             return apology("passworlds do not match")
-
         
-
+        # query databse for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # check if username already exists
+        if len(rows) != 0:
+            return apology("Username already exists")
 
 
 @app.route("/sell", methods=["GET", "POST"])
