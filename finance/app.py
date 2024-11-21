@@ -45,11 +45,14 @@ def buy():
     if request.method == 'POST':
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
-        
+        # check if symbol was submitted
         if not symbol:
             return apology("must provide symbol")
+        # check if shares was submitted
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive integer number of shares")
+
+        quote = lookup
 
 
 
