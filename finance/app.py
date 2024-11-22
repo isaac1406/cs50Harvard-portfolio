@@ -83,7 +83,7 @@ def buy():
             return apology("not suficient cash")
 
         # update users table
-        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, session["user_id"])
+        db.execute("UPDATE users SET cash = cash - (?) WHERE id = (?)", total_cost, session["user_id"])
 
         # add the purchase to the history table
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
