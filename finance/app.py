@@ -105,7 +105,11 @@ def buy():
 def history():
     """Show history of transactions"""
     # Query database for user's transactions
-    transactions = db.execute("SELECT * FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", session["user_id"])
+    transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", session["user_id"])
+
+    # Add a 'type' field to each transaction
+    for transaction in transactions:
+        transaction["type"] = "Buy" if transaction["shares"] > 0 else "Sell"
 
     # Render history page with transactions
     return render_template("history.html", transactions=transactions)
