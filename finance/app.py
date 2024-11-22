@@ -193,7 +193,7 @@ def register():
         elif not request.form.get("password"):
             return apology("Password required", 400)
         # check if confirmation was submitted
-        elif not request.form.get("password"):
+        elif not request.form.get("confirmation"):
             return apology("Username required", 400)
         # check if password and confirmation match
         elif request.form.get("password") != request.form.get("confirmation"):
