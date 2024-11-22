@@ -88,11 +88,11 @@ def buy():
             return apology("not sufficient cash")
 
         # Update users table
-        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", usd(total_cost), session["user_id"])
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, session["user_id"])
 
         # Add the purchase to the history table
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                   user_id=session["user_id"], symbol=symbol, shares=shares, price=usd(price))
+                   user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
         flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
