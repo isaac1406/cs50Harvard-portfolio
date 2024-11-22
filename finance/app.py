@@ -56,6 +56,7 @@ def index():
 
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
 
+
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
@@ -100,12 +101,14 @@ def buy():
     else:
         return render_template("buy.html")
 
+
 @app.route("/history")
 @login_required
 def history():
     """Show history of transactions"""
     # Query database for user's transactions
-    transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", session["user_id"])
+    transactions = db.execute(
+        "SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", session["user_id"])
 
     # Add a 'type' field to each transaction
     for transaction in transactions:
@@ -181,6 +184,7 @@ def quote():
     else:
         return render_template("quote.html")
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -229,7 +233,8 @@ def register():
 def sell():
     """Sell shares of stock"""
     # get user's stocks
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", session["user_id"])
+    stocks = db.execute(
+        "SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", session["user_id"])
 
     # form submitted via POST
     if request.method == "POST":
@@ -258,10 +263,12 @@ def sell():
                 total_sale = shares * price
 
                 # update users table
-                db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_sale, session["user_id"])
+                db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
+                           total_sale, session["user_id"])
 
                 # add the sale to history table
-                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, -shares, price)
+                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
+                           session["user_id"], symbol, -shares, price)
 
                 flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
                 return redirect("/")
@@ -271,6 +278,7 @@ def sell():
         # If the user visits the page
     else:
         return render_template("sell.html", stocks=stocks)
+
 
 @app.route("/cash", methods=["GET", "POST"])
 @login_required
@@ -288,7 +296,8 @@ def cash():
         additional_cash = int(additional_cash)
 
         # Update the user's cash balance in the database
-        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", additional_cash, session["user_id"])
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
+                   additional_cash, session["user_id"])
 
         # Flash a success message
         flash(f"Successfully added {usd(additional_cash)} to your account!")
