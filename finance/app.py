@@ -63,29 +63,34 @@ def buy():
     if request.method == 'POST':
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
-        # check if symbol was submitted
+
+        # Check if symbol was submitted
         if not symbol:
             return apology("must provide symbol")
-        # check if shares was submitted
+
+        # Check if shares was submitted
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive integer number of shares")
 
-        # check if the sybol can be found
+        # Check if the symbol can be found
         quote = lookup(symbol)
         if quote is None:
             return apology("Symbol not found")
 
         price = quote["price"]
         total_cost = int(shares) * price
-        cash = db.execute("SELECT cash FROM users WHERE id = ", session["user_id"])[0]["cash"]
-        # check if there's enough cash
+
+        # Corrected SQL query with placeholder
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+
+        # Check if there's enough cash
         if cash < total_cost:
-            return apology("not suficient cash")
+            return apology("not sufficient cash")
 
-        # update users table
-        db.execute("UPDATE users SET cash = cash - (?) WHERE id = (?)", total_cost, session["user_id"])
+        # Update users table
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, session["user_id"])
 
-        # add the purchase to the history table
+        # Add the purchase to the history table
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
