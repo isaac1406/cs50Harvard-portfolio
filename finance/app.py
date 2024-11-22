@@ -76,20 +76,20 @@ def buy():
             return apology("Symbol not found")
 
         price = quote["price"]
-        total = int(shares) * price
+        total_cost = int(shares) * price
         cash = db.execute("SELECT cash FROM users WHERE id = ", session["user_id"])[0]["cash"]
         # check if there's enough cash
-        if cash < total:
+        if cash < total_cost:
             return apology("not suficient cash")
 
         # update users table
-        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total, session["user_id"])
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, session["user_id"])
 
         # add the purchase to the history table
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
                    session["user_id"], symbol, shares, price)
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total)}!")
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
 
     else:
