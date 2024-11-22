@@ -229,7 +229,7 @@ def sell():
 
     # form submitted via POST
     if request.method == "POST":
-        symbol = request.form.get("symbol").upper
+        symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
 
         # Check if symbol was submitted
@@ -240,8 +240,7 @@ def sell():
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("must provide a positive integer number of shares")
 
-        else:
-            shares = int(shares)
+        shares = int(shares)
 
         for stock in stocks:
             if stock["symbol"] == symbol:
