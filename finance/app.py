@@ -269,6 +269,7 @@ def sell():
         return render_template("sell.html", stocks=stocks)
 
 @app.route("/cash", methods=["GET", "POST"])
+@login_required
 def cash():
     """Allow users to add additional cash to their account."""
     if request.method == "POST":
