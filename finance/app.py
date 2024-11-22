@@ -210,7 +210,7 @@ def register():
         # query database for new user
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # remenber the user that logged in
-        session["user_id"] = rows[0][id]
+        session["user_id"] = rows[0]["id"]
 
         # redirect to home page
         return redirect("/")
