@@ -246,22 +246,21 @@ def sell():
             if stock["symbol"] == symbol:
                 if stock["total_shares"] < shares:
                     return apology("not enough shares")
-                else:
-                    # Get quote
-                    quote = lookup(symbol)
-                    if quote is None:
-                        return apology("symbol not found")
-                    price = quote["price"]
-                    total_sale = shares * price
+                # Get quote
+                quote = lookup(symbol)
+                if quote is None:
+                    return apology("symbol not found")
+                price = quote["price"]
+                total_sale = shares * price
 
-                    # update users table
-                    db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_sale, session["user_id"])
+                # update users table
+                db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_sale, session["user_id"])
 
-                    # add the sale to history table
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, price)
+                # add the sale to history table
+                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, price)
 
-                    flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
-                    return redirect("/")
+                flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
+                return redirect("/")
 
         return apology("symbol not found")
 
