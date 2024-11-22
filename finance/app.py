@@ -264,7 +264,7 @@ def sell():
                     flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
                     return redirect("/")
 
-            return apology("symbol not found")
+        return apology("symbol not found")
 
         # If the user visits the page
     else:
