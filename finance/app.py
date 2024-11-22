@@ -257,7 +257,7 @@ def sell():
                 db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_sale, session["user_id"])
 
                 # add the sale to history table
-                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, price)
+                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, -shares, price)
 
                 flash(f"Sold {shares} shares of {symbol} for {usd(total_sale)}!")
                 return redirect("/")
