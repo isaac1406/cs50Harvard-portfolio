@@ -267,3 +267,30 @@ def sell():
         # If the user visits the page
     else:
         return render_template("sell.html", stocks=stocks)
+
+@app.route("/cash", methods=["GET", "POST"])
+def cash():
+    """Allow users to add additional cash to their account."""
+    if request.method == "POST":
+        # Get the amount of cash to add from the form
+        additional_cash = request.form.get("cash")
+
+        # Validate the input
+        if not additional_cash or not additional_cash.isdigit() or int(additional_cash) <= 0:
+            return apology("must provide a positive integer amount of cash")
+
+        # Convert the input to an integer
+        additional_cash = int(additional_cash)
+
+        # Update the user's cash balance in the database
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", additional_cash, session["user_id"])
+
+        # Flash a success message
+        flash(f"Successfully added {usd(additional_cash)} to your account!")
+
+        # Redirect to the homepage or another relevant page
+        return redirect("/")
+
+    else:
+        # Render the cash.html template
+        return render_template("cash.html")
