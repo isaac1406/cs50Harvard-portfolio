@@ -39,7 +39,7 @@ def index():
     stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
                         session["user_id"])
     # get user's cash balance
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])(0)["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
 
     # initialize variables for total values
     total_value = cash
