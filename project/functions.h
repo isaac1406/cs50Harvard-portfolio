@@ -1,54 +1,54 @@
-#ifndef FUNCOES_H
-#define FUNCOES_H
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
 #include <time.h>
 
-// Estrutura para armazenar informações de um paciente
+// Structure to store patient information
 typedef struct {
-    char nome[100]; // Nome do paciente
-    int gravidade; // Nível de gravidade dos sintomas
-    time_t horario_chegada; // Horário de chegada
-    int posicao; // Posição atual na lista
-} REGISTRO;
+    char name[100]; // Patient's name
+    int severity; // Severity level of symptoms
+    time_t arrival_time; // Arrival time
+    int position; // Current position in the list
+} RECORD;
 
-// Estrutura do nó da lista ligada
+// Node structure of the linked list
 typedef struct aux {
-    REGISTRO reg;
-    struct aux* prox; // Ponteiro para o próximo paciente da lista
-} PACIENTE;
+    RECORD rec;
+    struct aux* next; // Pointer to the next patient in the list
+} PATIENT;
 
-typedef PACIENTE* PONT;
+typedef PATIENT* POINTER;
 
-// Estrutura para a lista de pacientes
+// Structure for the patient list
 typedef struct {
-    PONT inicio;
-} LISTA;
+    POINTER start;
+} LIST;
 
-// Função para inicializar a lista de pacientes
-void inicializarLista(LISTA* l);
+// Function to initialize the patient list
+void initializeList(LIST* l);
 
-// Função para criar um novo paciente
-PONT criarPaciente(const char* nome, int gravidade, time_t horario_chegada);
+// Function to create a new patient
+POINTER createPatient(const char* name, int severity, time_t arrival_time);
 
-// Função para atualizar as posições da lista
-void atualizarPosicoes(const LISTA* l);
+// Function to update the positions in the list
+void updatePositions(const LIST* l);
 
-// Função para inserir um paciente na lista de forma ordenada
-void inserirPacienteOrdenado(LISTA* l, PONT novo_paciente);
+// Function to insert a patient into the list in an ordered manner
+void insertPatientOrdered(LIST* l, POINTER new_patient);
 
-// Função para pesquisar um paciente pelo nome
-PONT pesquisarPaciente(const LISTA* l, const char* nome);
+// Function to search for a patient by name
+POINTER searchPatient(const LIST* l, const char* name);
 
-// Função para retirar um paciente da lista com base no nome
-void retirarPaciente(LISTA* l, const char* nome);
+// Function to remove a patient from the list based on the name
+void removePatient(LIST* l, const char* name);
 
-// Função para salvar a lista de pacientes em um arquivo binário
-void salvarPacientesEmArquivo(const LISTA* l, char* nome_arquivo);
+// Function to save the patient list to a binary file
+void savePatientsToFile(const LIST* l, char* file_name);
 
-// Função para exibir uma quantidade específica de pacientes ordenados na lista
-void exibirLista(const LISTA* l, int quantidade);
+// Function to display a specific number of ordered patients in the list
+void displayList(const LIST* l, int quantity);
 
-// Função para liberar a memória alocada para a lista de pacientes
-void liberarLista(LISTA* l);
+// Function to free the memory allocated for the patient list
+void freeList(LIST* l);
 
-#endif // FUNCOES_H
+#endif // FUNCTIONS_H
