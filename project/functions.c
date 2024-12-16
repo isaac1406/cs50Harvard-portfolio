@@ -1,237 +1,235 @@
-#include "funcoes.h"
+#include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
-
-// Função para inicializar a lista de pacientes
-void inicializarLista(LISTA* l){
-    l->inicio = NULL;
+// Function to initialize the patient list
+void initializeList(LIST* l){
+    l->start = NULL;
 }
 
-// Função para criar um novo paciente
-PONT criarPaciente(const char* nome, int gravidade, time_t horario_chegada){
-    PACIENTE *novo = (PACIENTE *)malloc(sizeof(PACIENTE));
-    if(novo == NULL) {
-        printf("Erro ao alocar memória");
+// Function to create a new patient
+POINTER createPatient(const char* name, int severity, time_t arrival_time){
+    PATIENT *new = (PATIENT *)malloc(sizeof(PATIENT));
+    if(new == NULL) {
+        printf("Error allocating memory");
         return NULL;
     }
-    strcpy(novo->reg.nome, nome);
-    novo->reg.gravidade = gravidade;
-    novo->reg.horario_chegada = horario_chegada;
-    novo->reg.posicao = 0;
-    novo->prox = NULL;
+    strcpy(new->rec.name, name);
+    new->rec.severity = severity;
+    new->rec.arrival_time = arrival_time;
+    new->rec.position = 0;
+    new->next = NULL;
 
-    return novo;
+    return new;
 }
 
-// Função para atualizar as posições da lista
-void atualizarPosicoes(const LISTA* l) {
-    // Inicializa a posição do primeiro paciente
+// Function to update the positions in the list
+void updatePositions(const LIST* l) {
+    // Initialize the position of the first patient
     int pos = 1;
 
-    // Percorre a lista atualizada
-    PACIENTE* atual = l->inicio;
-    while (atual != NULL) {
-        atual->reg.posicao = pos; // Atribui a posição ao paciente
-        atual = atual->prox; // Move para o próximo paciente
-        pos++; // Incrementa a posição
+    // Traverse the updated list
+    PATIENT* current = l->start;
+    while (current != NULL) {
+        current->rec.position = pos; // Assign the position to the patient
+        current = current->next; // Move to the next patient
+        pos++; // Increment the position
     }
 }
 
-// Função para inserir um paciente na lista de forma ordenada
-void inserirPacienteOrdenado(LISTA* l, PONT novo_paciente) {
-    // Criação de uma cópia do paciente para garantir que ele não seja compartilhado entre listas
-    PACIENTE* paciente_copia = (PACIENTE*)malloc(sizeof(PACIENTE));
-    if (!paciente_copia) {
-        printf("Erro ao alocar memória para o paciente.\n");
+// Function to insert a patient into the list in an ordered manner
+void insertPatientOrdered(LIST* l, POINTER new_patient) {
+    // Create a copy of the patient to ensure it is not shared between lists
+    PATIENT* patient_copy = (PATIENT*)malloc(sizeof(PATIENT));
+    if (!patient_copy) {
+        printf("Error allocating memory for the patient.\n");
         return;
     }
-    *paciente_copia = *novo_paciente; // Cópia profunda do paciente
+    *patient_copy = *new_patient; // Deep copy of the patient
 
-    // Caso a lista esteja vazia, adiciona diretamente no início
-    if (l->inicio == NULL) {
-        l->inicio = paciente_copia;
-        paciente_copia->prox = NULL;
+    // If the list is empty, add directly at the start
+    if (l->start == NULL) {
+        l->start = patient_copy;
+        patient_copy->next = NULL;
     } else {
-        PACIENTE* atual = l->inicio;
+        PATIENT* current = l->start;
 
-        // Paciente deve ser inserido no início se for mais urgente ou com menor horário de chegada
-        if (atual->reg.gravidade < paciente_copia->reg.gravidade ||
-            (atual->reg.gravidade == paciente_copia->reg.gravidade &&
-             atual->reg.horario_chegada > paciente_copia->reg.horario_chegada)) {
-            paciente_copia->prox = l->inicio;
-            l->inicio = paciente_copia;
+        // Patient should be inserted at the start if more urgent or with earlier arrival time
+        if (current->rec.severity < patient_copy->rec.severity ||
+            (current->rec.severity == patient_copy->rec.severity &&
+             current->rec.arrival_time > patient_copy->rec.arrival_time)) {
+            patient_copy->next = l->start;
+            l->start = patient_copy;
         } else {
-            // Avançar na lista enquanto:
-            // 1. O próximo paciente tiver gravidade maior, ou
-            // 2. A gravidade for igual e o próximo paciente tiver chegado mais cedo
-            while (atual->prox != NULL &&
-                   (atual->prox->reg.gravidade > paciente_copia->reg.gravidade ||
-                   (atual->prox->reg.gravidade == paciente_copia->reg.gravidade &&
-                    atual->prox->reg.horario_chegada <= paciente_copia->reg.horario_chegada))) {
-                atual = atual->prox;
+            // Advance in the list while:
+            // 1. The next patient has higher severity, or
+            // 2. Severity is equal and the next patient arrived earlier
+            while (current->next != NULL &&
+                   (current->next->rec.severity > patient_copy->rec.severity ||
+                   (current->next->rec.severity == patient_copy->rec.severity &&
+                    current->next->rec.arrival_time <= patient_copy->rec.arrival_time))) {
+                current = current->next;
             }
 
-            // Inserir o paciente após o ponto encontrado
-            paciente_copia->prox = atual->prox;
-            atual->prox = paciente_copia;
+            // Insert the patient after the found point
+            patient_copy->next = current->next;
+            current->next = patient_copy;
         }
     }
 
-    // Atualiza as posições na lista
-    atualizarPosicoes(l);
+    // Update positions in the list
+    updatePositions(l);
 }
 
-// Função para pesquisar um paciente pelo nome
-PONT pesquisarPaciente(const LISTA* l, const char* nome)
+// Function to search for a patient by name
+POINTER searchPatient(const LIST* l, const char* name)
 {
-    PONT atual = l->inicio;
+    POINTER current = l->start;
 
-    while(atual != NULL){
-        if(strcmp(atual->reg.nome, nome) == 0){
-            return atual;  // Se for igual a 0, ambos as strings sao iguais, logo, paciente encontrado
+    while(current != NULL){
+        if(strcmp(current->rec.name, name) == 0){
+            return current;  // If equal to 0, both strings are the same, hence, patient found
         }
-        atual = atual->prox;
+        current = current->next;
     }
 
-    return NULL;  // Paciente nao encontrado
+    return NULL;  // Patient not found
 }
 
-// Função para retirar um paciente da lista com base no nome
-void retirarPaciente(LISTA* l, const char* nome)
+// Function to remove a patient from the list based on the name
+void removePatient(LIST* l, const char* name)
 {
-    if (l == NULL || l->inicio == NULL) {  // Verifica se a lista esta vazia
-        printf("A lista esta vazia.\n");
+    if (l == NULL || l->start == NULL) {  // Check if the list is empty
+        printf("The list is empty.\n");
         return;
     }
 
-    PONT paciente = pesquisarPaciente(l, nome);
+    POINTER patient = searchPatient(l, name);
 
-    // Verifica se o paciente está na lista
-    if(paciente == NULL){
+    // Check if the patient is in the list
+    if(patient == NULL){
         printf("------------------------\n");
-        printf("Paciente nao encontrado.\n");
+        printf("Patient not found.\n");
         printf("------------------------\n");
         return;
     }
 
-    // O paciente desejado está no começo da lista
-    if(l->inicio == paciente){
+    // The desired patient is at the start of the list
+    if(l->start == patient){
 
-        l->inicio = l->inicio->prox;
-        free(paciente);
+        l->start = l->start->next;
+        free(patient);
         printf("-------------------------------\n");
-        printf("Paciente removido com sucesso.\n");
+        printf("Patient successfully removed.\n");
         printf("-------------------------------\n");
-        atualizarPosicoes(l);
+        updatePositions(l);
         return;
     }
 
+    POINTER current = l->start;
 
-    PONT atual = l->inicio;
+    // The desired patient is at another position in the list
+    while(current != NULL){
 
-    // O paciente desejado está em outra posição na lista
-    while(atual != NULL){
+        if(current->next == patient){
 
-        if(atual->prox == paciente){
-
-            atual->prox = paciente->prox;
-            free(paciente);
+            current->next = patient->next;
+            free(patient);
             printf("-------------------------------\n");
-            printf("Paciente removido com sucesso.\n");
+            printf("Patient successfully removed.\n");
             printf("-------------------------------\n");
-            atualizarPosicoes(l);
+            updatePositions(l);
             return;
         }
 
-        atual = atual->prox;
+        current = current->next;
     }
     printf("------------------------\n");
-    printf("Paciente nao encontrado.\n");
+    printf("Patient not found.\n");
     printf("------------------------\n");
 }
 
-// Função para salvar a lista de pacientes em um arquivo binário
-void salvarPacientesEmArquivo(const LISTA* l, char* nome_arquivo)
+// Function to save the patient list to a binary file
+void savePatientsToFile(const LIST* l, char* file_name)
 {
-    FILE *arq = fopen(nome_arquivo, "wb");
-    // Verifica se houve erro na criação do arquivo
-    if(arq == NULL){
-        printf("Erro na abertura do arquivo\n");
+    FILE *file = fopen(file_name, "wb");
+    // Check if there was an error creating the file
+    if(file == NULL){
+        printf("Error opening the file\n");
         return;
     }
 
-    // Verifica se a lista esta vazia
-    if (l == NULL || l->inicio == NULL) {
-        fclose(arq);
+    // Check if the list is empty
+    if (l == NULL || l->start == NULL) {
+        fclose(file);
         printf("-------------------\n");
-        printf("A lista esta vazia.\n");
+        printf("The list is empty.\n");
         printf("-------------------\n");
         return;
     }
 
-    PONT atual = l->inicio;
+    POINTER current = l->start;
 
-    // Percorre a lista, gravando os dados no arquivo
-    while(atual != NULL){
+    // Traverse the list, writing the data to the file
+    while(current != NULL){
 
-        fwrite(&(atual->reg), sizeof(REGISTRO), 1, arq);
+        fwrite(&(current->rec), sizeof(RECORD), 1, file);
 
-        atual = atual->prox;
+        current = current->next;
     }
-    // Fechando o arquivo e declarando sucesso
-    fclose(arq);
+    // Closing the file and declaring success
+    fclose(file);
     printf("---------------------------------\n");
-    printf("Pacientes salvos no arquivo '%s'.\n", nome_arquivo);
+    printf("Patients saved in the file '%s'.\n", file_name);
     printf("---------------------------------\n");
 }
 
-// Função para exibir uma quantidade específica de pacientes ordenados na lista
-void exibirLista(const LISTA* l, int quantidade)
+// Function to display a specific number of ordered patients in the list
+void displayList(const LIST* l, int quantity)
 {
-    if (l == NULL || l->inicio == NULL) {  // Verifica se a lista esta vazia
+    if (l == NULL || l->start == NULL) {  // Check if the list is empty
         printf("----------------------------------------------------------\n");
-        printf("A lista esta vazia ou a quantidade solicitada eh invalida.\n");
+        printf("The list is empty or the requested quantity is invalid.\n");
         printf("----------------------------------------------------------\n");
         return;
     }
 
-    if (quantidade <= 0) {  // Garante que "quantidade" seja positivo e maior que 0
+    if (quantity <= 0) {  // Ensure "quantity" is positive and greater than 0
         printf("----------------------------------\n");
-        printf("Quantidade solicitada eh invalida.\n");
+        printf("Requested quantity is invalid.\n");
         printf("----------------------------------\n");
         return;
     }
 
-    PONT atual = l->inicio;
+    POINTER current = l->start;
     int count = 0;
 
-    while((atual != NULL) && (count < quantidade)){
+    while((current != NULL) && (count < quantity)){
         printf("------------------------\n");
-        printf("Posicao: %d \n", atual->reg.posicao);
-        printf("Nome: %s", atual->reg.nome);
-        printf("Gravidade: %d \n", atual->reg.gravidade);
-        printf("Horario de Chegada: %s", ctime(&atual->reg.horario_chegada));
-        printf("------------------------\n");  // Facilita visualmente a separacao entre pacientes
-        atual = atual->prox;
+        printf("Position: %d \n", current->rec.position);
+        printf("Name: %s", current->rec.name);
+        printf("Severity: %d \n", current->rec.severity);
+        printf("Arrival Time: %s", ctime(&current->rec.arrival_time));
+        printf("------------------------\n");  // Visually facilitates separation between patients
+        current = current->next;
         count++;
     }
 }
 
-// Função para liberar a memória alocada para a lista de pacientes
-void liberarLista(LISTA* l){
-    if(l == NULL)  // Verifica se a lista esta vazia
+// Function to free the memory allocated for the patient list
+void freeList(LIST* l){
+    if(l == NULL)  // Check if the list is empty
         return;
 
-    PONT atual = l->inicio;
+    POINTER current = l->start;
 
-    while(atual != NULL){
-        PONT apagar = atual;
-        atual = atual->prox;
-        free(apagar);
+    while(current != NULL){
+        POINTER to_delete = current;
+        current = current->next;
+        free(to_delete);
     }
 
-    l->inicio = NULL;
+    l->start = NULL;
 }
