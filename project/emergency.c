@@ -1,4 +1,4 @@
-#include "funcoes.h"
+#include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,157 +6,157 @@
 #define MAX 100
 
 int main() {
-    // Declaração da lista de todos os pacientes do dia e da lista que será atualizada ao decorrer do dia
-    LISTA* listaTotal = (LISTA*)malloc(sizeof(LISTA));
-    if (!listaTotal) {
-        puts("Erro ao alocar memória pWara listaTotal");
+    // Declaration of the list of all patients of the day and the list that will be updated throughout the day
+    LIST* totalList = (LIST*)malloc(sizeof(LIST));
+    if (!totalList) {
+        puts("Error allocating memory for totalList");
         return 1;
     }
-    LISTA* listaAtual = (LISTA*)malloc(sizeof(LISTA));
-    if (!listaAtual) {
-        puts("Erro ao alocar memória para listaTotal");
+    LIST* currentList = (LIST*)malloc(sizeof(LIST));
+    if (!currentList) {
+        puts("Error allocating memory for currentList");
         return 1;
     }
 
-    // Inicializar listas
-    inicializarLista(listaTotal);
-    inicializarLista(listaAtual);
+    // Initialize lists
+    initializeList(totalList);
+    initializeList(currentList);
 
-    // Declaração de todas as variáveis que serão utilizadas ao longo da main
-    int gravidade;
-    time_t horario_chegada;
-    int opcao = 0;
-    int acesso = 0;
-    int quantidade = 0;
+    // Declaration of all variables that will be used throughout the main
+    int severity;
+    time_t arrival_time;
+    int option = 0;
+    int access = 0;
+    int quantity = 0;
 
-    // Fazer os seguintes comandos...
+    // Execute the following commands...
     do {
-        char nome[MAX];
-        // Funcionalidades disponíveis para o usuário escolher
+        char name[MAX];
+        // Functionalities available for the user to choose
         printf("\t==========================\n");
-        puts("Sistema de Fila para recepcao hospitalar");
+        puts("Queue System for Hospital Reception");
         printf("\t==========================\n");
-        puts("\t1. Adicionar paciente");
-        puts("\t2. Retirar paciente");
-        puts("\t3. Pesquisar paciente");
-        puts("\t4. Ver lista ordenada");
-        puts("\t5. Salvar e sair");
-        printf("Escolha uma opcao: ");
-        // Ler opção escolhida
-        scanf("%d", &opcao);
+        puts("\t1. Add patient");
+        puts("\t2. Remove patient");
+        puts("\t3. Search patient");
+        puts("\t4. View ordered list");
+        puts("\t5. Save and exit");
+        printf("Choose an option: ");
+        // Read chosen option
+        scanf("%d", &option);
 
-        switch(opcao) {
-            // Adicionar paciente
+        switch(option) {
+            // Add patient
             case 1:
-                // Ler nome do paciente
-                printf("\nNome do paciente: ");
+                // Read patient's name
+                printf("\nPatient's name: ");
                 getchar();
-                fgets(nome, MAX, stdin);
-                // Ler Gravidade dos Sintomas
-                printf("\nGravidade dos sintomas (1-10): ");
-                scanf("%d", &gravidade);
-                // Obter horário de Chegada
-                horario_chegada = time(NULL);
-                // Criar Paciente
-                PACIENTE* novo_paciente = criarPaciente(nome, gravidade, horario_chegada);
-                // Inserir paciente nas listas e ordená-los (Inserction Sort)
-                inserirPacienteOrdenado(listaTotal, novo_paciente);
-                inserirPacienteOrdenado(listaAtual, novo_paciente);
+                fgets(name, MAX, stdin);
+                // Read Severity of Symptoms
+                printf("\nSeverity of symptoms (1-10): ");
+                scanf("%d", &severity);
+                // Get Arrival Time
+                arrival_time = time(NULL);
+                // Create Patient
+                PATIENT* new_patient = createPatient(name, severity, arrival_time);
+                // Insert patient into lists and order them (Insertion Sort)
+                insertPatientOrdered(totalList, new_patient);
+                insertPatientOrdered(currentList, new_patient);
                 break;
 
-            // Retirar paciente atendido da lista atual
+            // Remove attended patient from the current list
             case 2:
-                // Ler nome do paciente
-                printf("\nNome do paciente ou F para sair: ");
+                // Read patient's name
+                printf("\nPatient's name or F to exit: ");
                 getchar();
-                fgets(nome, MAX, stdin);
-                if (strcmp(nome, "F\n") != 0 && strcmp(nome, "f\n") != 0) {
-                    // Retirar paciente
-                    retirarPaciente(listaAtual, nome);
-                    // Atualizar posições da lista
-                    atualizarPosicoes(listaAtual);
+                fgets(name, MAX, stdin);
+                if (strcmp(name, "F\n") != 0 && strcmp(name, "f\n") != 0) {
+                    // Remove patient
+                    removePatient(currentList, name);
+                    // Update list positions
+                    updatePositions(currentList);
                 }
                 else {
-                    printf("Saindo... \n");
+                    printf("Exiting... \n");
                     break;
                 }
                 break;
 
-            // Pesquisar Paciente na lista atual
+            // Search Patient in the current list
             case 3:
-                // Ler nome do paciente desejado
-                printf("\nNome do paciente a pesquisar: ");
+                // Read desired patient's name
+                printf("\nPatient's name to search: ");
                 getchar();
-                fgets(nome, MAX, stdin);
-                // Pesquisar paciente na lista (Busca sequencial)
-                PACIENTE* encontrado = pesquisarPaciente(listaAtual, nome);
+                fgets(name, MAX, stdin);
+                // Search patient in the list (Sequential search)
+                PATIENT* found = searchPatient(currentList, name);
 
-                // Se o paciente foi encontrado...
-                if (encontrado != NULL) {
-                    // Printar os dados dele
+                // If the patient was found...
+                if (found != NULL) {
+                    // Print their data
                     printf("--------------------------------------------\n");
-                    printf("Paciente encontrado:\nNome: %sGravidade: %d\nPosicao: %d\nHorario de chegada: %s\n",
-                           encontrado->reg.nome, encontrado->reg.gravidade, encontrado->reg.posicao,
-                           ctime(&encontrado->reg.horario_chegada));
+                    printf("Patient found:\nName: %sSeverity: %d\nPosition: %d\nArrival time: %s\n",
+                           found->rec.name, found->rec.severity, found->rec.position,
+                           ctime(&found->rec.arrival_time));
                     printf("--------------------------------------------\n");
                 }
-                // Se não...
+                // If not...
                 else {
                     printf("------------------------\n");
-                    puts("Paciente nao encontrado.");
+                    puts("Patient not found.");
                     printf("------------------------\n");
                 }
                 break;
 
-            // Ver lista ordenada
+            // View ordered list
             case 4:
-                // Decidir qual lista deseja acessar
-                printf("\nDigite 1 para acessar a lista total ou digite 2 para a lista atual: ");
-                scanf("%d", &acesso);
+                // Decide which list to access
+                printf("\nEnter 1 to access the total list or enter 2 for the current list: ");
+                scanf("%d", &access);
 
-                // Ler a quantidade
-                printf("\nQuantidade desejada de pacientes a serem vistos da lista: ");
-                scanf("%d", &quantidade);
+                // Read the quantity
+                printf("\nDesired number of patients to be seen from the list: ");
+                scanf("%d", &quantity);
 
-                // Exibir lista total
-                if (acesso == 1){
-                    exibirLista(listaTotal, quantidade);
+                // Display total list
+                if (access == 1){
+                    displayList(totalList, quantity);
                 }
-                // Exibir lista atual
-                else if (acesso == 2){
-                    exibirLista(listaAtual, quantidade);
+                // Display current list
+                else if (access == 2){
+                    displayList(currentList, quantity);
                 }
-                // Opção inválida
+                // Invalid option
                 else{
-                    puts("Opção de lista invalida.");
+                    puts("Invalid list option.");
                 }
                 break;
 
-            // Salvar e sair
+            // Save and exit
             case 5:
-                // Obter o horário atual
+                // Get the current time
                 time_t now = time(NULL);
                 struct tm* t = localtime(&now);
 
-                // Criar uma string para o nome do arquivo com data
-                char nome_arquivo_data[150];
-                strftime(nome_arquivo_data, sizeof(nome_arquivo_data),
-                    "controle_atendimentos_%d-%m-%Y.bin", t);
+                // Create a string for the file name with date
+                char file_name_date[150];
+                strftime(file_name_date, sizeof(file_name_date),
+                    "attendance_control_%d-%m-%Y.bin", t);
 
-                // Salvar lista de pacientes em um arquivo binário
-                salvarPacientesEmArquivo(listaTotal, nome_arquivo_data);
-                // liberar memória alocada para a lista
-                liberarLista(listaTotal);
-                liberarLista(listaAtual);
-                // Mensagem de saída
-                printf("Dados salvos. Saindo...\n");
+                // Save patient list to a binary file
+                savePatientsToFile(totalList, file_name_date);
+                // Free allocated memory for the list
+                freeList(totalList);
+                freeList(currentList);
+                // Exit message
+                printf("Data saved. Exiting...\n");
                 break;
 
-            // Opção inválida
+            // Invalid option
             default:
-                printf("Opcao invalida.\n");
+                printf("Invalid option.\n");
         }
-    } while(opcao != 5); // Ficar no loop enquanto opcao for diferente de 5
+    } while(option != 5); // Stay in the loop while option is different from 5
 
     return 0;
 }
