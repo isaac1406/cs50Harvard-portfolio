@@ -18,7 +18,7 @@ The project consists of several key files, each contributing to the overall func
 
 - **emergency.c**: This is the main file of the project, where the user interacts with the system. It includes the implementation of the user interface, allowing users to add, remove, search, and view patients in the queue. The file handles the initialization of patient lists, processes user inputs, and calls the appropriate functions to manage the queue effectively.
 
-- **functions.c**: This file contains the implementation of all the functions declared in `functions.h`. It provides the logic for managing the patient queue, including memory allocation, patient insertion and removal, position updates, and file operations for saving and displaying patient data.
+- **functioe contains the implementation of all the functions declared in `functions.h`. It provides the logic for managing the patient queue, including memory allocation, patient insertion and removal, position updates, and file operations for saving and displaying patient data.
 
 ### Design Choices
 
