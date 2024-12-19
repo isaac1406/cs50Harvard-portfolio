@@ -24,13 +24,17 @@ The project consists of several key files, each contributing to the overall func
 
 During the development of this project, several design choices were made to enhance the system's efficiency and usability:
 
-1. **Data Structures**: I opted for a linked list structure to manage the patient queue. This choice allows for dynamic memory allocation, making it easier to handle varying numbers of patients without predefining the list size. The linked list also facilitates efficient insertion and removal operations, which are crucial for maintaining an ordered queue.
+1. **Programming Language Choice**: I chose to implement this project as a command-line program using C because it is the language I am most familiar with, thanks to my experience with CS50 and my studies in my university in Brazil. C is known for its high performance, which is an essential characteristic for a system as critical as one used in a hospital setting. The ability to manage memory directly and execute operations swiftly makes C an ideal choice for developing a responsive and efficient queue management system.
 
-2. **Priority Management**: The system uses a combination of severity and arrival time to prioritize patients. This decision ensures that critical cases are addressed promptly while maintaining fairness for those who arrived earlier. The insertion function sorts patients based on these criteria, updating positions accordingly.
+2. **Data Structures**: I opted for a linked list structure to manage the patient queue. This choice allows for dynamic memory allocation, making it easier to handle varying numbers of patients without predefining the list size. The linked list also facilitates efficient insertion and removal operations, which are crucial for maintaining an ordered queue.
 
-3. **User Interface**: The user interface in `emergency.c` was designed to be intuitive and straightforward, allowing users to perform essential operations with minimal effort. The menu-driven approach guides users through the available functionalities, ensuring a smooth interaction with the system.
+3. **Priority Management**: The system uses a combination of severity and arrival time to prioritize patients. This decision ensures that critical cases are addressed promptly while maintaining fairness for those who arrived earlier. The insertion function sorts patients based on these criteria, updating positions accordingly.
 
-4. **File Operations**: To ensure data persistence, the system includes functions for saving the total list of patients to a binary file specific to each day. This feature allows for the recovery of patient data in case of system restarts, maintaining continuity in patient management.
+4. **User Interface**: The user interface in `emergency.c` was designed to be intuitive and straightforward, allowing users to perform essential operations with minimal effort. The menu-driven approach guides users through the available functionalities, ensuring a smooth interaction with the system.
+
+5. **File Operations**: To ensure data persistence, the system includes functions for saving the total list of patients to a binary file specific to each day. This feature allows for the recovery of patient data in case of system restarts, maintaining continuity in patient management.
+
+6. **Linked Lists for Patient Management**: I chose to create two linked lists to store patient information: the total list and the current list. The total list serves as a comprehensive record of all patients who entered the hospital throughout the day, providing a complete overview for administrative purposes. The current list, on the other hand, is used to manage the emergency queue during the day, allowing for real-time updates and efficient handling of patient priorities. This dual-list approach ensures both detailed record-keeping and effective queue management.
 
 ### Conclusion
 
